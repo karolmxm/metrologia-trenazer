@@ -3,10 +3,16 @@
 /* ======================= Stan aplikacji ======================= */
 const LETTERS = ['A', 'B', 'C', 'D'];
 const EXAM_DEFAULT = 20;
-const BEST_KEY = 'metrologia.bestExam';
+const BEST_KEY_PREFIX = 'metrologia.bestExam';
 
 const state = {
-  all: [],            // wszystkie pytania z questions.json
+  datasets: {
+    exam: [],         // pytania z questions.json ("Oryginalna baza egzaminacyjna")
+    ai: []            // pytania z ai_questions.json ("Trenażer AI z wykładów")
+  },
+  source: 'exam',     // 'exam' | 'ai'
+  selectedLectures: new Set(), // pusty zbiór = Wszystkie wykłady (Mix); wpp wybrane numery lectureId
+  lecturesMeta: [],   // [{ id, title, count }] wyznaczone z ai_questions.json
   mode: null,         // 'learn' | 'exam' | 'browser'
   isRetry: false,     // czy to sesja powtórki błędnych
   examSize: EXAM_DEFAULT,
@@ -18,7 +24,10 @@ const state = {
   browser: {
     query: '',
     showAll: false,
-    checked: {}       // { [id]: wybranaLitera } w trybie samodzielnego sprawdzania
+    checkedBySource: {
+      exam: {},       // { [id]: wybranaLitera } dla questions.json
+      ai: {}          // { [id]: wybranaLitera } dla ai_questions.json
+    }
   }
 };
 
@@ -40,26 +49,62 @@ function esc(str) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+function plural(n, one, few, many) {
+  if (n === 1) return one;
+  const d = n % 10, t = n % 100;
+  return d >= 2 && d <= 4 && (t < 12 || t > 14) ? few : many;
+}
+
+function formatLectureBadge(q) {
+  if (!q || q.lectureId == null) return '';
+  return q.lectureTitle
+    ? `Wykład ${q.lectureId}: ${q.lectureTitle}`
+    : `Wykład ${q.lectureId}`;
+}
+
+function currentCheckedMap() {
+  return state.browser.checkedBySource[state.source];
+}
+
+function getActiveQuestions() {
+  if (state.source === 'ai') {
+    const allAi = state.datasets.ai;
+    if (state.selectedLectures.size === 0) return allAi;
+    return allAi.filter((q) => state.selectedLectures.has(Number(q.lectureId)));
+  }
+  return state.datasets.exam;
+}
+
+function hasAnyLoadedData() {
+  return state.datasets.exam.length > 0 || state.datasets.ai.length > 0;
+}
+
 const SCREENS = ['screen-loading', 'screen-error', 'screen-start', 'screen-quiz', 'screen-result', 'screen-browser'];
 function show(screen, scrollTop = true) {
   SCREENS.forEach((s) => $(s).classList.toggle('hidden', s !== screen));
   updateHeaderNav(screen);
   if (scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 function currentScreen() {
   return SCREENS.find((s) => !$(s).classList.contains('hidden'));
 }
 
 function updateHeaderNav(screen) {
+  const isInitOrErr = ['screen-loading', 'screen-error'].includes(screen);
   const onStartOrInit = ['screen-loading', 'screen-error', 'screen-start'].includes(screen);
   const onBrowser = screen === 'screen-browser';
+
+  $('nav-source-switch').classList.toggle('hidden', isInitOrErr);
   $('nav-menu').classList.toggle('hidden', onStartOrInit);
-  $('nav-browser').classList.toggle('hidden', ['screen-loading', 'screen-error'].includes(screen));
+  $('nav-browser').classList.toggle('hidden', isInitOrErr);
   $('nav-browser').className =
     'text-xs font-semibold px-3 py-1.5 rounded-xl border transition flex items-center gap-1.5 ' +
     (onBrowser
       ? 'border-amber-400 bg-amber-500/25 text-amber-200 shadow-sm shadow-amber-500/20'
       : 'border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20');
+
+  paintSourceSwitches();
 }
 
 function availableLetters(q) {
@@ -72,43 +117,282 @@ function validate(data) {
   return data.filter((q) => q && q.question && q.options && q.correct);
 }
 
-async function loadQuestions() {
-  try {
-    const res = await fetch('questions.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    initData(validate(await res.json()));
-  } catch (err) {
-    $('error-details').textContent = 'Szczegóły: ' + err.message;
-    show('screen-error');
+function buildLecturesMeta(aiQuestions) {
+  const map = new Map();
+  aiQuestions.forEach((q) => {
+    const lid = Number(q.lectureId);
+    if (!lid) return;
+    if (!map.has(lid)) {
+      map.set(lid, {
+        id: lid,
+        title: q.lectureTitle || `Wykład ${lid}`,
+        count: 0
+      });
+    }
+    map.get(lid).count++;
+  });
+  return [...map.values()].sort((a, b) => a.id - b.id);
+}
+
+async function fetchJsonSafe(url) {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+  return validate(await res.json());
+}
+
+async function loadAllDatabases() {
+  const [examRes, aiRes] = await Promise.allSettled([
+    fetchJsonSafe('questions.json'),
+    fetchJsonSafe('ai_questions.json')
+  ]);
+
+  if (examRes.status === 'fulfilled') {
+    state.datasets.exam = examRes.value;
   }
+  if (aiRes.status === 'fulfilled') {
+    state.datasets.ai = aiRes.value;
+    state.lecturesMeta = buildLecturesMeta(state.datasets.ai);
+  }
+
+  if (!hasAnyLoadedData()) {
+    const reasons = [examRes, aiRes]
+      .filter((r) => r.status === 'rejected')
+      .map((r) => r.reason?.message || String(r.reason))
+      .join(' | ');
+    $('error-details').textContent = 'Szczegóły: ' + reasons;
+    show('screen-error');
+    return;
+  }
+
+  if (state.datasets.exam.length === 0 && state.datasets.ai.length > 0) {
+    state.source = 'ai';
+  }
+
+  refreshAllSourceUI();
+  goMenu();
 }
 
 $('file-input').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
   try {
-    initData(validate(JSON.parse(await file.text())));
+    const parsed = validate(JSON.parse(await file.text()));
+    const isAi = parsed.some((q) => q.lectureId != null);
+    if (isAi) {
+      state.datasets.ai = parsed;
+      state.lecturesMeta = buildLecturesMeta(parsed);
+      state.source = 'ai';
+    } else {
+      state.datasets.exam = parsed;
+      state.source = 'exam';
+    }
+    refreshAllSourceUI();
+    goMenu();
   } catch (err) {
     $('error-details').textContent = 'Szczegóły: ' + err.message;
   }
 });
 
-function initData(questions) {
-  state.all = questions;
-  $('total-count').textContent = questions.length;
+$('file-input-ai').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  try {
+    const parsed = validate(JSON.parse(await file.text()));
+    state.datasets.ai = parsed;
+    state.lecturesMeta = buildLecturesMeta(parsed);
+    state.source = 'ai';
+    refreshAllSourceUI();
+    goMenu();
+  } catch (err) {
+    $('error-details').textContent = 'Szczegóły: ' + err.message;
+  }
+});
+
+/* ======================= Przełącznik źródeł i filtr wykładów ======================= */
+function switchSource(targetSource) {
+  if (targetSource !== 'exam' && targetSource !== 'ai') return;
+  if (state.source === targetSource && currentScreen() !== 'screen-quiz') return;
+
+  if (targetSource === 'ai' && state.datasets.ai.length === 0) {
+    alert('Baza AI (ai_questions.json) nie została jeszcze wczytana.');
+    return;
+  }
+  if (targetSource === 'exam' && state.datasets.exam.length === 0) {
+    alert('Oryginalna baza (questions.json) nie została jeszcze wczytana.');
+    return;
+  }
+
+  const screen = currentScreen();
+  if (screen === 'screen-quiz' && !confirmLeave()) return;
+
+  state.source = targetSource;
+  refreshAllSourceUI();
+
+  if (screen === 'screen-browser') {
+    renderBrowser();
+  } else {
+    goMenu();
+  }
+}
+
+function toggleLectureFilter(lectureId) {
+  const totalLectures = state.lecturesMeta.length;
+  if (lectureId === 'ALL') {
+    state.selectedLectures.clear();
+  } else {
+    const id = Number(lectureId);
+    if (state.selectedLectures.has(id)) {
+      state.selectedLectures.delete(id);
+    } else {
+      state.selectedLectures.add(id);
+    }
+    if (totalLectures > 0 && state.selectedLectures.size >= totalLectures) {
+      state.selectedLectures.clear();
+    }
+  }
+  refreshAllSourceUI();
+  if (currentScreen() === 'screen-browser') {
+    renderBrowser(true);
+  }
+}
+
+function paintSourceSwitches() {
+  const isAi = state.source === 'ai';
+
+  // Górny pasek nawigacji
+  $('nav-src-exam').className =
+    'text-xs font-semibold px-2.5 py-1.5 rounded-lg transition flex items-center gap-1.5 ' +
+    (!isAi
+      ? 'bg-indigo-500 text-white shadow-sm shadow-indigo-500/30'
+      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/70');
+
+  $('nav-src-ai').className =
+    'text-xs font-semibold px-2.5 py-1.5 rounded-lg transition flex items-center gap-1.5 ' +
+    (isAi
+      ? 'bg-violet-500 text-white shadow-sm shadow-violet-500/30'
+      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/70');
+
+  // Kafelki na ekranie startowym
+  $('start-src-exam').className =
+    'text-left p-4 rounded-2xl border-2 transition-all flex items-center justify-between gap-3 ' +
+    (!isAi
+      ? 'border-indigo-400 bg-indigo-500/15 shadow-lg shadow-indigo-500/10'
+      : 'border-slate-800 bg-slate-900/50 hover:border-slate-700 opacity-80 hover:opacity-100');
+
+  $('start-src-ai').className =
+    'text-left p-4 rounded-2xl border-2 transition-all flex items-center justify-between gap-3 ' +
+    (isAi
+      ? 'border-violet-400 bg-violet-500/15 shadow-lg shadow-violet-500/10'
+      : 'border-slate-800 bg-slate-900/50 hover:border-slate-700 opacity-80 hover:opacity-100');
+
+  $('start-src-exam-count').textContent = `${state.datasets.exam.length} pytań`;
+  $('start-src-ai-count').textContent = `${state.datasets.ai.length} pytań`;
+}
+
+function renderLecturesFilterPanel() {
+  const isAi = state.source === 'ai';
+  const panel = $('ai-lectures-panel');
+  panel.classList.toggle('hidden', !isAi);
+
+  const isMix = state.selectedLectures.size === 0;
+  $('lectures-all-count').textContent = `${state.datasets.ai.length} pytań`;
+  $('btn-lectures-all').className =
+    'text-xs sm:text-sm font-semibold px-3.5 py-2 rounded-xl border-2 transition flex items-center gap-2 ' +
+    (isMix
+      ? 'border-violet-400 bg-violet-500/25 text-violet-100 shadow-sm shadow-violet-500/20'
+      : 'border-slate-700 bg-slate-800/60 text-slate-300 hover:border-violet-400/60 hover:text-violet-200');
+
+  const grid = $('lectures-grid');
+  grid.innerHTML = '';
+
+  state.lecturesMeta.forEach((lec) => {
+    const selected = state.selectedLectures.has(lec.id);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.dataset.lectureId = lec.id;
+    btn.className =
+      'text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between gap-2 ' +
+      (selected
+        ? 'border-violet-400 bg-violet-500/20 text-slate-100 ring-2 ring-violet-400/25'
+        : isMix
+          ? 'border-slate-800 bg-slate-950/60 text-slate-200 hover:border-violet-400/60 hover:bg-slate-900'
+          : 'border-slate-800/80 bg-slate-950/40 text-slate-400 opacity-70 hover:opacity-100 hover:border-slate-600');
+
+    const checkBadge = selected
+      ? '<span class="w-5 h-5 rounded-md bg-violet-500 text-white grid place-items-center text-xs font-bold">✓</span>'
+      : '<span class="w-5 h-5 rounded-md border border-slate-700 bg-slate-900/80 grid place-items-center text-[10px] text-slate-500">+</span>';
+
+    btn.innerHTML = `
+      <div class="flex items-center justify-between gap-2">
+        <span class="text-xs font-bold uppercase tracking-wider ${selected ? 'text-violet-200' : 'text-violet-300/90'}">
+          Wykład ${lec.id}
+        </span>
+        <div class="flex items-center gap-1.5">
+          <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300">
+            ${lec.count} ${plural(lec.count, 'pytanie', 'pytania', 'pytań')}
+          </span>
+          ${checkBadge}
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm font-semibold leading-snug line-clamp-2">${esc(lec.title)}</p>`;
+
+    btn.addEventListener('click', () => toggleLectureFilter(lec.id));
+    grid.appendChild(btn);
+  });
+
+  const activeCount = getActiveQuestions().length;
+  if (isMix) {
+    $('lectures-selection-summary').innerHTML =
+      `Aktywne: <strong class="text-violet-200">Wszystkie wykłady (Mix 1–${state.lecturesMeta.length})</strong> — łącznie <strong class="text-slate-100">${activeCount}</strong> pytań`;
+  } else {
+    const sortedIds = [...state.selectedLectures].sort((a, b) => a - b);
+    const label = sortedIds.length === 1
+      ? `Wykład ${sortedIds[0]} (${esc(state.lecturesMeta.find((l) => l.id === sortedIds[0])?.title || '')})`
+      : `Wykłady: ${sortedIds.map((n) => '#' + n).join(', ')}`;
+    $('lectures-selection-summary').innerHTML =
+      `Wybrano: <strong class="text-violet-200">${label}</strong> — łącznie <strong class="text-slate-100">${activeCount}</strong> ${plural(activeCount, 'pytanie', 'pytania', 'pytań')}`;
+  }
+}
+
+function refreshAllSourceUI() {
+  paintSourceSwitches();
+  renderLecturesFilterPanel();
+
+  const pool = getActiveQuestions();
+  $('total-count').textContent = pool.length;
+
+  if (state.source === 'ai') {
+    if (state.selectedLectures.size === 0) {
+      $('active-source-label').textContent = 'z bazy AI (Wszystkie wykłady 1–8)';
+    } else {
+      const sorted = [...state.selectedLectures].sort((a, b) => a - b);
+      $('active-source-label').textContent =
+        sorted.length === 1
+          ? `z bazy AI (Wykład ${sorted[0]})`
+          : `z bazy AI (wykłady: ${sorted.join(', ')})`;
+    }
+  } else {
+    $('active-source-label').textContent = 'z oryginalnej bazy egzaminacyjnej';
+  }
+
+  $('learn-pool-hint').textContent = `Wszystkie pytania z wybranej puli (${pool.length}) w losowej kolejności`;
   renderExamCountOptions();
-  goMenu();
+  updateBestScoreBanner();
 }
 
 /* ======================= Menu ======================= */
 function renderExamCountOptions() {
-  const total = state.all.length;
-  const opts = [...new Set([10, 20, 30, 40].filter((n) => n < total).concat(total))];
-  state.examSize = Math.min(EXAM_DEFAULT, total);
+  const total = getActiveQuestions().length;
+  const standardCounts = [10, 14, 20, 30, 40].filter((n) => n < total);
+  const opts = [...new Set(standardCounts.concat(total > 0 ? [total] : []))];
+  if (!opts.includes(state.examSize)) {
+    state.examSize = Math.min(EXAM_DEFAULT, total);
+  }
   const wrap = $('exam-count');
   wrap.innerHTML = '';
   opts.forEach((n) => {
     const b = document.createElement('button');
+    b.type = 'button';
     b.textContent = n === total ? `Wszystkie (${n})` : n;
     b.dataset.n = n;
     b.addEventListener('click', () => { state.examSize = n; paintExamCount(); });
@@ -126,16 +410,29 @@ function paintExamCount() {
   });
 }
 
+function bestScoreStorageKey() {
+  return `${BEST_KEY_PREFIX}.${state.source}`;
+}
+
+function updateBestScoreBanner() {
+  const best = localStorage.getItem(bestScoreStorageKey()) ??
+    (state.source === 'exam' ? localStorage.getItem(BEST_KEY_PREFIX) : null);
+  $('best-score').classList.toggle('hidden', !best);
+  if (best) {
+    const srcName = state.source === 'ai' ? 'Trenażer AI z wykładów' : 'Oryginalna baza egzaminacyjna';
+    $('best-score').innerHTML = `🏆 Najlepszy wynik egzaminu (${srcName}): <span class="text-slate-100 font-semibold">${esc(best)}%</span>`;
+  }
+}
+
 function goMenu() {
   $('mode-badge').classList.add('hidden');
-  const best = localStorage.getItem(BEST_KEY);
-  $('best-score').classList.toggle('hidden', !best);
-  if (best) $('best-score').innerHTML = `🏆 Najlepszy wynik egzaminu: <span class="text-slate-100 font-semibold">${esc(best)}%</span>`;
+  refreshAllSourceUI();
   show('screen-start');
 }
 
 /* ======================= Sesja ======================= */
 function startSession(mode, questions, isRetry = false) {
+  if (!questions.length) return;
   state.mode = mode;
   state.isRetry = isRetry;
   state.questions = questions;
@@ -147,18 +444,20 @@ function startSession(mode, questions, isRetry = false) {
   badge.classList.remove('hidden');
   badge.className = 'text-xs font-semibold px-3 py-1.5 rounded-full ' +
     (mode === 'learn' ? 'bg-emerald-500/15 text-emerald-300' : 'bg-indigo-500/15 text-indigo-300');
-  badge.textContent = (mode === 'learn' ? '📘 Tryb Nauki' : '📝 Tryb Egzaminu') + (isRetry ? ' · powtórka błędnych' : '');
+  const srcPrefix = state.source === 'ai' ? '🤖 AI · ' : '📚 ';
+  badge.textContent = srcPrefix + (mode === 'learn' ? 'Tryb Nauki' : 'Tryb Egzaminu') + (isRetry ? ' · powtórka błędnych' : '');
 
   show('screen-quiz');
   renderQuestion();
 }
 
 function startLearn() {
-  startSession('learn', shuffle(state.all));
+  startSession('learn', shuffle(getActiveQuestions()));
 }
 
 function startExam() {
-  startSession('exam', shuffle(state.all).slice(0, state.examSize));
+  const pool = shuffle(getActiveQuestions());
+  startSession('exam', pool.slice(0, Math.min(state.examSize, pool.length)));
 }
 
 function stats() {
@@ -182,6 +481,18 @@ function renderQuestion() {
   $('q-current').textContent = state.idx + 1;
   $('q-total').textContent = total;
   $('q-id').textContent = `Pytanie #${q.id ?? state.idx + 1} z bazy`;
+
+  // Etykieta (badge) wykładu w trybie AI
+  const lecBadge = $('q-lecture-badge');
+  const lecText = formatLectureBadge(q);
+  if (lecText) {
+    lecBadge.textContent = `🎓 ${lecText}`;
+    lecBadge.classList.remove('hidden');
+  } else {
+    lecBadge.textContent = '';
+    lecBadge.classList.add('hidden');
+  }
+
   $('q-text').textContent = q.question;
 
   // Obrazek (jeśli jest)
@@ -340,12 +651,6 @@ function prev() {
   renderQuestion();
 }
 
-function plural(n, one, few, many) {
-  if (n === 1) return one;
-  const d = n % 10, t = n % 100;
-  return d >= 2 && d <= 4 && (t < 12 || t > 14) ? few : many;
-}
-
 /* ======================= Wyniki ======================= */
 function finish() {
   state.finished = true;
@@ -359,12 +664,18 @@ function finish() {
     .filter((x) => x.answer !== x.q.correct);
 
   if (state.mode === 'exam' && !state.isRetry) {
-    const best = Number(localStorage.getItem(BEST_KEY) || 0);
-    if (percent > best || localStorage.getItem(BEST_KEY) == null) localStorage.setItem(BEST_KEY, String(percent));
+    const key = bestScoreStorageKey();
+    const best = Number(localStorage.getItem(key) || 0);
+    if (percent > best || localStorage.getItem(key) == null) {
+      localStorage.setItem(key, String(percent));
+    }
   }
 
+  const srcTitle = state.source === 'ai' ? ' · Trenażer AI' : ' · Baza egzaminacyjna';
   $('result-title').textContent =
-    (state.mode === 'learn' ? 'Koniec sesji nauki' : 'Wynik egzaminu') + (state.isRetry ? ' (powtórka)' : '');
+    (state.mode === 'learn' ? 'Koniec sesji nauki' : 'Wynik egzaminu') +
+    srcTitle +
+    (state.isRetry ? ' (powtórka)' : '');
   $('result-percent').textContent = `${percent}%`;
   $('result-grade').textContent = grade(percent);
   $('result-good').textContent = s.good;
@@ -409,8 +720,15 @@ function renderMistakes() {
     const yours = answer
       ? `<span class="font-bold">${esc(answer)}.</span> ${esc(q.options[answer])}`
       : '<em class="text-slate-500">brak odpowiedzi</em>';
+    const lecText = formatLectureBadge(q);
+    const lecBadgeHtml = lecText
+      ? `<span class="text-xs font-semibold px-2 py-0.5 rounded-md bg-violet-500/15 border border-violet-400/40 text-violet-200">🎓 ${esc(lecText)}</span>`
+      : '';
     el.innerHTML = `
-      <p class="text-xs text-slate-500 mb-1">${n + 1}. Pytanie #${esc(q.id)}</p>
+      <div class="flex flex-wrap items-center gap-2 mb-2">
+        <span class="text-xs font-semibold text-slate-400">${n + 1}. Pytanie #${esc(q.id)}</span>
+        ${lecBadgeHtml}
+      </div>
       <p class="font-semibold mb-3 leading-relaxed">${esc(q.question)}</p>
       ${q.image ? `<img src="${esc(q.image)}" alt="" class="max-h-48 rounded-xl border border-slate-700 bg-white mb-3" />` : ''}
       <div class="grid gap-2 text-sm">
@@ -433,25 +751,25 @@ function restart() {
 
 function confirmLeave() {
   if (currentScreen() === 'screen-quiz' && !state.finished && state.answers.some((a) => a != null)) {
-    return confirm('Przerwać bieżącą sesję i wrócić do menu?');
+    return confirm('Przerwać bieżącą sesję i kontynuować?');
   }
   return true;
 }
 
 /* ======================= Przeglądarka bazy pytań ======================= */
-function sortedAllQuestions() {
-  return state.all.slice().sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+function sortedActiveQuestions() {
+  return getActiveQuestions().slice().sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
 }
 
 function openBrowser() {
-  if (!state.all.length || !confirmLeave()) return;
+  if (!hasAnyLoadedData() || !confirmLeave()) return;
   state.mode = 'browser';
   $('mode-badge').classList.add('hidden');
   show('screen-browser');
   renderBrowser();
 }
 
-function parseBrowserQuery(raw) {
+function parseBrowserQuery(raw, activeList) {
   const trimmed = raw.trim();
   if (!trimmed) return { type: 'all', value: '' };
 
@@ -461,11 +779,11 @@ function parseBrowserQuery(raw) {
     return { type: 'id', id: Number(hashMatch[1]), value: trimmed };
   }
 
-  // Zapytanie samą liczbą (np. "15") — jeśli istnieje pytanie o takim ID, pokaż je natychmiast
+  // Zapytanie samą liczbą (np. "15") — jeśli w aktywnej puli istnieje pytanie o takim ID, pokaż je natychmiast
   const numMatch = trimmed.match(/^(\d+)$/);
   if (numMatch) {
     const id = Number(numMatch[1]);
-    if (state.all.some((q) => Number(q.id) === id)) {
+    if (activeList.some((q) => Number(q.id) === id)) {
       return { type: 'id', id, value: trimmed };
     }
   }
@@ -474,8 +792,8 @@ function parseBrowserQuery(raw) {
 }
 
 function filterBrowserQuestions() {
-  const all = sortedAllQuestions();
-  const parsed = parseBrowserQuery(state.browser.query);
+  const all = sortedActiveQuestions();
+  const parsed = parseBrowserQuery(state.browser.query, all);
   if (parsed.type === 'all') return { list: all, parsed };
   if (parsed.type === 'id') {
     return { list: all.filter((q) => Number(q.id) === parsed.id), parsed };
@@ -483,6 +801,7 @@ function filterBrowserQuestions() {
   const needle = parsed.keyword;
   const list = all.filter((q) => {
     if (String(q.question || '').toLowerCase().includes(needle)) return true;
+    if (String(q.lectureTitle || '').toLowerCase().includes(needle)) return true;
     return availableLetters(q).some((l) => String(q.options[l] || '').toLowerCase().includes(needle));
   });
   return { list, parsed };
@@ -501,12 +820,58 @@ function highlightText(str, rawKeyword) {
     .join('');
 }
 
+function renderBrowserLectureChips() {
+  const wrap = $('browser-lectures-wrap');
+  const isAi = state.source === 'ai';
+  wrap.classList.toggle('hidden', !isAi);
+  if (!isAi) return;
+
+  const isMix = state.selectedLectures.size === 0;
+  $('browser-lectures-all').className =
+    'text-xs font-semibold px-2.5 py-1 rounded-lg border transition ' +
+    (isMix
+      ? 'border-violet-400 bg-violet-500/25 text-violet-100'
+      : 'border-slate-700 bg-slate-800/80 text-slate-300 hover:border-violet-400/60');
+
+  const chips = $('browser-lectures-chips');
+  chips.innerHTML = '';
+  state.lecturesMeta.forEach((lec) => {
+    const selected = state.selectedLectures.has(lec.id);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.title = `Wykład ${lec.id}: ${lec.title} (${lec.count} pytań)`;
+    btn.className =
+      'text-xs font-semibold px-2.5 py-1.5 rounded-xl border transition flex items-center gap-1.5 ' +
+      (selected
+        ? 'border-violet-400 bg-violet-500/25 text-violet-100'
+        : isMix
+          ? 'border-slate-700 bg-slate-900 text-slate-300 hover:border-violet-400/60'
+          : 'border-slate-800 bg-slate-950/50 text-slate-500 hover:text-slate-300 hover:border-slate-700');
+    btn.innerHTML = `<span class="font-bold">W${lec.id}:</span> <span class="truncate max-w-[180px] sm:max-w-[240px]">${esc(lec.title)}</span> <span class="opacity-70">(${lec.count})</span>`;
+    btn.addEventListener('click', () => toggleLectureFilter(lec.id));
+    chips.appendChild(btn);
+  });
+}
+
 function renderBrowser(preserveScroll = false) {
   const scrollY = preserveScroll ? window.scrollY : null;
-  const all = sortedAllQuestions();
+  const all = sortedActiveQuestions();
   const { list: filtered, parsed } = filterBrowserQuestions();
   const filteredIds = new Set(filtered.map((q) => Number(q.id)));
   const kw = parsed.type === 'keyword' ? parsed.rawKeyword : '';
+  const checkedMap = currentCheckedMap();
+
+  // Etykieta aktywnego źródła w nagłówku przeglądarki
+  const srcBadge = $('browser-source-badge');
+  if (state.source === 'ai') {
+    srcBadge.className = 'text-xs font-semibold px-2.5 py-1 rounded-full bg-violet-500/20 border border-violet-400/40 text-violet-200';
+    srcBadge.textContent = '🤖 Trenażer AI z wykładów';
+  } else {
+    srcBadge.className = 'text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-indigo-200';
+    srcBadge.textContent = '📚 Oryginalna baza egzaminacyjna';
+  }
+
+  renderBrowserLectureChips();
 
   // Licznik znalezionych pytań
   $('browser-shown-count').textContent = filtered.length;
@@ -516,7 +881,7 @@ function renderBrowser(preserveScroll = false) {
   $('browser-search-clear').classList.toggle('hidden', state.browser.query.trim() === '');
 
   // Podpowiedź i przycisk resetowania sprawdzonych pytań
-  const checkedCount = Object.keys(state.browser.checked).length;
+  const checkedCount = Object.keys(checkedMap).length;
   $('browser-selfcheck-hint').classList.toggle('hidden', state.browser.showAll);
   $('browser-reset-checked').classList.toggle('hidden', state.browser.showAll || checkedCount === 0);
 
@@ -527,12 +892,13 @@ function renderBrowser(preserveScroll = false) {
     const id = Number(q.id);
     const inFilter = filteredIds.has(id);
     const isSingleMatch = filtered.length === 1 && inFilter && state.browser.query.trim() !== '';
-    const chosen = state.browser.checked[id];
+    const chosen = checkedMap[id];
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.dataset.qid = id;
     btn.textContent = id;
-    btn.title = `Skocz do pytania #${id}`;
+    const lecText = formatLectureBadge(q);
+    btn.title = lecText ? `Pytanie #${id} (${lecText})` : `Skocz do pytania #${id}`;
 
     let cls = 'h-9 rounded-xl text-xs font-bold border transition ';
     if (isSingleMatch) {
@@ -561,22 +927,28 @@ function renderBrowser(preserveScroll = false) {
 
   filtered.forEach((q) => {
     const id = Number(q.id);
-    const chosen = state.browser.checked[id];
+    const chosen = checkedMap[id];
     const revealed = state.browser.showAll || chosen != null;
     const isSelfChecked = !state.browser.showAll && chosen != null && chosen !== '__REVEAL__';
+    const lecText = formatLectureBadge(q);
 
     const card = document.createElement('article');
     card.id = `browser-q-${id}`;
     card.dataset.qid = id;
     card.className = 'bg-slate-900/70 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl transition';
 
-    // Nagłówek karty pytania
+    // Nagłówek karty pytania (z badge wykładu w trybie AI)
     const topBar = document.createElement('div');
-    topBar.className = 'flex items-center justify-between gap-2 mb-2';
-    topBar.innerHTML = `
+    topBar.className = 'flex flex-wrap items-center justify-between gap-2 mb-2.5';
+
+    const badgesWrap = document.createElement('div');
+    badgesWrap.className = 'flex flex-wrap items-center gap-2';
+    badgesWrap.innerHTML = `
       <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-amber-300">
         Pytanie #${esc(id)}
-      </span>`;
+      </span>
+      ${lecText ? `<span class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg bg-violet-500/15 border border-violet-400/40 text-violet-200">🎓 ${highlightText(lecText, kw)}</span>` : ''}`;
+    topBar.appendChild(badgesWrap);
 
     if (!state.browser.showAll) {
       const actionBtn = document.createElement('button');
@@ -588,10 +960,10 @@ function renderBrowser(preserveScroll = false) {
       actionBtn.textContent = chosen != null ? '↺ Ukryj odpowiedź' : '👁 Pokaż odpowiedź';
       actionBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (state.browser.checked[id] != null) {
-          delete state.browser.checked[id];
+        if (checkedMap[id] != null) {
+          delete checkedMap[id];
         } else {
-          state.browser.checked[id] = '__REVEAL__';
+          checkedMap[id] = '__REVEAL__';
         }
         renderBrowser(true);
       });
@@ -649,7 +1021,7 @@ function renderBrowser(preserveScroll = false) {
 
       if (!state.browser.showAll) {
         btn.addEventListener('click', () => {
-          state.browser.checked[id] = letter;
+          checkedMap[id] = letter;
           renderBrowser(true);
         });
       }
@@ -683,7 +1055,7 @@ function renderBrowser(preserveScroll = false) {
 function jumpToQuestion(id) {
   let card = $(`browser-q-${id}`);
   if (!card) {
-    // Jeśli pytanie jest aktualnie odfiltrowane, wyczyść filtr i wyrenderuj pełną listę
+    // Jeśli pytanie jest aktualnie odfiltrowane wyszukiwarką, wyczyść filtr i wyrenderuj pełną listę
     state.browser.query = '';
     $('browser-search').value = '';
     renderBrowser(true);
@@ -697,17 +1069,24 @@ function jumpToQuestion(id) {
 }
 
 /* ======================= Zdarzenia ======================= */
+$('nav-src-exam').addEventListener('click', () => switchSource('exam'));
+$('nav-src-ai').addEventListener('click', () => switchSource('ai'));
+$('start-src-exam').addEventListener('click', () => switchSource('exam'));
+$('start-src-ai').addEventListener('click', () => switchSource('ai'));
+$('btn-lectures-all').addEventListener('click', () => toggleLectureFilter('ALL'));
+$('browser-lectures-all').addEventListener('click', () => toggleLectureFilter('ALL'));
+
 $('btn-learn').addEventListener('click', startLearn);
 $('btn-exam').addEventListener('click', startExam);
 $('btn-browser').addEventListener('click', openBrowser);
 $('nav-browser').addEventListener('click', openBrowser);
-$('nav-menu').addEventListener('click', () => { if (state.all.length && confirmLeave()) goMenu(); });
+$('nav-menu').addEventListener('click', () => { if (hasAnyLoadedData() && confirmLeave()) goMenu(); });
 $('btn-next').addEventListener('click', (e) => { e.currentTarget.blur(); next(); });
 $('btn-prev').addEventListener('click', (e) => { e.currentTarget.blur(); prev(); });
 $('btn-retry-wrong').addEventListener('click', retryWrong);
 $('btn-restart').addEventListener('click', restart);
 $('btn-menu').addEventListener('click', goMenu);
-$('logo').addEventListener('click', () => { if (state.all.length && confirmLeave()) goMenu(); });
+$('logo').addEventListener('click', () => { if (hasAnyLoadedData() && confirmLeave()) goMenu(); });
 
 $('browser-search').addEventListener('input', (e) => {
   state.browser.query = e.target.value;
@@ -730,13 +1109,13 @@ $('browser-empty-clear').addEventListener('click', () => {
 $('browser-show-answers').addEventListener('change', (e) => {
   state.browser.showAll = e.target.checked;
   if (!state.browser.showAll) {
-    state.browser.checked = {};
+    state.browser.checkedBySource[state.source] = {};
   }
   renderBrowser(true);
 });
 
 $('browser-reset-checked').addEventListener('click', () => {
-  state.browser.checked = {};
+  state.browser.checkedBySource[state.source] = {};
   renderBrowser(true);
 });
 
@@ -787,4 +1166,4 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-loadQuestions();
+loadAllDatabases();
