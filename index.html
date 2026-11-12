@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trenażer Metrologii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] } } }
+    };
+  </script>
+  <style>
+    body { background: radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,.25), transparent 60%),
+                       radial-gradient(900px 500px at 110% 10%, rgba(16,185,129,.15), transparent 60%),
+                       #0b1020; }
+    .fade-in { animation: fadeIn .25s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .shake { animation: shake .35s ease-in-out; }
+    @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+    kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .ring-progress { transition: stroke-dashoffset .8s ease-out; }
+    .card-flash { animation: cardFlash 1.2s ease-out; }
+    @keyframes cardFlash {
+      0%, 25% { box-shadow: 0 0 0 3px rgba(99,102,241,.85), 0 20px 40px -15px rgba(99,102,241,.4); border-color: #818cf8; }
+      100% { box-shadow: none; }
+    }
+  </style>
+</head>
+<body class="min-h-full text-slate-100 font-sans antialiased">
+  <div class="max-w-3xl mx-auto px-4 py-6 sm:py-10">
+
+    <!-- Nagłówek / Nawigacja -->
+    <header class="flex flex-wrap items-center justify-between gap-3 mb-6">
+      <button id="logo" class="flex items-center gap-3 group" title="Menu główne">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-emerald-400 grid place-items-center text-lg font-extrabold shadow-lg shadow-indigo-500/30">μ</div>
+        <div class="text-left">
+          <h1 class="text-lg sm:text-xl font-bold leading-tight group-hover:text-indigo-300 transition">Trenażer Metrologii</h1>
+          <p class="text-xs text-slate-400">Nauka, egzamin i baza pytań</p>
+        </div>
+      </button>
+      <nav class="flex items-center gap-2">
+        <div id="mode-badge" class="hidden text-xs font-semibold px-3 py-1.5 rounded-full"></div>
+        <button id="nav-menu" class="hidden text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-slate-600 transition">
+          🏠 Menu
+        </button>
+        <button id="nav-browser" class="text-xs font-semibold px-3 py-1.5 rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition flex items-center gap-1.5">
+          <span>🔎</span>
+          <span>Przeglądarka bazy pytań</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Ekran ładowania / błędu -->
+    <section id="screen-loading" class="fade-in text-center py-20 text-slate-400">
+      Wczytywanie pytań…
+    </section>
+
+    <section id="screen-error" class="hidden fade-in bg-slate-900/70 border border-rose-500/40 rounded-3xl p-6 sm:p-8">
+      <h2 class="text-xl font-bold text-rose-300 mb-2">Nie udało się wczytać pliku questions.json</h2>
+      <p class="text-slate-300 mb-4 text-sm">Uruchom aplikację przez lokalny serwer (np. <code class="text-indigo-300">serve.ps1</code>) albo wskaż plik ręcznie:</p>
+      <label class="inline-flex items-center gap-3 cursor-pointer px-4 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 font-semibold transition">
+        Wybierz questions.json
+        <input id="file-input" type="file" accept=".json,application/json" class="hidden" />
+      </label>
+      <p id="error-details" class="text-xs text-slate-500 mt-4"></p>
+    </section>
+
+    <!-- Ekran startowy -->
+    <section id="screen-start" class="hidden fade-in">
+      <div class="mb-8">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">Wybierz tryb</h2>
+        <p class="text-slate-400">Baza zawiera <span id="total-count" class="text-slate-100 font-semibold">0</span> pytań. Kolejność pytań jest losowana przy każdym uruchomieniu.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Tryb nauki -->
+        <button id="btn-learn" class="text-left p-6 rounded-3xl bg-slate-900/70 border-2 border-slate-800 hover:border-emerald-400/70 hover:-translate-y-0.5 transition-all shadow-xl group">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-300 grid place-items-center text-2xl">📘</div>
+            <kbd class="text-xs px-2 py-1 rounded-md bg-slate-800 border border-slate-700 text-slate-400">1</kbd>
+          </div>
+          <h3 class="text-xl font-bold mb-1 group-hover:text-emerald-300 transition">Tryb Nauki</h3>
+          <p class="text-sm text-slate-400">Natychmiastowa informacja zwrotna: poprawna odpowiedź na zielono, błędna na czerwono, plus wyjaśnienie.</p>
+          <p class="text-xs text-slate-500 mt-4">Wszystkie pytania w losowej kolejności</p>
+        </button>
+
+        <!-- Tryb egzaminu -->
+        <div class="p-6 rounded-3xl bg-slate-900/70 border-2 border-slate-800 hover:border-indigo-400/70 transition-all shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 text-indigo-300 grid place-items-center text-2xl">📝</div>
+            <kbd class="text-xs px-2 py-1 rounded-md bg-slate-800 border border-slate-700 text-slate-400">2</kbd>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Tryb Egzaminu</h3>
+          <p class="text-sm text-slate-400">Losowy zestaw pytań bez podpowiedzi. Wynik procentowy i lista błędów dopiero na końcu.</p>
+          <div class="mt-4">
+            <p class="text-xs text-slate-500 mb-2">Liczba pytań:</p>
+            <div id="exam-count" class="flex flex-wrap gap-2"></div>
+          </div>
+          <button id="btn-exam" class="mt-4 w-full py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 font-semibold transition shadow-lg shadow-indigo-500/20">Rozpocznij egzamin</button>
+        </div>
+      </div>
+
+      <!-- Przeglądarka bazy pytań -->
+      <button id="btn-browser" class="mt-4 w-full text-left p-6 rounded-3xl bg-slate-900/70 border-2 border-slate-800 hover:border-amber-400/70 hover:-translate-y-0.5 transition-all shadow-xl group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-300 grid place-items-center text-2xl">🔎</div>
+            <div>
+              <h3 class="text-xl font-bold mb-1 group-hover:text-amber-300 transition">Przeglądarka bazy pytań</h3>
+              <p class="text-sm text-slate-400">Przeglądaj wszystkie pytania z bazy, wyszukuj na żywo po numerze (np. <code class="text-amber-300">#15</code>) lub słowie kluczowym, korzystaj ze spisu treści i odkrywaj odpowiedzi od razu lub sprawdzaj się samodzielnie.</p>
+            </div>
+          </div>
+          <kbd class="shrink-0 text-xs px-2 py-1 rounded-md bg-slate-800 border border-slate-700 text-slate-400">3</kbd>
+        </div>
+      </button>
+
+      <div id="best-score" class="hidden mt-4 text-sm text-slate-400"></div>
+
+      <div class="mt-8 p-5 rounded-2xl bg-slate-900/50 border border-slate-800 text-sm text-slate-400">
+        <p class="font-semibold text-slate-300 mb-2">⌨️ Skróty klawiszowe</p>
+        <div class="grid sm:grid-cols-2 gap-y-1.5 gap-x-6">
+          <p><kbd class="kbd-chip">1</kbd>–<kbd class="kbd-chip">4</kbd> lub <kbd class="kbd-chip">A</kbd>–<kbd class="kbd-chip">D</kbd> — wybór odpowiedzi</p>
+          <p><kbd class="kbd-chip">Spacja</kbd> / <kbd class="kbd-chip">Enter</kbd> — następne pytanie</p>
+          <p><kbd class="kbd-chip">←</kbd> — poprzednie pytanie (egzamin)</p>
+          <p><kbd class="kbd-chip">Esc</kbd> — powrót do menu</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ekran pytania -->
+    <section id="screen-quiz" class="hidden">
+      <!-- Pasek postępu i liczniki -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between text-sm mb-2 gap-3">
+          <p class="font-semibold">Pytanie <span id="q-current">1</span> z <span id="q-total">1</span></p>
+          <div id="counters" class="flex items-center gap-2 text-xs font-semibold"></div>
+        </div>
+        <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
+          <div id="progress-bar" class="h-full rounded-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-300" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- Karta pytania -->
+      <article id="q-card" class="bg-slate-900/70 border border-slate-800 rounded-3xl p-5 sm:p-7 shadow-2xl">
+        <p id="q-id" class="text-xs font-semibold text-slate-500 mb-2"></p>
+        <h2 id="q-text" class="text-lg sm:text-xl font-semibold leading-relaxed mb-5"></h2>
+        <figure id="q-image-wrap" class="hidden mb-5">
+          <img id="q-image" alt="Ilustracja do pytania" class="max-h-80 mx-auto rounded-2xl border border-slate-700 bg-white object-contain" />
+        </figure>
+        <div id="options" class="grid gap-3"></div>
+
+        <!-- Wyjaśnienie (tryb nauki) -->
+        <div id="feedback" class="hidden mt-5 p-4 rounded-2xl border fade-in"></div>
+      </article>
+
+      <!-- Nawigacja -->
+      <div class="flex items-center justify-between gap-3 mt-5">
+        <button id="btn-prev" class="px-4 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 transition disabled:opacity-30 disabled:cursor-not-allowed">← Wstecz</button>
+        <p id="nav-hint" class="hidden sm:block text-xs text-slate-500 text-center flex-1"></p>
+        <button id="btn-next" class="px-5 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 font-semibold transition disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20">Dalej →</button>
+      </div>
+    </section>
+
+    <!-- Ekran wyników -->
+    <section id="screen-result" class="hidden fade-in">
+      <div class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-center">
+        <p id="result-title" class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4"></p>
+        <div class="relative w-44 h-44 mx-auto mb-5">
+          <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#1e293b" stroke-width="12" />
+            <circle id="result-ring" class="ring-progress" cx="60" cy="60" r="52" fill="none" stroke-width="12" stroke-linecap="round"
+                    stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+          </svg>
+          <div class="absolute inset-0 grid place-items-center">
+            <div>
+              <p id="result-percent" class="text-4xl font-extrabold">0%</p>
+              <p id="result-grade" class="text-xs text-slate-400 mt-1"></p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-3 text-sm mb-6">
+          <span class="px-3 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 font-semibold">✓ Dobre: <span id="result-good">0</span></span>
+          <span class="px-3 py-1.5 rounded-full bg-rose-500/15 text-rose-300 font-semibold">✗ Błędne: <span id="result-bad">0</span></span>
+          <span id="result-skipped-wrap" class="hidden px-3 py-1.5 rounded-full bg-slate-700/50 text-slate-300 font-semibold">○ Bez odp.: <span id="result-skipped">0</span></span>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <button id="btn-retry-wrong" class="px-5 py-3 rounded-xl bg-rose-500 hover:bg-rose-400 font-semibold transition shadow-lg shadow-rose-500/20 disabled:opacity-30 disabled:cursor-not-allowed">↻ Powtórz tylko błędne <kbd class="ml-1 text-xs opacity-70">R</kbd></button>
+          <button id="btn-restart" class="px-5 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-400 font-semibold transition">Nowa sesja <kbd class="ml-1 text-xs opacity-70">N</kbd></button>
+          <button id="btn-menu" class="px-5 py-3 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 transition">Menu <kbd class="ml-1 text-xs opacity-70">Esc</kbd></button>
+        </div>
+      </div>
+
+      <div id="mistakes-wrap" class="mt-6">
+        <h3 id="mistakes-title" class="text-lg font-bold mb-3"></h3>
+        <div id="mistakes" class="grid gap-3"></div>
+      </div>
+    </section>
+
+    <!-- Ekran przeglądarki bazy pytań -->
+    <section id="screen-browser" class="hidden fade-in">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-2xl mb-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight">Przeglądarka bazy pytań</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Wpisz numer (np. <code class="text-amber-300">15</code> lub <code class="text-amber-300">#15</code>) albo słowo kluczowe (np. <code class="text-amber-300">błąd</code>, <code class="text-amber-300">napięcie</code>)</p>
+          </div>
+          <p id="browser-count" class="text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-200">
+            Wyświetlono: <span id="browser-shown-count" class="text-amber-300">0</span> z <span id="browser-total-count">0</span> pytań
+          </p>
+        </div>
+
+        <!-- Pasek wyszukiwania -->
+        <div class="relative mb-4">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">🔎</span>
+          <input
+            id="browser-search"
+            type="text"
+            autocomplete="off"
+            placeholder="Szukaj po numerze (np. 15, #15) lub frazie w pytaniu i odpowiedziach…"
+            class="w-full pl-11 pr-10 py-3 rounded-2xl bg-slate-950/80 border-2 border-slate-700 focus:border-amber-400 focus:outline-none text-sm sm:text-base text-slate-100 placeholder-slate-500 transition"
+          />
+          <button
+            id="browser-search-clear"
+            type="button"
+            title="Wyczyść wyszukiwanie"
+            class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold"
+          >✕</button>
+        </div>
+
+        <!-- Przełącznik pokazywania odpowiedzi + reset sprawdzonych -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <label for="browser-show-answers" class="inline-flex items-center gap-3 cursor-pointer select-none">
+            <input id="browser-show-answers" type="checkbox" class="peer sr-only" />
+            <span class="relative w-11 h-6 rounded-full bg-slate-700 peer-checked:bg-emerald-500 transition-colors after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:w-5 after:h-5 after:rounded-full after:bg-white after:transition-transform peer-checked:after:translate-x-5"></span>
+            <span class="text-sm font-medium text-slate-200">Pokaż od razu poprawne odpowiedzi</span>
+          </label>
+          <div class="flex items-center gap-2">
+            <span id="browser-selfcheck-hint" class="text-xs text-slate-400">Kliknij odpowiedź w pytaniu, aby sprawdzić wiedzę</span>
+            <button id="browser-reset-checked" type="button" class="hidden text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition">
+              ↺ Resetuj sprawdzone
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Siatka numerów pytań (Spis treści) -->
+      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-4 sm:p-5 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Spis treści — skocz do pytania</p>
+          <p class="text-xs text-slate-500">Kliknij numer, aby przewinąć lub wyświetlić</p>
+        </div>
+        <div id="browser-toc" class="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 gap-2"></div>
+      </div>
+
+      <!-- Lista pytań -->
+      <div id="browser-list" class="grid gap-4"></div>
+
+      <!-- Pusty stan wyszukiwania -->
+      <div id="browser-empty" class="hidden text-center py-12 px-6 rounded-3xl bg-slate-900/50 border border-slate-800">
+        <p class="text-3xl mb-2">🔍</p>
+        <p class="font-bold text-slate-200 mb-1">Brak pytań pasujących do zapytania</p>
+        <p class="text-sm text-slate-400 mb-4">Spróbuj wpisać inne słowo kluczowe lub numer pytania.</p>
+        <button id="browser-empty-clear" type="button" class="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-200 text-sm font-semibold hover:bg-amber-500/30 transition">
+          Pokaż wszystkie pytania
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <style>
+    .kbd-chip { display:inline-block; min-width:1.5rem; text-align:center; padding:.05rem .4rem; border-radius:.375rem;
+                background:#1e293b; border:1px solid #334155; color:#cbd5e1; font-size:.75rem; }
+  </style>
+  <script src="app.js"></script>
+</body>
+</html>

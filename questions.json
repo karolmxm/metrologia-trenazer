@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "question": "Czym jest pomiar (definicja pomiaru)?",
+    "image": null,
+    "options": {
+      "A": "Zgrubnym wytworzeniem skali pozwalającym na jakościową ocenę otaczającego świata",
+      "B": "Procesem poznawczym umożliwiającym obiektywne odwzorowanie właściwości fizycznych obiektów w dziedzinie liczb",
+      "C": "Porównaniem wskazań przyrządu z wzorcem wyłącznie w celu wyznaczenia poprawki",
+      "D": "Subiektywną oceną cech obiektu dokonywaną przez obserwatora bez użycia przyrządów"
+    },
+    "correct": "B",
+    "explanation": "Pomiar to proces poznawczy, w którym właściwościom fizycznym obiektu przyporządkowuje się w sposób obiektywny liczby (wartość liczbową wraz z jednostką). Opis z odpowiedzi A dotyczy obserwacji, która daje jedynie obraz jakościowy."
+  },
+  {
+    "id": 2,
+    "question": "Czym jest obserwacja (definicja obserwacji)?",
+    "image": null,
+    "options": {
+      "A": "Procesem poznawczym umożliwiającym obiektywne odwzorowanie właściwości fizycznych obiektów w dziedzinie liczb",
+      "B": "Zbiorem czynności mających na celu wyznaczenie poprawki przyrządu pomiarowego",
+      "C": "Zgrubnym wytworzeniem skali pozwalającym na ocenę otaczającego świata; pozwala na ustalenie jakościowego obrazu obiektu fizycznego",
+      "D": "Wielokrotnym powtarzaniem pomiaru w celu wyznaczenia niepewności typu A"
+    },
+    "correct": "C",
+    "explanation": "Obserwacja poprzedza pomiar – pozwala zgrubnie uporządkować zjawiska i ustalić jakościowy (a nie ilościowy) obraz obiektu. Ilościowe, liczbowe odwzorowanie właściwości to już pomiar."
+  },
+  {
+    "id": 3,
+    "question": "Który zapis wyniku pomiaru jest prawidłowy?",
+    "image": null,
+    "options": {
+      "A": "2,5 ± 0,1",
+      "B": "2,5 V ± 0,123 V",
+      "C": "2,5432 V ± 0,1 V",
+      "D": "2,5 V ± 0,1 V"
+    },
+    "correct": "D",
+    "explanation": "Wynik zapisuje się jako wartość ± niepewność wraz z jednostką (np. 2,5 V ± 0,1 V lub 5,3 kg ± 0,2 kg). Niepewność zaokrągla się do 1–2 cyfr znaczących, a wartość wyniku – do tego samego miejsca dziesiętnego co niepewność. W A brakuje jednostek, w B niepewność ma za dużo cyfr znaczących, a w C wynik ma więcej miejsc po przecinku niż niepewność."
+  },
+  {
+    "id": 4,
+    "question": "Który z poniższych jest przykładem pomiaru metodą pośrednią?",
+    "image": null,
+    "options": {
+      "A": "Pomiar gęstości ciała na podstawie pomiarów masy i objętości",
+      "B": "Pomiar długości linijką",
+      "C": "Pomiar natężenia prądu amperomierzem",
+      "D": "Pomiar masy na wadze z podziałką"
+    },
+    "correct": "A",
+    "explanation": "W metodzie pośredniej wartość wielkości mierzonej oblicza się ze znanej zależności funkcyjnej od innych wielkości zmierzonych bezpośrednio (ρ = m/V). Inne przykłady: energia elektryczna z pomiarów prądu, napięcia i czasu albo rezystywność z rezystancji, długości i przekroju próbki."
+  },
+  {
+    "id": 5,
+    "question": "Który z poniższych jest przykładem pomiaru metodą bezpośrednią?",
+    "image": null,
+    "options": {
+      "A": "Pomiar energii elektrycznej na podstawie pomiarów prądu, napięcia i czasu",
+      "B": "Pomiar natężenia prądu amperomierzem",
+      "C": "Pomiar rezystywności na podstawie pomiarów rezystancji, długości i przekroju próbki",
+      "D": "Pomiar gęstości ciała na podstawie pomiarów masy i objętości"
+    },
+    "correct": "B",
+    "explanation": "W metodzie bezpośredniej wartość wielkości mierzonej odczytuje się wprost z przyrządu wyskalowanego w jej jednostkach, bez obliczeń (amperomierz, linijka, waga z podziałką lub równoramienna). Pozostałe odpowiedzi to metody pośrednie."
+  },
+  {
+    "id": 6,
+    "question": "Który z poniższych jest przykładem pomiaru metodą złożoną?",
+    "image": null,
+    "options": {
+      "A": "Pomiar długości linijką",
+      "B": "Pomiar napięcia woltomierzem",
+      "C": "Wyznaczenie gęstości ciała na podstawie pomiarów masy i objętości",
+      "D": "Pomiar masy poszczególnych odważników z kompletu, gdy znana jest masa jednego z nich oraz wyniki porównań mas różnych kombinacji tych odważników"
+    },
+    "correct": "D",
+    "explanation": "W metodzie złożonej wartości kilku wielkości wyznacza się, rozwiązując układ równań utworzony z wyników pomiarów różnych ich kombinacji – tak jak przy wzorcowaniu kompletu odważników na podstawie porównań ich zestawów."
+  },
+  {
+    "id": 7,
+    "question": "Który z poniższych jest przykładem pomiaru metodą podstawową?",
+    "image": null,
+    "options": {
+      "A": "Wyznaczenie powierzchni prostokąta na podstawie pomiaru jego długości i szerokości",
+      "B": "Pomiar napięcia przez porównanie z napięciem ogniwa wzorcowego w układzie kompensacyjnym",
+      "C": "Pomiar masy odważników na podstawie porównań różnych ich kombinacji",
+      "D": "Pomiar rezystancji omomierzem"
+    },
+    "correct": "A",
+    "explanation": "Metoda podstawowa (bezwzględna) polega na pomiarze wielkości podstawowych (np. długości), z których wynika wartość wielkości mierzonej zgodnie z jej definicją – powierzchnia prostokąta to iloczyn zmierzonej długości i szerokości (S = a·b)."
+  },
+  {
+    "id": 8,
+    "question": "Na czym polega metoda odchyłowa?",
+    "image": null,
+    "options": {
+      "A": "Na doprowadzeniu do zera różnicy między wielkością mierzoną a wielkością wzorcową (stan równowagi)",
+      "B": "Na wyznaczeniu wartości wielkości z zależności funkcyjnej od innych wielkości mierzonych bezpośrednio",
+      "C": "Na przyporządkowaniu wielkości mierzonej miejsca w uporządkowanym zbiorze wartości danej wielkości",
+      "D": "Na rozwiązaniu układu równań otrzymanego z pomiarów różnych kombinacji wielkości"
+    },
+    "correct": "C",
+    "explanation": "W metodzie odchyłowej wartość odczytuje się z odchylenia wskazówki (lub zmiany wskazania) na wyskalowanej podziałce, która jest uporządkowanym zbiorem wartości wielkości. Wielkość mierzona dostaje więc miejsce na skali. A opisuje metodę zerową, B – pośrednią, a D – złożoną."
+  },
+  {
+    "id": 9,
+    "question": "Jaka jest różnica między systemem pomiarowym a układem pomiarowym?",
+    "image": null,
+    "options": {
+      "A": "Nie ma żadnej różnicy – są to pojęcia całkowicie tożsame",
+      "B": "System pomiarowy jest bardziej zintegrowany i zautomatyzowany, umożliwia zaawansowane przetwarzanie i analizę danych, a układ pomiarowy jest prostszy, manualny i niekoniecznie wymaga użycia komputera",
+      "C": "Układ pomiarowy zawsze zawiera komputer, a system pomiarowy składa się wyłącznie z przyrządów analogowych",
+      "D": "System pomiarowy służy wyłącznie do pomiarów wielkości nieelektrycznych, a układ pomiarowy – elektrycznych"
+    },
+    "correct": "B",
+    "explanation": "System pomiarowy to zautomatyzowany zespół przyrządów, przetworników i jednostki sterującej (zwykle komputera), który zbiera, przetwarza i analizuje dane. Układ pomiarowy to prostsze połączenie przyrządów obsługiwane ręcznie. Uwaga: autor notatek zaznaczał, że nie jest pewien tej odpowiedzi."
+  },
+  {
+    "id": 10,
+    "question": "W jakim celu stosuje się przetwornik pomiarowy?",
+    "image": null,
+    "options": {
+      "A": "W celu zwiększenia rozdzielczości wyświetlacza przyrządu",
+      "B": "W celu wyeliminowania błędów przypadkowych",
+      "C": "W celu zapisywania wyników pomiarów w pamięci przyrządu",
+      "D": "Gdy nie możemy bezpośrednio zmierzyć wielkości mierzonej X, a można ją przekształcić na wielkość Y, którą jesteśmy w stanie zmierzyć"
+    },
+    "correct": "D",
+    "explanation": "Przetwornik pomiarowy przetwarza wielkość mierzoną X (np. temperaturę, ciśnienie) według znanej zależności na inną wielkość Y (najczęściej elektryczną), którą łatwiej zmierzyć, przesłać i przetworzyć."
+  },
+  {
+    "id": 11,
+    "question": "W jaki sposób można wyeliminować błąd systematyczny pomiaru?",
+    "image": null,
+    "options": {
+      "A": "Przez wielokrotne powtórzenie pomiaru i uśrednienie wyników",
+      "B": "Nie da się go wyeliminować, ponieważ podlega rozkładowi Gaussa",
+      "C": "Przez kalibrację przyrządów i zastosowanie poprawki",
+      "D": "Przez odrzucenie wyników znacznie odbiegających od pozostałych"
+    },
+    "correct": "C",
+    "explanation": "Błąd systematyczny ma stałą lub przewidywalnie zmienną wartość, więc można go wyznaczyć (np. podczas kalibracji względem wzorca) i skompensować poprawką równą błędowi ze znakiem przeciwnym. Uśrednianie (A) nie pomaga, bo każdy pomiar jest przesunięty o tyle samo."
+  },
+  {
+    "id": 12,
+    "question": "Kiedy wystąpi błąd dodatkowy pomiaru?",
+    "image": null,
+    "options": {
+      "A": "W warunkach różniących się od warunków znamionowych – określa się go osobno dla każdej wielkości wpływającej",
+      "B": "W warunkach odniesienia, dla których określono właściwości metrologiczne przyrządu",
+      "C": "Gdy obserwator popełni pomyłkę przy odczycie wskazania",
+      "D": "Wyłącznie przy pomiarach wielokrotnych, jako składnik niepewności typu A"
+    },
+    "correct": "A",
+    "explanation": "Błąd dodatkowy pojawia się, gdy wielkości wpływające (temperatura, wilgotność, częstotliwość, pole magnetyczne itp.) wychodzą poza warunki znamionowe. Podaje się go osobno dla każdej wielkości wpływającej. B opisuje błąd podstawowy, a C – błąd gruby."
+  },
+  {
+    "id": 13,
+    "question": "Co należy zrobić, jeśli wystąpi błąd gruby?",
+    "image": null,
+    "options": {
+      "A": "Uwzględnić go w obliczeniach jako składnik niepewności typu B",
+      "B": "Wyeliminować go przez sprawdzenie poprawności procedury pomiarowej i powtórzenie pomiaru",
+      "C": "Skorygować wynik poprawką wyznaczoną podczas kalibracji",
+      "D": "Zwiększyć liczbę pomiarów i uśrednić wszystkie wyniki, łącznie z błędnym"
+    },
+    "correct": "B",
+    "explanation": "Błąd gruby (pomyłka) wynika np. z błędnego odczytu, złego podłączenia lub awarii. Wynik obarczony takim błędem odrzuca się, sprawdza procedurę pomiarową i powtarza pomiar. Takiego wyniku nie wolno uśredniać ani korygować poprawką."
+  },
+  {
+    "id": 14,
+    "question": "Kiedy wystąpi błąd podstawowy pomiaru?",
+    "image": null,
+    "options": {
+      "A": "W warunkach różniących się od warunków znamionowych",
+      "B": "Przy niewłaściwym podłączeniu przyrządu do obwodu",
+      "C": "Wyłącznie przy pomiarach metodą pośrednią",
+      "D": "W warunkach, dla których określono właściwości metrologiczne przyrządu (warunki odniesienia)"
+    },
+    "correct": "D",
+    "explanation": "Błąd podstawowy to błąd przyrządu pracującego w warunkach odniesienia, czyli takich, dla których producent określił jego właściwości metrologiczne (np. klasę dokładności). Poza tymi warunkami dochodzą błędy dodatkowe."
+  },
+  {
+    "id": 15,
+    "question": "Które stwierdzenie dotyczące błędów przypadkowych jest prawdziwe?",
+    "image": null,
+    "options": {
+      "A": "Mają stałą wartość i znak, więc można je usunąć poprawką",
+      "B": "Wynikają wyłącznie z pomyłek obserwatora i należy je odrzucać",
+      "C": "Statystycznie podlegają rozkładowi Gaussa (normalnemu) i nie dają się wyeliminować",
+      "D": "Występują tylko w warunkach różniących się od znamionowych"
+    },
+    "correct": "C",
+    "explanation": "Błędy przypadkowe zmieniają się w nieprzewidywalny sposób między kolejnymi pomiarami i zwykle mają rozkład normalny (Gaussa). Nie da się ich wyeliminować, można jedynie ograniczyć ich wpływ przez wielokrotny pomiar i uśrednianie (odchylenie standardowe średniej maleje jak 1/√n)."
+  },
+  {
+    "id": 16,
+    "question": "Do pomiaru jakich wielkości elektrycznych stosowany jest przetwornik typu „TRUE RMS”?",
+    "image": null,
+    "options": {
+      "A": "Wartości skutecznej prądu i napięcia",
+      "B": "Wartości szczytowej (amplitudy) prądu i napięcia",
+      "C": "Wartości średniej wyprostowanej prądu i napięcia",
+      "D": "Wyłącznie składowej stałej napięcia"
+    },
+    "correct": "A",
+    "explanation": "RMS (Root Mean Square) to wartość skuteczna. Przetwornik „TRUE RMS” mierzy rzeczywistą wartość skuteczną także przebiegów odkształconych (niesinusoidalnych), a nie tylko wartość wyliczoną z wartości średniej przy założeniu sinusoidy."
+  },
+  {
+    "id": 17,
+    "question": "Amplituda napięcia sinusoidalnego bez składowej stałej wynosi 4,24 V. Ile pokaże przyrząd mierzący wartość skuteczną przy pomiarze tego napięcia?",
+    "image": null,
+    "options": {
+      "A": "4,24 V",
+      "B": "≈ 3,00 V (2,998 V)",
+      "C": "2,70 V",
+      "D": "6,00 V"
+    },
+    "correct": "B",
+    "explanation": "Dla przebiegu sinusoidalnego U_sk = U_m / √2 = 4,24 V / √2 ≈ 2,998 V ≈ 3 V. Wartość 2,70 V to wartość średnia wyprostowana (2·U_m/π), a 6,00 V to wynik błędnego mnożenia przez √2."
+  },
+  {
+    "id": 18,
+    "question": "Wykonano 36 pomiarów napięcia. Otrzymano odchylenie standardowe równe 0,0036 V. Ile wynosi niepewność pomiaru liczona metodą typu A?",
+    "image": null,
+    "options": {
+      "A": "0,0036 V",
+      "B": "0,0001 V",
+      "C": "0,0006 V",
+      "D": "0,0216 V"
+    },
+    "correct": "C",
+    "explanation": "Niepewność typu A to odchylenie standardowe średniej: U_A = σ / √n = 0,0036 V / √36 = 0,0036 V / 6 = 0,0006 V. Wartość 0,0001 V wychodzi z błędnego dzielenia przez n zamiast przez √n."
+  },
+  {
+    "id": 19,
+    "question": "Błąd graniczny pomiaru napięcia multimetrem cyfrowym wynosi 0,138 V. Ile wynosi niepewność pomiaru liczona metodą typu B?",
+    "image": null,
+    "options": {
+      "A": "0,138 V",
+      "B": "0,0460 V",
+      "C": "0,239 V",
+      "D": "0,0797 V"
+    },
+    "correct": "D",
+    "explanation": "Przy założeniu rozkładu prostokątnego (jednostajnego) niepewność typu B wynosi U_B = ΔU_gr / √3 = 0,138 V / 1,732 ≈ 0,0797 V. Wartość 0,0460 V to błędne dzielenie przez 3, a 0,239 V – mnożenie przez √3."
+  },
+  {
+    "id": 20,
+    "question": "Przetwornik cyfrowo-analogowy o rozdzielczości 9 bitów posiada napięcie referencyjne 5,12 V. Jaka jest możliwa minimalna zmiana napięcia na jego wyjściu?",
+    "image": null,
+    "options": {
+      "A": "0,01 V = 10 mV",
+      "B": "0,02 V = 20 mV",
+      "C": "0,569 V",
+      "D": "5 mV"
+    },
+    "correct": "A",
+    "explanation": "Najmniejsza zmiana napięcia (1 LSB) to U_ref / 2ⁿ = 5,12 V / 2⁹ = 5,12 V / 512 = 0,01 V = 10 mV. Wynik 20 mV odpowiada przetwornikowi 8-bitowemu, a 5 mV – 10-bitowemu."
+  },
+  {
+    "id": 21,
+    "question": "Niepewność pomiaru obliczona metodą typu A wynosi 0,0539 V, a niepewność obliczona metodą typu B wynosi 0,0589 V. Ile wynosi niepewność całkowita pomiaru?",
+    "image": null,
+    "options": {
+      "A": "0,1128 V",
+      "B": "0,0798 V",
+      "C": "0,0564 V",
+      "D": "0,00637 V"
+    },
+    "correct": "B",
+    "explanation": "Niepewność całkowitą (złożoną) liczy się geometrycznie: U_C = √(U_A² + U_B²) = √(0,0539² + 0,0589²) V = √0,00637442 V ≈ 0,0798 V. Niepewności nie dodaje się wprost (0,1128 V). W notatkach źródłowych wynik zapisano jako 0,00799 V – to pomyłka o rząd wielkości."
+  },
+  {
+    "id": 22,
+    "question": "Multimetrem cyfrowym na zakresie 10 V zmierzono napięcie stałe i otrzymano wynik 3,000 V. Producent podaje dokładność przyrządu w postaci 0,3% of reading + 0,2% of range. Ile wyniesie błąd graniczny pomiaru tego napięcia?",
+    "image": null,
+    "options": {
+      "A": "0,009 V",
+      "B": "0,020 V",
+      "C": "0,029 V",
+      "D": "0,050 V"
+    },
+    "correct": "C",
+    "explanation": "ΔU_gr = 0,3% · wartość zmierzona + 0,2% · zakres = 0,003 · 3,000 V + 0,002 · 10 V = 0,009 V + 0,020 V = 0,029 V. Odpowiedzi A i B zawierają tylko jeden ze składników, a D błędnie liczy oba procenty od zakresu."
+  },
+  {
+    "id": 23,
+    "question": "Multimetr podaje wynik z rozdzielczością 5 cyfr po przecinku. Wykonujemy 20 pomiarów napięcia. Ile cyfr po przecinku należy zapisać przy obliczaniu średniej wartości tego napięcia?",
+    "image": null,
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "6",
+      "D": "5"
+    },
+    "correct": "D",
+    "explanation": "Średnią zapisuje się z taką samą liczbą cyfr po przecinku, jak dane wyświetlane przez multimetr (5). Dopisywanie kolejnych cyfr sugerowałoby fałszywie większą dokładność niż rozdzielczość przyrządu."
+  },
+  {
+    "id": 24,
+    "question": "Co oznacza jednostka ppm?",
+    "image": null,
+    "options": {
+      "A": "10⁻⁶ (jedna milionowa część)",
+      "B": "10⁻³ (jedna tysięczna część)",
+      "C": "10⁻⁹ (jedna miliardowa część)",
+      "D": "10⁻² (jedna setna część)"
+    },
+    "correct": "A",
+    "explanation": "ppm (parts per million) oznacza „części na milion”, czyli 10⁻⁶. W specyfikacjach przyrządów (np. 50 ppm) to 0,005%. 10⁻³ to promil (‰), a 10⁻² to procent (%)."
+  }
+]
