@@ -295,8 +295,8 @@
       "C": "6",
       "D": "5"
     },
-    "correct": "D",
-    "explanation": "Średnią zapisuje się z taką samą liczbą cyfr po przecinku, jak dane wyświetlane przez multimetr (5). Dopisywanie kolejnych cyfr sugerowałoby fałszywie większą dokładność niż rozdzielczość przyrządu."
+    "correct": "C",
+    "explanation": "Zgodnie z zasadami zaokrąglania z wykładu (w06, slajd 18): wynik pojedynczego pomiaru (lub średnią z do 10 pomiarów) zapisuje się z taką samą liczbą cyfr znaczących jak odczyt z przyrządu, natomiast przy obliczaniu średniej z powyżej 10 pomiarów (tu: 20 pomiarów) uwzględnia się dodatkowo jedną cyfrę znaczącą (5 + 1 = 6 cyfr po przecinku), a powyżej 100 pomiarów – dwie dodatkowe cyfry znaczące."
   },
   {
     "id": 24,
