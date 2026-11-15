@@ -12,7 +12,8 @@
       "D": "Według struktury na bezpośrednie i pośrednie, a według poboru energii na statyczne i dynamiczne"
     },
     "correct": "A",
-    "explanation": "Wielkości mierzalne dzielimy według struktury na ciągłe (analogowe – przyjmujące nieskończenie wiele wartości) oraz ziarniste (dyskretne – różniące się o skończone kwanty), natomiast według poboru energii na aktywne (np. napięcie, siła elektromotoryczna – nie wymagają zewnętrznego źródła energii przy pomiarze) oraz pasywne (np. rezystancja, pojemność – do ich pomiaru trzeba doprowadzić energię z zewnątrz)."
+    "explanation": "Wielkości mierzalne dzielimy według struktury na ciągłe (analogowe – przyjmujące nieskończenie wiele wartości) oraz ziarniste (dyskretne – różniące się o skończone kwanty), natomiast według poboru energii na aktywne (np. napięcie, siła elektromotoryczna – nie wymagają zewnętrznego źródła energii przy pomiarze) oraz pasywne (np. rezystancja, pojemność – do ich pomiaru trzeba doprowadzić energię z zewnątrz).",
+    "type": "choice"
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
       "D": "Model metrologiczny jest zawsze tożsamy z modelem fizycznym i poprzedza zapisanie jakichkolwiek formuł matematycznych"
     },
     "correct": "B",
-    "explanation": "W procesie pomiarowym najpierw wybiera się badane właściwości (model fizyczny), następnie opisuje je równaniami (model matematyczny), a kolejnym krokiem jest ustalenie modelu metrologicznego – czyli taka transformacja modelu matematycznego, aby występowały w nim wyłącznie wielkości mierzalne."
+    "explanation": "W procesie pomiarowym najpierw wybiera się badane właściwości (model fizyczny), następnie opisuje je równaniami (model matematyczny), a kolejnym krokiem jest ustalenie modelu metrologicznego – czyli taka transformacja modelu matematycznego, aby występowały w nim wyłącznie wielkości mierzalne.",
+    "type": "choice"
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
       "D": "Stałej Boltzmanna k = 1,380 649 × 10⁻²³ wyrażonej w jednostce J·K⁻¹"
     },
     "correct": "C",
-    "explanation": "Po redefinicji układu SI kilogram nie jest już definiowany przez wzorzec materijalny, lecz przez ustalenie dokładnej wartości stałej Plancka h = 6,626 070 15 × 10⁻³⁴ J·s (gdzie J·s = kg·m²·s⁻¹), przy czym metr jest zdefiniowany przez prędkość światła w próżni c, a sekunda przez częstotliwość przejścia nadsubtelnego w atomie cezu-133 (Δν_Cs)."
+    "explanation": "Po redefinicji układu SI kilogram nie jest już definiowany przez wzorzec materijalny, lecz przez ustalenie dokładnej wartości stałej Plancka h = 6,626 070 15 × 10⁻³⁴ J·s (gdzie J·s = kg·m²·s⁻¹), przy czym metr jest zdefiniowany przez prędkość światła w próżni c, a sekunda przez częstotliwość przejścia nadsubtelnego w atomie cezu-133 (Δν_Cs).",
+    "type": "choice"
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
       "D": "Stałej Boltzmanna k = 1,380 649 × 10⁻²³ J·K⁻¹ (czyli kg·m²·s⁻²·K⁻¹)"
     },
     "correct": "D",
-    "explanation": "Kelwin (K) jest zdefiniowany poprzez przyjęcie ustalonej wartości liczbowej stałej Boltzmanna k = 1,380 649 × 10⁻²³ J·K⁻¹ (gdzie J·K⁻¹ = kg·m²·s⁻²·K⁻¹), przy wykorzystaniu definicji kilograma (h), metra (c) i sekundy (Δν_Cs)."
+    "explanation": "Kelwin (K) jest zdefiniowany poprzez przyjęcie ustalonej wartości liczbowej stałej Boltzmanna k = 1,380 649 × 10⁻²³ J·K⁻¹ (gdzie J·K⁻¹ = kg·m²·s⁻²·K⁻¹), przy wykorzystaniu definicji kilograma (h), metra (c) i sekundy (Δν_Cs).",
+    "type": "choice"
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
       "D": "Sekunda – Δν_Cs; metr – prędkość światła c; amper – kwant strumienia magnetycznego Φ₀; kandela – skuteczność świetlna dla długości fali 683 nm"
     },
     "correct": "B",
-    "explanation": "W układzie SI: sekunda opiera się na częstotliwości przejścia nadsubtelnego w atomie cezu-133 (Δν_Cs = 9 192 631 770 Hz), metr na prędkości światła w próżni (c = 299 792 458 m·s⁻¹), amper na ładunku elementarnym (e = 1,602 176 634 × 10⁻¹⁹ C, gdzie C = A·s), a kandela na skuteczności świetlnej promieniowania monochromatycznego o częstotliwości 540 × 10¹² Hz (K_cd = 683 lm·W⁻¹ = cd·sr·W⁻¹)."
+    "explanation": "W układzie SI: sekunda opiera się na częstotliwości przejścia nadsubtelnego w atomie cezu-133 (Δν_Cs = 9 192 631 770 Hz), metr na prędkości światła w próżni (c = 299 792 458 m·s⁻¹), amper na ładunku elementarnym (e = 1,602 176 634 × 10⁻¹⁹ C, gdzie C = A·s), a kandela na skuteczności świetlnej promieniowania monochromatycznego o częstotliwości 540 × 10¹² Hz (K_cd = 683 lm·W⁻¹ = cd·sr·W⁻¹).",
+    "type": "choice"
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
       "D": "Nominalna miara wzorca, niedokładność miary wzorca, okres zachowania niedokładności miary wzorca oraz warunki, w których miara i niedokładność są zachowane"
     },
     "correct": "D",
-    "explanation": "W metryce wzorca (lub bezpośrednio na nim) podaje się cztery kluczowe parametry metrologiczne: nominalną miarę wzorca, niedokładność tej miary, okres zachowania niedokładności miary (ważność wzorcowania) oraz warunki odniesienia, w których miara i niedokładność są zachowane."
+    "explanation": "W metryce wzorca (lub bezpośrednio na nim) podaje się cztery kluczowe parametry metrologiczne: nominalną miarę wzorca, niedokładność tej miary, okres zachowania niedokładności miary (ważność wzorcowania) oraz warunki odniesienia, w których miara i niedokładność są zachowane.",
+    "type": "choice"
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
       "D": "Są to wirtualne wzorce generowane programowo w komputerze; opisuje je wzór U_wy = U_ref · Σ a_i · 2⁻ⁱ"
     },
     "correct": "A",
-    "explanation": "Wzorce obliczeniowe (liczalne) to wzorce skonstruowane tak, że ich miarę można wyliczyć z praw fizyki na podstawie dokładnie zmierzonych wymiarów geometrycznych i stałych materiałowych – przykładem jest wzorzec pojemności (kondensator płaski/pierścieniowy Thompsona-Lamparda) opisywany zależnością C = ε·ε₀·S/l."
+    "explanation": "Wzorce obliczeniowe (liczalne) to wzorce skonstruowane tak, że ich miarę można wyliczyć z praw fizyki na podstawie dokładnie zmierzonych wymiarów geometrycznych i stałych materiałowych – przykładem jest wzorzec pojemności (kondensator płaski/pierścieniowy Thompsona-Lamparda) opisywany zależnością C = ε·ε₀·S/l.",
+    "type": "choice"
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
       "D": "Wzorce II rzędu → wzorce I rzędu → wzorce państwowe (etalony)"
     },
     "correct": "C",
-    "explanation": "Hierarchia wzorców wynika z ich dokładności: na szczycie znajdują się wzorce pierwotne (wzorce państwowe – etalony) o najwyższej dokładności, poniżej wzorce I rzędu, a następnie wzorce II rzędu (i kontrolne/robocze)."
+    "explanation": "Hierarchia wzorców wynika z ich dokładności: na szczycie znajdują się wzorce pierwotne (wzorce państwowe – etalony) o najwyższej dokładności, poniżej wzorce I rzędu, a następnie wzorce II rzędu (i kontrolne/robocze).",
+    "type": "choice"
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
       "D": "Jest to graficzny zapis niepewności rozszerzonej typu A"
     },
     "correct": "C",
-    "explanation": "Mimo że bargraf jest umieszczony na wyświetlaczu multimetru cyfrowego, stanowi on przykład analogowej wizualizacji wyniku pomiaru – informacja jest przekazywana poprzez długość paska (położenie wskaźnika) względem opisanej w liczbach podziałki, co ułatwia obserwację szybkich zmian sygnału."
+    "explanation": "Mimo że bargraf jest umieszczony na wyświetlaczu multimetru cyfrowego, stanowi on przykład analogowej wizualizacji wyniku pomiaru – informacja jest przekazywana poprzez długość paska (położenie wskaźnika) względem opisanej w liczbach podziałki, co ułatwia obserwację szybkich zmian sygnału.",
+    "type": "choice"
   },
   {
     "id": 10,
@@ -147,7 +156,8 @@
       "D": "Multiplekser → komparator → układ próbkująco-pamiętający → czujnik fizyczny"
     },
     "correct": "A",
-    "explanation": "W schemacie funkcjonalnym przyrządu pomiarowego wielkość wejściowa trafia na przetwornik, a następnie do układu porównania (komparatora), który porównuje ją z wartością z układu odniesienia; wynik porównania przekazywany jest przez urządzenie odczytowe na pole informacyjne (wskazówka/wyświetlacz)."
+    "explanation": "W schemacie funkcjonalnym przyrządu pomiarowego wielkość wejściowa trafia na przetwornik, a następnie do układu porównania (komparatora), który porównuje ją z wartością z układu odniesienia; wynik porównania przekazywany jest przez urządzenie odczytowe na pole informacyjne (wskazówka/wyświetlacz).",
+    "type": "choice"
   },
   {
     "id": 11,
@@ -162,7 +172,8 @@
       "D": "Nośnik sygnału jest wielkością opisującą procesy energetyczne przenoszące informację (np. prąd, napięcie), natomiast parametr informacji to funkcja zrealizowana na tym nośniku (np. amplituda, częstotliwość, faza)"
     },
     "correct": "D",
-    "explanation": "Sygnał pomiarowy składa się z nośnika sygnału (wielkości fizycznej opisującej procesy energetyczne przenoszące informację, np. prądu elektrycznego czy napięcia) oraz parametru informacji (funkcji zrealizowanej na tym nośniku, z której wyznacza się wartość wielkości mierzonej)."
+    "explanation": "Sygnał pomiarowy składa się z nośnika sygnału (wielkości fizycznej opisującej procesy energetyczne przenoszące informację, np. prądu elektrycznego czy napięcia) oraz parametru informacji (funkcji zrealizowanej na tym nośniku, z której wyznacza się wartość wielkości mierzonej).",
+    "type": "choice"
   },
   {
     "id": 12,
@@ -177,7 +188,8 @@
       "D": "System pomiarowy nie dokonuje komparacji ani przetwarzania informacji pomiarowej, a jedynie ją wyświetla"
     },
     "correct": "B",
-    "explanation": "Zarówno układ, jak i system pomiarowy są zbiorami funkcjonalnymi przyrządów i przetworników, jednak system pomiarowy jest objęty wspólnym sterowaniem (wewnętrznym lub zewnętrznym, np. przez komputer z programem) oraz realizuje automatyczne obliczenie i rejestrację wyników pomiaru."
+    "explanation": "Zarówno układ, jak i system pomiarowy są zbiorami funkcjonalnymi przyrządów i przetworników, jednak system pomiarowy jest objęty wspólnym sterowaniem (wewnętrznym lub zewnętrznym, np. przez komputer z programem) oraz realizuje automatyczne obliczenie i rejestrację wyników pomiaru.",
+    "type": "choice"
   },
   {
     "id": 13,
@@ -192,7 +204,8 @@
       "D": "Operacja ta nazywana jest przetwarzaniem, a nowa wielkość Y nazywana jest sygnałem pomiarowym"
     },
     "correct": "D",
-    "explanation": "Zgodnie z definicją z wykładu, zamiana wielkości wejściowej X w wielkość wyjściową Y (w przetworniku pomiarowym o symbolu X/Y) przy zachowaniu informacji o wartości X nazywana jest przetwarzaniem, natomiast nowa wielkość Y nosi nazwę sygnału pomiarowego."
+    "explanation": "Zgodnie z definicją z wykładu, zamiana wielkości wejściowej X w wielkość wyjściową Y (w przetworniku pomiarowym o symbolu X/Y) przy zachowaniu informacji o wartości X nazywana jest przetwarzaniem, natomiast nowa wielkość Y nosi nazwę sygnału pomiarowego.",
+    "type": "choice"
   },
   {
     "id": 14,
@@ -207,7 +220,8 @@
       "D": "Nieskończenie wiele jednostek podstawowych i 7 jednostek pochodnych"
     },
     "correct": "C",
-    "explanation": "Ze względu na dużą liczbę wielkości mierzalnych (około 1000) w układzie SI wyszczególniono 7 jednostek podstawowych (s, m, kg, A, K, mol, cd), za pomocą których tworzy się wszystkie pozostałe jednostki pochodne przy użyciu odpowiednich równań definicyjnych."
+    "explanation": "Ze względu na dużą liczbę wielkości mierzalnych (około 1000) w układzie SI wyszczególniono 7 jednostek podstawowych (s, m, kg, A, K, mol, cd), za pomocą których tworzy się wszystkie pozostałe jednostki pochodne przy użyciu odpowiednich równań definicyjnych.",
+    "type": "choice"
   },
   {
     "id": 15,
@@ -222,7 +236,8 @@
       "D": "Wymaga rozwiązania układu równań różniczkowych z użyciem co najmniej trzech wzorców jednocześnie"
     },
     "correct": "B",
-    "explanation": "W metodzie różnicowej od wielkości mierzonej X odejmujemy znaną wartość porównawczą X_w, a niewielką różnicę α = X − X_w mierzymy metodą odchyłową. Pozwala to uzyskać wysoką dokładność (zbliżoną do dokładności wzorca X_w) nawet przy użyciu mało dokładnego miernika odchyłowego, o ile X_w jest bliskie X. Gdy skala jest opisana wprost w jednostkach X, zakres nie zawiera wartości zerowej."
+    "explanation": "W metodzie różnicowej od wielkości mierzonej X odejmujemy znaną wartość porównawczą X_w, a niewielką różnicę α = X − X_w mierzymy metodą odchyłową. Pozwala to uzyskać wysoką dokładność (zbliżoną do dokładności wzorca X_w) nawet przy użyciu mało dokładnego miernika odchyłowego, o ile X_w jest bliskie X. Gdy skala jest opisana wprost w jednostkach X, zakres nie zawiera wartości zerowej.",
+    "type": "choice"
   },
   {
     "id": 16,
@@ -237,7 +252,8 @@
       "D": "Jest odmianą metody przestawieniowej, w której zamienia się miejscami woltomierz z amperomierzem"
     },
     "correct": "A",
-    "explanation": "Metoda koincydencyjna to szczególna odmiana metody różnicowej. Polega na obserwacji zbieżności (koincydencji) sygnałów lub kresek podziałki przy niewielkiej różnicy między wartością mierzoną a wzorcową – np. koincydencji wzorcowych sygnałów czasu z sygnałami badanego zegara."
+    "explanation": "Metoda koincydencyjna to szczególna odmiana metody różnicowej. Polega na obserwacji zbieżności (koincydencji) sygnałów lub kresek podziałki przy niewielkiej różnicy między wartością mierzoną a wzorcową – np. koincydencji wzorcowych sygnałów czasu z sygnałami badanego zegara.",
+    "type": "choice"
   },
   {
     "id": 17,
@@ -252,7 +268,8 @@
       "D": "Ponieważ metoda zerowa służy wyłącznie do pomiarów z błędem względnym powyżej 10%"
     },
     "correct": "A",
-    "explanation": "Każdy rzeczywisty detektor zera posiada niezerowy próg czułości (pobudliwości) Δ_D X. Dopóki moduł różnicy |X − X_w| nie przekroczy wartości Δ_D X, stan detektora nie ulega zmianie, przez co istnieje przedział nieczułości wokół idealnego stanu X = X_w."
+    "explanation": "Każdy rzeczywisty detektor zera posiada niezerowy próg czułości (pobudliwości) Δ_D X. Dopóki moduł różnicy |X − X_w| nie przekroczy wartości Δ_D X, stan detektora nie ulega zmianie, przez co istnieje przedział nieczułości wokół idealnego stanu X = X_w.",
+    "type": "choice"
   },
   {
     "id": 18,
@@ -267,7 +284,8 @@
       "D": "Dokładność metody kompensacyjnej zależy wyłącznie od rezystancji wewnętrznej badanego źródła R_wx"
     },
     "correct": "B",
-    "explanation": "W metodzie kompensacyjnej wielkość wzorcowa przeciwdziała fizycznie wielkości mierzonej. W stanie równowagi prąd płynący przez detektor dąży do 0, więc badane źródło nie wydatkuje energii (brak spadku napięcia na R_wx – pomiar SEM jak idealnym woltomierzem). Bezpośredni pomiar tą metodą jest możliwy wyłącznie dla wielkości aktywnych (będących nośnikiem energii)."
+    "explanation": "W metodzie kompensacyjnej wielkość wzorcowa przeciwdziała fizycznie wielkości mierzonej. W stanie równowagi prąd płynący przez detektor dąży do 0, więc badane źródło nie wydatkuje energii (brak spadku napięcia na R_wx – pomiar SEM jak idealnym woltomierzem). Bezpośredni pomiar tą metodą jest możliwy wyłącznie dla wielkości aktywnych (będących nośnikiem energii).",
+    "type": "choice"
   },
   {
     "id": 19,
@@ -282,7 +300,8 @@
       "D": "Polega na obliczeniu średniej geometrycznej dwóch wzorców X = √(X_w1 · X_w2)"
     },
     "correct": "C",
-    "explanation": "W metodzie komparacyjnej badana różnica X − k·X_w jest sprowadzana do zera poprzez zmianę bezwymiarowego współczynnika k (X = k·X_w). Główną zaletą jest to, że wzorzec musi odtwarzać tylko jedną wartość X_w, a wzorce jednowartościowe (np. ogniwo Westona, pojedynczy rezystor wzorcowy) można wykonać ze znacznie lepszą dokładnością niż wzorce wielowartościowe."
+    "explanation": "W metodzie komparacyjnej badana różnica X − k·X_w jest sprowadzana do zera poprzez zmianę bezwymiarowego współczynnika k (X = k·X_w). Główną zaletą jest to, że wzorzec musi odtwarzać tylko jedną wartość X_w, a wzorce jednowartościowe (np. ogniwo Westona, pojedynczy rezystor wzorcowy) można wykonać ze znacznie lepszą dokładnością niż wzorce wielowartościowe.",
+    "type": "choice"
   },
   {
     "id": 20,
@@ -297,7 +316,8 @@
       "D": "W celu wyeliminowania niedokładności systematycznej użytego przyrządu pomiarowego"
     },
     "correct": "D",
-    "explanation": "W metodzie podstawieniowej wielkość mierzoną X zastępuje się w tym samym układzie wielkością odniesienia X_w dobraną tak, aby wywołała identyczny skutek (to samo wskazanie miernika). Ponieważ w obu krokach przyrząd wnosi ten sam błąd systematyczny, niedokładność systematyczna samego przyrządu pomiarowego zostaje wyeliminowana."
+    "explanation": "W metodzie podstawieniowej wielkość mierzoną X zastępuje się w tym samym układzie wielkością odniesienia X_w dobraną tak, aby wywołała identyczny skutek (to samo wskazanie miernika). Ponieważ w obu krokach przyrząd wnosi ten sam błąd systematyczny, niedokładność systematyczna samego przyrządu pomiarowego zostaje wyeliminowana.",
+    "type": "choice"
   },
   {
     "id": 21,
@@ -312,7 +332,8 @@
       "D": "X = √(X_w1² + X_w2²)"
     },
     "correct": "B",
-    "explanation": "W metodzie przestawieniowej (metodzie Gaussa) w pierwszym etapie równoważy się X za pomocą X_w1 (X · l₁ = X_w1 · l₂), a po zamianie miejscami równoważy się X za pomocą X_w2 (X_w2 · l₁ = X · l₂). Po podzieleniu równań stronami stosunek ramion się skraca i otrzymujemy średnią geometryczną: X = √(X_w1 · X_w2)."
+    "explanation": "W metodzie przestawieniowej (metodzie Gaussa) w pierwszym etapie równoważy się X za pomocą X_w1 (X · l₁ = X_w1 · l₂), a po zamianie miejscami równoważy się X za pomocą X_w2 (X_w2 · l₁ = X · l₂). Po podzieleniu równań stronami stosunek ramion się skraca i otrzymujemy średnią geometryczną: X = √(X_w1 · X_w2).",
+    "type": "choice"
   },
   {
     "id": 22,
@@ -327,7 +348,8 @@
       "D": "Jest odpowiednikiem metody odchyłowej pomiaru (bez bezpośredniego udziału wielkości wzorcowych); przykładem jest zamiana temperatury na napięcie w termoparze lub zmiana skali prądu w przekładniku"
     },
     "correct": "D",
-    "explanation": "Metoda przekształcenia polega na uformowaniu sygnału Y poprzez zmianę skali wielkości X (np. w przekładniku), zmianę jej charakteru fizycznego (np. prąd na odchylenie w amperomierzu, temperatura na napięcie w termoparze) lub sterowanie procesami energetycznymi – odbywa się to bez bezpośredniego udziału wielkości wzorcowych i jest odpowiednikiem metody odchyłowej."
+    "explanation": "Metoda przekształcenia polega na uformowaniu sygnału Y poprzez zmianę skali wielkości X (np. w przekładniku), zmianę jej charakteru fizycznego (np. prąd na odchylenie w amperomierzu, temperatura na napięcie w termoparze) lub sterowanie procesami energetycznymi – odbywa się to bez bezpośredniego udziału wielkości wzorcowych i jest odpowiednikiem metody odchyłowej.",
+    "type": "choice"
   },
   {
     "id": 23,
@@ -342,13 +364,14 @@
       "D": "R₁ / R₄ = R₂ / R₃"
     },
     "correct": "A",
-    "explanation": "Napięcie na przekątnej pomiarowej C–D wynosi ΔU = U₀ · [R₁/(R₁+R₂) − R₃/(R₃+R₄)]. Przyrównując ΔU do zera, otrzymujemy warunek równowagi mostka Wheatstone'a: iloczyny rezystancji gałęzi przeciwległych muszą być sobie równe, czyli R₁ · R₄ = R₂ · R₃."
+    "explanation": "Napięcie na przekątnej pomiarowej C–D wynosi ΔU = U₀ · [R₁/(R₁+R₂) − R₃/(R₃+R₄)]. Przyrównując ΔU do zera, otrzymujemy warunek równowagi mostka Wheatstone'a: iloczyny rezystancji gałęzi przeciwległych muszą być sobie równe, czyli R₁ · R₄ = R₂ · R₃.",
+    "type": "choice"
   },
   {
     "id": 24,
     "lectureId": 2,
     "lectureTitle": "Metody pomiarowe i mostek Wheatstone'a",
-    "question": "W zrównoważonym mostku Wheatstone'a (gdzie R₁ · R₄ = R₂ · R₃) znamy wartości R₂ = 200 Ω, R₃ = 500 Ω oraz R₄ = 1000 Ω. Ile wynosi mierzona rezystancja R₁?",
+    "question": "W zrównoważonym mostku Wheatstone'a (\\(R_1 \\cdot R_4 = R_2 \\cdot R_3\\)) znamy wartości \\(R_2 = 200\\,\\Omega\\), \\(R_3 = 500\\,\\Omega\\) oraz \\(R_4 = 1000\\,\\Omega\\). Oblicz mierzoną rezystancję \\(R_1\\). Wynik podaj w omach [Ω].",
     "image": null,
     "options": {
       "A": "400 Ω",
@@ -357,7 +380,16 @@
       "D": "2500 Ω"
     },
     "correct": "C",
-    "explanation": "Z warunku równowagi mostka R₁ · R₄ = R₂ · R₃ wyznaczamy R₁ = (R₂ · R₃) / R₄ = (200 Ω · 500 Ω) / 1000 Ω = 100 000 / 1000 Ω = 100 Ω."
+    "explanation": "Z warunku równowagi mostka Wheatstone'a:\n\\[R_1 \\cdot R_4 = R_2 \\cdot R_3 \\implies R_1 = \\frac{R_2 \\cdot R_3}{R_4} = \\frac{200\\,\\Omega \\cdot 500\\,\\Omega}{1000\\,\\Omega} = \\frac{100\\,000}{1000}\\,\\Omega = 100\\,\\Omega\\]",
+    "type": "open",
+    "numericTarget": 100,
+    "acceptedNumbers": [
+      100
+    ],
+    "tolerance": 0.01,
+    "toleranceAbs": 0.1,
+    "unit": "Ω",
+    "openAnswerText": "100 Ω"
   },
   {
     "id": 25,
@@ -372,7 +404,8 @@
       "D": "Niezależnie od liczby aktywnych gałęzi stosunek ΔU / U₀ wynosi zawsze (1/4)·(ΔR/R)"
     },
     "correct": "C",
-    "explanation": "Dla mostka równoramiennego (R₁=R₂=R₃=R₄=R) przy małych przyrostach ΔR << R czułość względna ΔU / U₀ wynosi: (1/4)·(ΔR/R) przy zmianie rezystancji w jednej gałęzi (ćwierćmostek), (1/2)·(ΔR/R) przy zmianie w dwóch gałęziach (półmostek) oraz ΔR/R przy zmianie we wszystkich czterech gałęziach (pełny mostek)."
+    "explanation": "Dla mostka równoramiennego (R₁=R₂=R₃=R₄=R) przy małych przyrostach ΔR << R czułość względna ΔU / U₀ wynosi: (1/4)·(ΔR/R) przy zmianie rezystancji w jednej gałęzi (ćwierćmostek), (1/2)·(ΔR/R) przy zmianie w dwóch gałęziach (półmostek) oraz ΔR/R przy zmianie we wszystkich czterech gałęziach (pełny mostek).",
+    "type": "choice"
   },
   {
     "id": 26,
@@ -387,7 +420,8 @@
       "D": "ΔU = U₀ · (ΔR / R)²"
     },
     "correct": "A",
-    "explanation": "Podstawiając R₁ = R + ΔR oraz R₂ = R₃ = R₄ = R do wzoru ogólnego ΔU = U₀ · [R₁/(R₁+R₂) − R₃/(R₃+R₄)], otrzymujemy dokładnie ΔU = U₀ · [(R + ΔR)/(R + ΔR + R) − R/(R + R)] = U₀ · [(R + ΔR)/(2R + ΔR) − 1/2]. Dopiero dla ΔR << 2R ułamek ten przybliża się liniowo przez (1/4)·(ΔR/R)."
+    "explanation": "Podstawiając R₁ = R + ΔR oraz R₂ = R₃ = R₄ = R do wzoru ogólnego ΔU = U₀ · [R₁/(R₁+R₂) − R₃/(R₃+R₄)], otrzymujemy dokładnie ΔU = U₀ · [(R + ΔR)/(R + ΔR + R) − R/(R + R)] = U₀ · [(R + ΔR)/(2R + ΔR) − 1/2]. Dopiero dla ΔR << 2R ułamek ten przybliża się liniowo przez (1/4)·(ΔR/R).",
+    "type": "choice"
   },
   {
     "id": 27,
@@ -402,7 +436,8 @@
       "D": "Ponieważ wymaga bezpośredniego pomiaru wielkości podstawowych wchodzących do definicji danej wielkości mierzalnej, co dla wielkości elektrycznych jest technicznie bardzo trudne i znacznie mniej wygodne niż metody porównawcze"
     },
     "correct": "D",
-    "explanation": "Metoda podstawowa (bezwzględna, absolutna) polega na wyznaczeniu wielkości mierzonej wprost z pomiarów wielkości podstawowych wchodzących do jej definicji (jak pole prostokąta z długości i szerokości). W elektrotechnice wyznaczanie np. napięcia czy rezystancji z samych definicyjnych wielkości podstawowych jest skomplikowane, dlatego stosuje się metody porównawcze z wzorcami elektrycznymi."
+    "explanation": "Metoda podstawowa (bezwzględna, absolutna) polega na wyznaczeniu wielkości mierzonej wprost z pomiarów wielkości podstawowych wchodzących do jej definicji (jak pole prostokąta z długości i szerokości). W elektrotechnice wyznaczanie np. napięcia czy rezystancji z samych definicyjnych wielkości podstawowych jest skomplikowane, dlatego stosuje się metody porównawcze z wzorcami elektrycznymi.",
+    "type": "choice"
   },
   {
     "id": 28,
@@ -417,7 +452,8 @@
       "D": "W metodzie cyfrowej sygnał pomiarowy przyjmuje nieskończenie wiele wartości w każdym punkcie czasu"
     },
     "correct": "B",
-    "explanation": "Podział ze względu na sposób przetwarzania sygnału w procesie pomiarowym wyróżnia metody analogowe (gdzie ciągłej wielkości mierzonej odpowiada ciągły sygnał pomiarowy) oraz metody cyfrowe (gdzie ciągłe przedziały wielkości mierzonej odwzorowywane są przez dyskretne, skwantowane wartości sygnału pomiarowego)."
+    "explanation": "Podział ze względu na sposób przetwarzania sygnału w procesie pomiarowym wyróżnia metody analogowe (gdzie ciągłej wielkości mierzonej odpowiada ciągły sygnał pomiarowy) oraz metody cyfrowe (gdzie ciągłe przedziały wielkości mierzonej odwzorowywane są przez dyskretne, skwantowane wartości sygnału pomiarowego).",
+    "type": "choice"
   },
   {
     "id": 29,
@@ -432,7 +468,8 @@
       "D": "x(t) = x(t + m·T), gdzie m jest dowolną liczbą naturalną, a T stałym okresem"
     },
     "correct": "D",
-    "explanation": "Zgodnie z definicją sygnału okresowego jego wartości powtarzają się regularnie co stały przedział czasu nazywany okresem T, co zapisuje się wzorem x(t) = x(t + m·T), gdzie m jest liczbą naturalną."
+    "explanation": "Zgodnie z definicją sygnału okresowego jego wartości powtarzają się regularnie co stały przedział czasu nazywany okresem T, co zapisuje się wzorem x(t) = x(t + m·T), gdzie m jest liczbą naturalną.",
+    "type": "choice"
   },
   {
     "id": 30,
@@ -447,7 +484,8 @@
       "D": "Wartości chwilowe należą do przedziału [-2·Xm, 2·Xm], a wartość międzyszczytowa wynosi Xpp = Xm"
     },
     "correct": "C",
-    "explanation": "Funkcja sinus przyjmuje wartości z przedziału [-1, 1], zatem wartość chwilowa x(t) zmienia się w granicach [-Xm, Xm]. Wartość międzyszczytowa (peak-to-peak) dla przebiegu symetrycznego względem zera jest równa podwojonej amplitudzie: Xpp = 2·Xm."
+    "explanation": "Funkcja sinus przyjmuje wartości z przedziału [-1, 1], zatem wartość chwilowa x(t) zmienia się w granicach [-Xm, Xm]. Wartość międzyszczytowa (peak-to-peak) dla przebiegu symetrycznego względem zera jest równa podwojonej amplitudzie: Xpp = 2·Xm.",
+    "type": "choice"
   },
   {
     "id": 31,
@@ -462,7 +500,8 @@
       "D": "Tylko podczas wzorcowania analogowych woltomierzy elektromagnetycznych"
     },
     "correct": "B",
-    "explanation": "Wartość międzyszczytowa Xpp bezpośrednio informuje o rozpiętości zmian sygnału od minimum do maksimum, dlatego jest niezwykle wygodna do odczytu z ekranu oscyloskopu (np. przy badaniu wzmocnienia) oraz do oceny, czy sygnał nie przekroczy dopuszczalnego zakresu napięć wejściowych układu."
+    "explanation": "Wartość międzyszczytowa Xpp bezpośrednio informuje o rozpiętości zmian sygnału od minimum do maksimum, dlatego jest niezwykle wygodna do odczytu z ekranu oscyloskopu (np. przy badaniu wzmocnienia) oraz do oceny, czy sygnał nie przekroczy dopuszczalnego zakresu napięć wejściowych układu.",
+    "type": "choice"
   },
   {
     "id": 32,
@@ -477,7 +516,8 @@
       "D": "Wynosi 1,11·Xm; mierzy się ją przyrządem magnetoelektrycznym z prostownikiem"
     },
     "correct": "A",
-    "explanation": "Całka z funkcji sinus po pełnym okresie T jest równa zeru (dodatnie i ujemne półokresy znoszą się wzajemnie), więc wartość średnia całookresowa wynosi 0. Do pomiaru wartości średniej (składowej stałej) służą ustroje magnetoelektryczne oraz multimetry cyfrowe przełączone na zakres DCV/DCI."
+    "explanation": "Całka z funkcji sinus po pełnym okresie T jest równa zeru (dodatnie i ujemne półokresy znoszą się wzajemnie), więc wartość średnia całookresowa wynosi 0. Do pomiaru wartości średniej (składowej stałej) służą ustroje magnetoelektryczne oraz multimetry cyfrowe przełączone na zakres DCV/DCI.",
+    "type": "choice"
   },
   {
     "id": 33,
@@ -492,7 +532,8 @@
       "D": "W przyrządzie magnetoelektrycznym wskazówka wychyli się w prawo, a multimetr cyfrowy wyświetli komunikat o przekroczeniu zakresu (OL)"
     },
     "correct": "A",
-    "explanation": "Kierunek momentu obrotowego w ustroju magnetoelektrycznym zależy od kierunku prądu – przy odwrotnej polaryzacji wskazówka próbuje wychylić się w lewo poza zero skali i pomiar jest niemożliwy. Multimetr cyfrowy w trybie DC automatycznie rozpoznaje biegunowość i sygnalizuje ujemny znak na wyświetlaczu."
+    "explanation": "Kierunek momentu obrotowego w ustroju magnetoelektrycznym zależy od kierunku prądu – przy odwrotnej polaryzacji wskazówka próbuje wychylić się w lewo poza zero skali i pomiar jest niemożliwy. Multimetr cyfrowy w trybie DC automatycznie rozpoznaje biegunowość i sygnalizuje ujemny znak na wyświetlaczu.",
+    "type": "choice"
   },
   {
     "id": 34,
@@ -507,7 +548,8 @@
       "D": "Xsk = Xm / 1,11; mierzą ją przyrządy magnetoelektryczne z prostownikiem jednopołówkowym"
     },
     "correct": "B",
-    "explanation": "Wartość skuteczna (RMS – Root Mean Square) to pierwiastek ze średniej kwadratowej sygnału w okresie T: Xsk = √( (1/T) ∫ x²(t) dt ). Zjawisko kwadratowej zależności wykorzystują ustroje elektromagnetyczne, termoelektryczne (cieplne działanie prądu) oraz układy TrueRMS w multimetrach cyfrowych."
+    "explanation": "Wartość skuteczna (RMS – Root Mean Square) to pierwiastek ze średniej kwadratowej sygnału w okresie T: Xsk = √( (1/T) ∫ x²(t) dt ). Zjawisko kwadratowej zależności wykorzystują ustroje elektromagnetyczne, termoelektryczne (cieplne działanie prądu) oraz układy TrueRMS w multimetrach cyfrowych.",
+    "type": "choice"
   },
   {
     "id": 35,
@@ -522,13 +564,14 @@
       "D": "Mierzą wartość szczytową Xm i dzielą ją zawsze przez współczynnik kształtu równy 2"
     },
     "correct": "C",
-    "explanation": "Proste mierniki AC prostują sygnał i uśredniają go, mierząc fizycznie wartość średnią wyprostowaną (półokresową) Xśrw. Aby dla sinusoidy pokazywały wartość skuteczną Xsk, konstruktor mnoży wynik przez współczynnik kształtu sinusoidy kk = Xsk/Xśrw = π/(2√2) ≈ 1,11. Dla przebiegów niesinusoidalnych prowadzi to do dużych błędów."
+    "explanation": "Proste mierniki AC prostują sygnał i uśredniają go, mierząc fizycznie wartość średnią wyprostowaną (półokresową) Xśrw. Aby dla sinusoidy pokazywały wartość skuteczną Xsk, konstruktor mnoży wynik przez współczynnik kształtu sinusoidy kk = Xsk/Xśrw = π/(2√2) ≈ 1,11. Dla przebiegów niesinusoidalnych prowadzi to do dużych błędów.",
+    "type": "choice"
   },
   {
     "id": 36,
     "lectureId": 3,
     "lectureTitle": "Parametry sygnałów pomiarowych",
-    "question": "Sygnał napięciowy składa się ze składowej stałej Uśr = 3 V oraz składowej przemiennej o wartości skutecznej Usk(AC) = 4 V. Ile wynosi całkowita wartość skuteczna Usk(AC+DC) tego sygnału i jakiego trybu multimetru należy użyć do jej bezpośredniego pomiaru?",
+    "question": "Sygnał napięciowy składa się ze składowej stałej \\(U_{\\text{śr}} = 3\\text{ V}\\) oraz składowej przemiennej o wartości skutecznej \\(U_{\\text{sk(AC)}} = 4\\text{ V}\\). Oblicz całkowitą wartość skuteczną \\(U_{\\text{sk(AC+DC)}}\\) tego sygnału (mierzoną multimetrem TrueRMS w trybie AC+DC). Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "7 V; wystarczy dowolny multimetr analogowy na zakresie DC",
@@ -537,7 +580,16 @@
       "D": "5 V; należy użyć multimetru cyfrowego z przetwornikiem TrueRMS posiadającego tryb pomiaru AC+DC"
     },
     "correct": "D",
-    "explanation": "Całkowita wartość skuteczna przebiegu ze składową stałą wyraża się wzorem Xsk(AC+DC) = √(Xsk² + Xśr²) = √(4² + 3²) = √(16 + 9) = √25 = 5 V. Standardowy tryb AC w multimetrze odcina składową stałą przez kondensator, dlatego do bezpośredniego pomiaru wymagany jest multimetr TrueRMS z funkcją AC+DC."
+    "explanation": "Całkowita wartość skuteczna przebiegu ze składową stałą wyraża się wzorem:\n\\[U_{\\text{sk(AC+DC)}} = \\sqrt{U_{\\text{sk(AC)}}^2 + U_{\\text{śr}}^2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5\\text{ V}\\]\nStandardowy tryb AC odcina składową stałą przez kondensator, dlatego do bezpośredniego pomiaru wymagany jest multimetr TrueRMS z funkcją AC+DC.",
+    "type": "open",
+    "numericTarget": 5,
+    "acceptedNumbers": [
+      5
+    ],
+    "tolerance": 0.01,
+    "toleranceAbs": 0.05,
+    "unit": "V",
+    "openAnswerText": "5 V (pomiar multimetrem TrueRMS w trybie AC+DC)"
   },
   {
     "id": 37,
@@ -552,7 +604,8 @@
       "D": "ks = Xsk / Xśr (dla sinusoidy nieskończoność), natomiast kk = Xm / Xsk (dla sinusoidy 1,414)"
     },
     "correct": "B",
-    "explanation": "Współczynnik szczytu (crest factor) to stosunek wartości szczytowej (amplitudy) do wartości skutecznej: ks = Xm / Xsk, co dla sinusoidy daje Xm / (Xm/√2) = √2 ≈ 1,414. Współczynnik kształtu (form factor) to stosunek wartości skutecznej do wartości średniej wyprostowanej (półokresowej): kk = Xsk / Xśrw ≈ 1,11."
+    "explanation": "Współczynnik szczytu (crest factor) to stosunek wartości szczytowej (amplitudy) do wartości skutecznej: ks = Xm / Xsk, co dla sinusoidy daje Xm / (Xm/√2) = √2 ≈ 1,414. Współczynnik kształtu (form factor) to stosunek wartości skutecznej do wartości średniej wyprostowanej (półokresowej): kk = Xsk / Xśrw ≈ 1,11.",
+    "type": "choice"
   },
   {
     "id": 38,
@@ -567,7 +620,8 @@
       "D": "Xśr = (1/n)·Σ Nx(ti), a Xsk = √( (1/n)·Σ Nx²(ti) ); próbkowanie musi być równomierne, tzn. odstęp czasu Tp między kolejnymi próbkami musi być stały"
     },
     "correct": "D",
-    "explanation": "Dla sygnału spróbkowanego równomiernie (stały okres próbkowania Tp między próbkami) całki w definicjach wartości średniej i skutecznej zastępuje się sumowaniem dyskretnych próbek Nx(ti) z jednego okresu: Xśr = (1/n) Σᵢ₌₁ⁿ Nx(ti) oraz Xsk = √( (1/n) Σᵢ₌₁ⁿ Nx²(ti) )."
+    "explanation": "Dla sygnału spróbkowanego równomiernie (stały okres próbkowania Tp między próbkami) całki w definicjach wartości średniej i skutecznej zastępuje się sumowaniem dyskretnych próbek Nx(ti) z jednego okresu: Xśr = (1/n) Σᵢ₌₁ⁿ Nx(ti) oraz Xsk = √( (1/n) Σᵢ₌₁ⁿ Nx²(ti) ). (Uwaga: na slajdzie 20 wykładu w03 w indeksie dolnym wzoru na wartość skuteczną z próbek znajduje się literówka: napisano Xśr zamiast Xsk).",
+    "type": "choice"
   },
   {
     "id": 39,
@@ -582,7 +636,8 @@
       "D": "Czas narastania mierzy się od 25% do 75% amplitudy, a czas opadania od 75% do 25%"
     },
     "correct": "A",
-    "explanation": "Ponieważ w okolicach 0% i 100% wysokości impulsu zbocza zbliżają się do wartości ustalonych asymptotycznie (lub występują tam przerzuty), czas narastania definiuje się jednoznacznie jako czas wzrostu sygnału z poziomu 10% do 90%, a czas opadania z poziomu 90% do 10%."
+    "explanation": "Ponieważ w okolicach 0% i 100% wysokości impulsu zbocza zbliżają się do wartości ustalonych asymptotycznie (lub występują tam przerzuty), czas narastania definiuje się jednoznacznie jako czas wzrostu sygnału z poziomu 10% do 90%, a czas opadania z poziomu 90% do 10%.",
+    "type": "choice"
   },
   {
     "id": 40,
@@ -597,7 +652,8 @@
       "D": "Nie wolno tego robić – każde wyłączenie kalibracji pionowej unieważnia pomiar czasu na osi poziomej"
     },
     "correct": "C",
-    "explanation": "Wykorzystanie płynnej regulacji wzmocnienia pionowego pozwala wygodnie rozciągnąć obraz impulsu tak, aby jego podstawa pokryła się z linią 0%, a wierzchołek z linią 100%. Choć oś napięcia (pionowa) traci wówczas kalibrację, oś czasu (pozioma) pozostaje skalibrowana, co pozwala odczytać czas między przecięciami z liniami 10% i 90%."
+    "explanation": "Wykorzystanie płynnej regulacji wzmocnienia pionowego pozwala wygodnie rozciągnąć obraz impulsu tak, aby jego podstawa pokryła się z linią 0%, a wierzchołek z linią 100%. Choć oś napięcia (pionowa) traci wówczas kalibrację, oś czasu (pozioma) pozostaje skalibrowana, co pozwala odczytać czas między przecięciami z liniami 10% i 90%.",
+    "type": "choice"
   },
   {
     "id": 41,
@@ -612,7 +668,8 @@
       "D": "φ = 2π · T · t0"
     },
     "correct": "C",
-    "explanation": "Pełny okres T odpowiada kątowi fazowemu 2π radianów (lub 360°). Z proporcji wynika więc, że przesunięciu czasowemu t0 odpowiada faza początkowa φ = (2π / T) · t0 (w radianach)."
+    "explanation": "Pełny okres T odpowiada kątowi fazowemu 2π radianów (lub 360°). Z proporcji wynika więc, że przesunięciu czasowemu t0 odpowiada faza początkowa φ = (2π / T) · t0 (w radianach).",
+    "type": "choice"
   },
   {
     "id": 42,
@@ -627,7 +684,8 @@
       "D": "Mają pasmo pomiarowe sięgające 10 GHz na wszystkich zakresach napięciowych"
     },
     "correct": "A",
-    "explanation": "Jak pokazano na wykładzie, najtańsze multimetry cyfrowe nie tylko nie posiadają przetwornika TrueRMS (mierzą wartość średnią wyprostowaną wyskalowaną dla sinusoidy), ale często w ogóle są pozbawione zakresów pomiaru prądu przemiennego (ACI)."
+    "explanation": "Jak pokazano na wykładzie, najtańsze multimetry cyfrowe nie tylko nie posiadają przetwornika TrueRMS (mierzą wartość średnią wyprostowaną wyskalowaną dla sinusoidy), ale często w ogóle są pozbawione zakresów pomiaru prądu przemiennego (ACI).",
+    "type": "choice"
   },
   {
     "id": 43,
@@ -642,7 +700,8 @@
       "D": "Każdy pomiar obarczony jest pewnym błędem (wynikającym m.in. ze skończonej dokładności przyrządów, warunków fizycznych i szumów), a mniejsza rozdzielczość tańszego miernika może jedynie zamaskować tę różnicę"
     },
     "correct": "D",
-    "explanation": "Każdy pomiar obarczony jest niedokładnością. Przyrządy wysokiej rozdzielczości ujawniają drobne różnice wynikające ze skończonej dokładności wzorców wewnętrznych, wpływu warunków środowiskowych oraz szumów. Zastosowanie miernika o małej rozdzielczości (np. 3½ cyfry) sprawiłoby jedynie, że oba pokazałyby np. 10,08 V, co nie oznacza braku błędu."
+    "explanation": "Każdy pomiar obarczony jest niedokładnością. Przyrządy wysokiej rozdzielczości ujawniają drobne różnice wynikające ze skończonej dokładności wzorców wewnętrznych, wpływu warunków środowiskowych oraz szumów. Zastosowanie miernika o małej rozdzielczości (np. 3½ cyfry) sprawiłoby jedynie, że oba pokazałyby np. 10,08 V, co nie oznacza braku błędu.",
+    "type": "choice"
   },
   {
     "id": 44,
@@ -657,7 +716,8 @@
       "D": "ΔX = X / Xr oraz δX = X - Xr; wartość rzeczywistą Xr przyjmuje się zawsze jako równą zeru"
     },
     "correct": "B",
-    "explanation": "Błąd bezwzględny to różnica między wynikiem pomiaru X a wartością rzeczywistą Xr (ΔX = X - Xr, wyrażany w jednostkach wielkości mierzonej), a błąd względny to stosunek δX = ΔX / Xr (zwykle w %). Gdyby Xr była dokładnie znana, pomiar byłby zbędny – dlatego zastępuje się ją tzw. wartością poprawną (umownie prawdziwą)."
+    "explanation": "Błąd bezwzględny to różnica między wynikiem pomiaru X a wartością rzeczywistą Xr (ΔX = X - Xr, wyrażany w jednostkach wielkości mierzonej), a błąd względny to stosunek δX = ΔX / Xr (zwykle w %). Gdyby Xr była dokładnie znana, pomiar byłby zbędny – dlatego zastępuje się ją tzw. wartością poprawną (umownie prawdziwą).",
+    "type": "choice"
   },
   {
     "id": 45,
@@ -672,7 +732,8 @@
       "D": "Ponieważ zaokrąglenie błędu w dół zawęziłoby przedział [X - ΔXg, X + ΔXg], przez co wartość rzeczywista Xr leżąca blisko krańca przedziału mogłaby znaleźć się poza nim"
     },
     "correct": "D",
-    "explanation": "Błąd graniczny ΔXg wyznacza najkrótszy przedział wokół wyniku pomiaru X, w którym na pewno znajduje się wartość rzeczywista: X - ΔXg ≤ Xr ≤ X + ΔXg. Zaokrąglenie ΔXg w dół zmniejszyłoby ten przedział, prowadząc do ryzyka, że wartość rzeczywista wypadnie poza zadeklarowane granice błędu."
+    "explanation": "Błąd graniczny ΔXg wyznacza najkrótszy przedział wokół wyniku pomiaru X, w którym na pewno znajduje się wartość rzeczywista: X - ΔXg ≤ Xr ≤ X + ΔXg. Zaokrąglenie ΔXg w dół zmniejszyłoby ten przedział, prowadząc do ryzyka, że wartość rzeczywista wypadnie poza zadeklarowane granice błędu.",
+    "type": "choice"
   },
   {
     "id": 46,
@@ -687,7 +748,8 @@
       "D": "Błąd podstawowy można wyeliminować przyciskiem REL, a błędu dodatkowego nie opisuje się w dokumentacji"
     },
     "correct": "C",
-    "explanation": "Ze względu na warunki fizyczne wyróżniamy błąd podstawowy (określony w warunkach nominalnych/odniesienia podanych przez producenta, np. 23°C ± 5°C) oraz błędy dodatkowe, które dolicza się osobno dla każdej wielkości wpływającej (np. temperatury, przechyłu miernika analogowego) przekraczającej zakres nominalny."
+    "explanation": "Ze względu na warunki fizyczne wyróżniamy błąd podstawowy (określony w warunkach nominalnych/odniesienia podanych przez producenta, np. 23°C ± 5°C) oraz błędy dodatkowe, które dolicza się osobno dla każdej wielkości wpływającej (np. temperatury, przechyłu miernika analogowego) przekraczającej zakres nominalny.",
+    "type": "choice"
   },
   {
     "id": 47,
@@ -702,13 +764,14 @@
       "D": "Błędy systematyczne mają rozkład normalny Gaussa, a błędy przypadkowe mają zawsze stałą wartość i znak"
     },
     "correct": "B",
-    "explanation": "Błędy grube wynikają z pomyłki lub awarii i są łatwe do wykrycia przy powtórzeniu pomiaru. Błędy systematyczne mają stałą wartość w danych warunkach (np. rezystancja przewodów przy pomiarze małych rezystancji) i eliminuje się je poprawką lub trybem REL. Błędy przypadkowe (losowe, o rozkładzie Gaussa) wymagają analizy statystycznej."
+    "explanation": "Błędy grube wynikają z pomyłki lub awarii i są łatwe do wykrycia przy powtórzeniu pomiaru. Błędy systematyczne mają stałą wartość w danych warunkach (np. rezystancja przewodów przy pomiarze małych rezystancji) i eliminuje się je poprawką lub trybem REL. Błędy przypadkowe (losowe, o rozkładzie Gaussa) wymagają analizy statystycznej.",
+    "type": "choice"
   },
   {
     "id": 48,
     "lectureId": 4,
     "lectureTitle": "Niedokładność i błędy pomiaru – cz. 1",
-    "question": "Woltomierz analogowy o klasie dokładności 0,5 pracuje na zakresie pomiarowym Uzakr = 300 V i wskazuje napięcie U = 230 V. Ile wynosi bezwzględny błąd graniczny ΔU oraz względny błąd graniczny δU tego pomiaru?",
+    "question": "Woltomierz analogowy o klasie dokładności \\(K = 0{,}5\\) pracuje na zakresie pomiarowym \\(U_{\\text{zakr}} = 300\\text{ V}\\) i wskazuje napięcie \\(U = 230\\text{ V}\\). Oblicz względny błąd graniczny \\(\\delta U\\) tego pomiaru. Wynik podaj w procentach [%].",
     "image": null,
     "options": {
       "A": "ΔU = 1,5 V; δU ≈ 0,65%",
@@ -717,7 +780,18 @@
       "D": "ΔU = 1,5 V; δU = 0,50%"
     },
     "correct": "A",
-    "explanation": "Dla miernika analogowego bezwzględny błąd graniczny jest stały na całym zakresie i wynosi ΔU = (klasa · zakres) / 100 = (0,5 · 300 V) / 100 = 1,5 V. Względny błąd graniczny dla wskazania 230 V wynosi natomiast δU = (ΔU / U) · 100% = (1,5 / 230) · 100% ≈ 0,65%."
+    "explanation": "Dla miernika analogowego bezwzględny błąd graniczny jest stały na całym zakresie:\n\\[\\Delta U = \\frac{K \\cdot U_{\\text{zakr}}}{100} = \\frac{0{,}5 \\cdot 300\\text{ V}}{100} = 1{,}5\\text{ V}\\]\nWzględny błąd graniczny dla wskazania \\(U = 230\\text{ V}\\) wynosi:\n\\[\\delta U = \\frac{\\Delta U}{U} \\cdot 100\\% = \\frac{1{,}5}{230} \\cdot 100\\% \\approx 0{,}652\\% \\approx 0{,}65\\%\\]",
+    "type": "open",
+    "numericTarget": 0.65,
+    "acceptedNumbers": [
+      0.65,
+      0.652,
+      0.66
+    ],
+    "tolerance": 0.03,
+    "toleranceAbs": 0.02,
+    "unit": "%",
+    "openAnswerText": "0,65% (przy błędzie bezwzględnym ΔU = 1,5 V)"
   },
   {
     "id": 49,
@@ -732,7 +806,8 @@
       "D": "Ponieważ w dolnej części skali sprężyny zwrotne przestają przewodzić prąd elektryczny"
     },
     "correct": "A",
-    "explanation": "W mierniku analogowym błąd bezwzględny ΔXg zależy od pełnego zakresu pomiarowego, a nie od bieżącego wskazania. Przy małym wychyleniu wskazówki stały błąd ΔXg stanowi duży procent mierzonej wartości (np. dla klasy 0,5 i zakresu 300 V przy wskazaniu 30 V błąd względny rośnie aż do 5%)."
+    "explanation": "W mierniku analogowym błąd bezwzględny ΔXg zależy od pełnego zakresu pomiarowego, a nie od bieżącego wskazania. Przy małym wychyleniu wskazówki stały błąd ΔXg stanowi duży procent mierzonej wartości (np. dla klasy 0,5 i zakresu 300 V przy wskazaniu 30 V błąd względny rośnie aż do 5%).",
+    "type": "choice"
   },
   {
     "id": 50,
@@ -747,7 +822,8 @@
       "D": "Wskazują liczbę próbek na sekundę pobieranych przez przetwornik A/C"
     },
     "correct": "B",
-    "explanation": "Na tarczy przyrządu analogowego umieszcza się znormalizowane znaki określające warunki odniesienia i parametry graniczne: rodzaj ustroju, klasę dokładności, napięcie próby izolacji (w gwieździe), położenie pracy (np. poziome/pionowe – zmiana położenia wywołuje błąd dodatkowy!) oraz zakres częstotliwości odniesienia."
+    "explanation": "Na tarczy przyrządu analogowego umieszcza się znormalizowane znaki określające warunki odniesienia i parametry graniczne: rodzaj ustroju, klasę dokładności, napięcie próby izolacji (w gwieździe), położenie pracy (np. poziome/pionowe – zmiana położenia wywołuje błąd dodatkowy!) oraz zakres częstotliwości odniesienia.",
+    "type": "choice"
   },
   {
     "id": 51,
@@ -762,7 +838,8 @@
       "D": "Wyłącznie z dwóch składników multiplikatywnych zależnych od kwadratu napięcia"
     },
     "correct": "C",
-    "explanation": "Pierwszy człon (a%·Uwsk) jest proporcjonalny do wartości mierzonej i nazywa się składnikiem multiplikatywnym (wynika m.in. z błędu wzmocnienia/wzorca). Drugi człon (b%·Uzakr lub c = k·rozdzielczość) jest stały na danym zakresie i nazywa się składnikiem addytywnym (wynika m.in. z przesunięcia zera i kwantowania)."
+    "explanation": "Pierwszy człon (a%·Uwsk) jest proporcjonalny do wartości mierzonej i nazywa się składnikiem multiplikatywnym (wynika m.in. z błędu wzmocnienia/wzorca). Drugi człon (b%·Uzakr lub c = k·rozdzielczość) jest stały na danym zakresie i nazywa się składnikiem addytywnym (wynika m.in. z przesunięcia zera i kwantowania).",
+    "type": "choice"
   },
   {
     "id": 52,
@@ -777,13 +854,14 @@
       "D": "Błąd względny rośnie hiperbolicznie przy malejącym wskazaniu Uwsk (z powodu składnika addytywnego c), dlatego pomiar należy zawsze wykonywać na możliwie najmniejszym zakresie obejmującym mierzoną wartość"
     },
     "correct": "D",
-    "explanation": "We wzorze na błąd względny δUgr = a% + (c / Uwsk)·100% składnik addytywny c dzielony jest przez wartość wskazywaną Uwsk. Im mniejsze Uwsk w stosunku do wybranego zakresu (i jego rozdzielczości), tym większy udział składnika c/Uwsk. Dlatego w multimetrach cyfrowych zawsze wybieramy najniższy możliwy zakres."
+    "explanation": "We wzorze na błąd względny δUgr = a% + (c / Uwsk)·100% składnik addytywny c dzielony jest przez wartość wskazywaną Uwsk. Im mniejsze Uwsk w stosunku do wybranego zakresu (i jego rozdzielczości), tym większy udział składnika c/Uwsk. Dlatego w multimetrach cyfrowych zawsze wybieramy najniższy możliwy zakres.",
+    "type": "choice"
   },
   {
     "id": 53,
     "lectureId": 4,
     "lectureTitle": "Niedokładność i błędy pomiaru – cz. 1",
-    "question": "Multimetrem cyfrowym UNI-T UT60E zmierzono napięcie przemienne Uwsk = 10,03 V na zakresie 40 V (rozdzielczość 0,01 V, dokładność ±(1% + 5 dgt)). Ile wynosi bezwzględny błąd graniczny ΔUgr oraz poprawnie zapisany wynik pomiaru?",
+    "question": "Multimetrem cyfrowym UNI-T UT60E zmierzono napięcie przemienne \\(U_{\\text{wsk}} = 10{,}03\\text{ V}\\) na zakresie \\(40\\text{ V}\\) (rozdzielczość \\(0{,}01\\text{ V}\\), dokładność \\(\\pm(1\\% + 5\\text{ dgt})\\)). Oblicz bezwzględny błąd graniczny \\(\\Delta U_{\\text{gr}}\\) po prawidłowym zaokrągleniu w górę. Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "ΔUgr = 0,10 V; U = (10,03 ± 0,10) V",
@@ -792,7 +870,18 @@
       "D": "ΔUgr = 0,60 V; U = (10,0 ± 0,6) V"
     },
     "correct": "B",
-    "explanation": "Obliczamy składnik multiplikatywny: 1% · 10,03 V = 0,1003 V oraz składnik addytywny: 5 · 0,01 V = 0,05 V. Suma wynosi ΔUgr = 0,1003 + 0,05 = 0,1503 V. Ponieważ błąd graniczny zaokrąglamy zawsze w górę (a zaokrąglenie do 1 cyfry znaczącej, czyli 0,2 V, zmieniłoby wartość o ponad 20%), zostawiamy 2 cyfry znaczące: ΔUgr = 0,16 V."
+    "explanation": "Składnik multiplikatywny: \\(1\\% \\cdot 10{,}03\\text{ V} = 0{,}1003\\text{ V}\\).\nSkładnik addytywny: \\(5 \\cdot 0{,}01\\text{ V} = 0{,}05\\text{ V}\\).\n\\[\\Delta U_{\\text{gr}} = 0{,}1003\\text{ V} + 0{,}05\\text{ V} = 0{,}1503\\text{ V}\\]\nPonieważ zaokrąglenie w górę do 1 cyfry znaczącej (\\(0{,}2\\text{ V}\\)) zmieniłoby wartość o ponad 20%, zostawiamy 2 cyfry znaczące zaokrąglone w górę: \\(\\Delta U_{\\text{gr}} = 0{,}16\\text{ V}\\), a zapis wyniku to \\(U = (10{,}03 \\pm 0{,}16)\\text{ V}\\).",
+    "type": "open",
+    "numericTarget": 0.16,
+    "acceptedNumbers": [
+      0.16,
+      0.1503,
+      0.15
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 0.005,
+    "unit": "V",
+    "openAnswerText": "0,16 V (dokł. 0,1503 V → w górę: 0,16 V; zapis: (10,03 ± 0,16) V)"
   },
   {
     "id": 54,
@@ -807,7 +896,8 @@
       "D": "Aby zmierzyć i odjąć od kolejnych wskazań systematyczny błąd addytywny wynikający z rezystancji samych przewodów pomiarowych oraz styków"
     },
     "correct": "D",
-    "explanation": "Rezystancja przewodów pomiarowych (zwykle 0,1–0,5 Ω) dodaje się wprost do mierzonej rezystancji, stanowiąc klasyczny błąd systematyczny. Zwarcie sond i włączenie trybu względnego REL zapisuje tę wartość jako poziom odniesienia i automatycznie odejmuje ją od kolejnych wyników."
+    "explanation": "Rezystancja przewodów pomiarowych (zwykle 0,1–0,5 Ω) dodaje się wprost do mierzonej rezystancji, stanowiąc klasyczny błąd systematyczny. Zwarcie sond i włączenie trybu względnego REL zapisuje tę wartość jako poziom odniesienia i automatycznie odejmuje ją od kolejnych wyników.",
+    "type": "choice"
   },
   {
     "id": 55,
@@ -822,7 +912,8 @@
       "D": "Określają warunki, poza którymi wyświetlacz ciekłokrystaliczny ulega trwałemu pęknięciu"
     },
     "correct": "A",
-    "explanation": "Podawane w specyfikacji formuły dokładności (np. ±(1% + 5 dgt)) określają błąd podstawowy. Obowiązuje on wyłącznie wtedy, gdy pomiar odbywa się w zadeklarowanych warunkach odniesienia (temperatury, wilgotności oraz częstotliwości sygnału AC)."
+    "explanation": "Podawane w specyfikacji formuły dokładności (np. ±(1% + 5 dgt)) określają błąd podstawowy. Obowiązuje on wyłącznie wtedy, gdy pomiar odbywa się w zadeklarowanych warunkach odniesienia (temperatury, wilgotności oraz częstotliwości sygnału AC).",
+    "type": "choice"
   },
   {
     "id": 56,
@@ -837,7 +928,8 @@
       "D": "δX = X · Xr"
     },
     "correct": "C",
-    "explanation": "Przekształcając definicję błędu względnego δX = ΔX / Xr = (X - Xr) / Xr, otrzymujemy równoważną postać δX = (X / Xr) - 1 (często wyrażaną w procentach po pomnożeniu przez 100%)."
+    "explanation": "Przekształcając definicję błędu względnego δX = ΔX / Xr = (X - Xr) / Xr, otrzymujemy równoważną postać δX = (X / Xr) - 1 (często wyrażaną w procentach po pomnożeniu przez 100%).",
+    "type": "choice"
   },
   {
     "id": 57,
@@ -852,7 +944,8 @@
       "D": "Multimetr potrafi mierzyć napięcia wyłącznie z dokładnością do 3/4 wolta"
     },
     "correct": "C",
-    "explanation": "W oznaczeniu '3 3/4 cyfry' liczba całkowita (3) oznacza liczbę pełnych pozycji dziesiętnych (0–9), natomiast ułamek (3/4) informuje, że najstarsza cyfra może przyjmować wartości do 3 (maksymalne wskazanie 3999/4000). Z tego powodu zakresy pomiarowe tworzą szereg 400 mV, 4 V, 40 V, 400 V."
+    "explanation": "W oznaczeniu '3 3/4 cyfry' liczba całkowita (3) oznacza liczbę pełnych pozycji dziesiętnych (0–9), natomiast ułamek (3/4) informuje, że najstarsza cyfra może przyjmować wartości do 3 (maksymalne wskazanie 3999/4000). Z tego powodu zakresy pomiarowe tworzą szereg 400 mV, 4 V, 40 V, 400 V.",
+    "type": "choice"
   },
   {
     "id": 58,
@@ -867,13 +960,14 @@
       "D": "Są to odpowiednio: temperatura lutowania, temperatura topnienia obudowy oraz temperatura wrzenia elektrolitu baterii"
     },
     "correct": "A",
-    "explanation": "Producenci przyrządów pomiarowych rozróżniają: temperaturę przechowywania (np. -10°C..50°C, gdy przyrząd jest wyłączony), temperaturę pracy (np. 0°C..40°C, w której przyrząd działa bezpiecznie, ale z możliwym błędem dodatkowym) oraz węższy przedział +23°C ± 5°C, w którym gwarantowany jest błąd podstawowy."
+    "explanation": "Producenci przyrządów pomiarowych rozróżniają: temperaturę przechowywania (np. -10°C..50°C, gdy przyrząd jest wyłączony), temperaturę pracy (np. 0°C..40°C, w której przyrząd działa bezpiecznie, ale z możliwym błędem dodatkowym) oraz węższy przedział +23°C ± 5°C, w którym gwarantowany jest błąd podstawowy.",
+    "type": "choice"
   },
   {
     "id": 59,
     "lectureId": 5,
     "lectureTitle": "Niedokładność pomiaru – cz. 2 i pomiary pośrednie",
-    "question": "Multimetrem Metex M-3860D zmierzono napięcie stałe U = 1,352 V na zakresie 4 V (rozdzielczość 1 mV, dokładność ±(0,3% rdg + 1 dgt)). Ile wynosi bezwzględny błąd graniczny ΔU po prawidłowym zaokrągleniu?",
+    "question": "Multimetrem Metex M-3860D zmierzono napięcie stałe \\(U = 1{,}352\\text{ V}\\) na zakresie \\(4\\text{ V}\\) (rozdzielczość \\(1\\text{ mV}\\), dokładność \\(\\pm(0{,}3\\%\\text{ rdg} + 1\\text{ dgt})\\)). Oblicz bezwzględny błąd graniczny \\(\\Delta U\\) po prawidłowym zaokrągleniu w górę. Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "0,010 V",
@@ -882,7 +976,18 @@
       "D": "0,006 V"
     },
     "correct": "D",
-    "explanation": "Obliczamy błąd graniczny ze wzoru producenta: ΔU = 0,3% · 1,352 V + 1 · 0,001 V = 0,004056 V + 0,001 V = 0,005056 V. Zgodnie z zasadą zaokrąglania błędów granicznych zawsze w górę do miejsca ostatniej cyfry znaczącej rozdzielczości (lub 1 cyfry znaczącej błędu) otrzymujemy ΔU = 0,006 V."
+    "explanation": "Obliczamy błąd graniczny ze specyfikacji producenta:\n\\[\\Delta U = 0{,}3\\% \\cdot 1{,}352\\text{ V} + 1 \\cdot 0{,}001\\text{ V} = 0{,}004056\\text{ V} + 0{,}001\\text{ V} = 0{,}005056\\text{ V}\\]\nZgodnie z zasadą zaokrąglania błędów granicznych zawsze w górę do 1 cyfry znaczącej (wzrost \\(< 20\\%\\), a zarazem ostatnia cyfra rozdzielczości) otrzymujemy \\(\\Delta U = 0{,}006\\text{ V}\\).",
+    "type": "open",
+    "numericTarget": 0.006,
+    "acceptedNumbers": [
+      0.006,
+      0.005056,
+      0.0051
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 0.0002,
+    "unit": "V",
+    "openAnswerText": "0,006 V (dokł. 0,005056 V → w górę: 0,006 V)"
   },
   {
     "id": 60,
@@ -897,7 +1002,8 @@
       "D": "Tryb Slow służy wyłącznie do pomiaru częstotliwości powyżej 1 MHz"
     },
     "correct": "B",
-    "explanation": "W przetwornikach całkujących dłuższy czas całkowania (tryb Slow) zapewnia większą liczbę zliczeń (maks. 119 999, rozdzielczość 100 μV na zakresie 12 V) oraz lepsze tłumienie zakłóceń. Przyspieszenie pomiaru (Medium: 39 999, Fast: 3 999) odbywa się kosztem mniejszej rozdzielczości i większego błędu granicznego."
+    "explanation": "W przetwornikach całkujących dłuższy czas całkowania (tryb Slow) zapewnia większą liczbę zliczeń (maks. 119 999, rozdzielczość 100 μV na zakresie 12 V) oraz lepsze tłumienie zakłóceń. Przyspieszenie pomiaru (Medium: 39 999, Fast: 3 999) odbywa się kosztem mniejszej rozdzielczości i większego błędu granicznego.",
+    "type": "choice"
   },
   {
     "id": 61,
@@ -912,7 +1018,8 @@
       "D": "Konieczność wstępnego wygrzania przyrządu po włączeniu zasilania (np. 30 minut dla Escort 3145A lub 2 godziny dla HP 34401A) oraz uwzględnienia czasu od ostatniej kalibracji (np. 24h, 90 dni, 1 rok) i współczynnika temperaturowego"
     },
     "correct": "D",
-    "explanation": "Precyzyjne multimetry stołowe wymagają ustabilizowania termicznego wewnętrznych źródeł napięcia odniesienia i dzielników (czas nagrzewania 30 min – 2 h), a na najniższych zakresach (np. 120 mV) użycia funkcji REL do kompensacji sił termoelektrycznych. Ich dokładność zależy też od czasu, jaki upłynął od kalibracji."
+    "explanation": "Precyzyjne multimetry stołowe wymagają ustabilizowania termicznego wewnętrznych źródeł napięcia odniesienia i dzielników (czas nagrzewania 30 min – 2 h), a na najniższych zakresach (np. 120 mV) użycia funkcji REL do kompensacji sił termoelektrycznych. Ich dokładność zależy też od czasu, jaki upłynął od kalibracji.",
+    "type": "choice"
   },
   {
     "id": 62,
@@ -927,13 +1034,14 @@
       "D": "'20% overrange' pozwala mierzyć napięcie 1200 V na zakresie 1000 V bez ryzyka przebicia izolacji"
     },
     "correct": "C",
-    "explanation": "W multimetrach klasy HP 34401A dokładność zapisuje się jako ±(% of reading + % of range). Funkcja 20% przepełnienia (overrange) pozwala na zakresach 100 mV, 1 V, 10 V i 100 V mierzyć napięcia odpowiednio do 120 mV, 1,2 V, 12 V i 120 V bez przełączania na wyższy, mniej dokładny zakres."
+    "explanation": "W multimetrach klasy HP 34401A dokładność zapisuje się jako ±(% of reading + % of range). Funkcja 20% przepełnienia (overrange) pozwala na zakresach 100 mV, 1 V, 10 V i 100 V mierzyć napięcia odpowiednio do 120 mV, 1,2 V, 12 V i 120 V bez przełączania na wyższy, mniej dokładny zakres.",
+    "type": "choice"
   },
   {
     "id": 63,
     "lectureId": 5,
     "lectureTitle": "Niedokładność pomiaru – cz. 2 i pomiary pośrednie",
-    "question": "W dokumentacji multimetru Keithley 2000 dokładność pomiaru napięcia DC na zakresie 10 V (24h, 23°C ± 1°C) zapisano jako '±(15 ppm of reading + 4 ppm of range)'. Ile w przeliczeniu na procenty wynosi 10 ppm i jaki błąd graniczny ΔU otrzymamy dla wskazania 1,35182 V?",
+    "question": "W dokumentacji multimetru Keithley 2000 dokładność pomiaru napięcia DC na zakresie \\(10\\text{ V}\\) (24h, \\(23^\\circ\\text{C} \\pm 1^\\circ\\text{C}\\)) zapisano jako \\(\\pm(15\\text{ ppm of reading} + 4\\text{ ppm of range})\\). Oblicz bezwzględny błąd graniczny \\(\\Delta U\\) dla wskazania \\(1{,}35182\\text{ V}\\) po zaokrągleniu w górę do 1 cyfry znaczącej. Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "10 ppm = 0,1%; ΔU = 0,07 V",
@@ -942,7 +1050,20 @@
       "D": "10 ppm = 10⁻⁹%; ΔU = 0,00001 V"
     },
     "correct": "B",
-    "explanation": "Jednostka 1 ppm (part per million) to milionowa część całości, czyli 10⁻⁶ = 0,0001%, stąd 10 ppm = 0,001%. Dla 15 ppm wskazania i 4 ppm zakresu 10 V otrzymujemy: ΔU = 0,000015 · 1,35182 + 0,000004 · 10 = 0,0000202773 + 0,00004 = 0,0000602773 V, co po zaokrągleniu w górę daje 0,00007 V (identycznie jak w HP 34401A)."
+    "explanation": "Jednostka \\(1\\text{ ppm} = 10^{-6} = 0{,}0001\\%\\) (stąd \\(10\\text{ ppm} = 0{,}001\\%\\)).\nDla \\(15\\text{ ppm}\\) wskazania i \\(4\\text{ ppm}\\) zakresu \\(10\\text{ V}\\):\n\\[\\Delta U = 15 \\cdot 10^{-6} \\cdot 1{,}35182\\text{ V} + 4 \\cdot 10^{-6} \\cdot 10\\text{ V} = 0{,}0000202773\\text{ V} + 0{,}00004\\text{ V} = 0{,}0000602773\\text{ V}\\]\nPo zaokrągleniu w górę do 1 cyfry znaczącej otrzymujemy \\(\\Delta U = 0{,}00007\\text{ V}\\) (\\(70\\,\\mu\\text{V}\\)).",
+    "type": "open",
+    "numericTarget": 7e-05,
+    "acceptedNumbers": [
+      7e-05,
+      6.03e-05,
+      6e-05,
+      70,
+      60.28
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 5e-06,
+    "unit": "V",
+    "openAnswerText": "0,00007 V (70 μV; przed zaokrągleniem: 0,0000602773 V)"
   },
   {
     "id": 64,
@@ -957,7 +1078,8 @@
       "D": "Rezystancja wejściowa jest ujemna i zależy od częstotliwości sieci"
     },
     "correct": "A",
-    "explanation": "Na zakresach do 10 V włącznie wejście pomiarowe prowadzi bezpośrednio na wzmacniacz buforowy o gigantycznej rezystancji wejściowej (> 10 GΩ), co niemal całkowicie eliminuje błąd metody (obciążenie badanego źródła). Na zakresach 100 V i 1000 V włączany jest precyzyjny dzielnik napięcia o rezystancji 10 MΩ."
+    "explanation": "Na zakresach do 10 V włącznie wejście pomiarowe prowadzi bezpośrednio na wzmacniacz buforowy o gigantycznej rezystancji wejściowej (> 10 GΩ), co niemal całkowicie eliminuje błąd metody (obciążenie badanego źródła). Na zakresach 100 V i 1000 V włączany jest precyzyjny dzielnik napięcia o rezystancji 10 MΩ.",
+    "type": "choice"
   },
   {
     "id": 65,
@@ -972,7 +1094,8 @@
       "D": "δA ≈ δR + (δI)² + δt"
     },
     "correct": "A",
-    "explanation": "Ponieważ prąd I występuje we wzorze A = R·I²·t w drugiej potędze, jego błąd względny przenosi się na błąd wyznaczenia energii z wagą równą wykładnikowi potęgi (czyli 2). Stąd dla małych błędów względnych otrzymujemy δA ≈ δR + 2·δI + δt."
+    "explanation": "Ponieważ prąd I występuje we wzorze A = R·I²·t w drugiej potędze, jego błąd względny przenosi się na błąd wyznaczenia energii z wagą równą wykładnikowi potęgi (czyli 2). Stąd dla małych błędów względnych otrzymujemy δA ≈ δR + 2·δI + δt.",
+    "type": "choice"
   },
   {
     "id": 66,
@@ -987,7 +1110,8 @@
       "D": "Ponieważ iloczyny błędów względnych są zawsze liczbami urojonymi"
     },
     "correct": "B",
-    "explanation": "Jeżeli poszczególne błędy względne wynoszą np. 1% (0,01), to ich iloczyn wynosi 0,0001 (0,01%), a iloczyn trzech błędów 0,000001. Odrzucenie tych wyrazów wyższych rzędów prowadzi do liniowego przybliżenia δA ≈ δR + 2·δI + δt, identycznego z wynikiem metody różniczki zupełnej i logarytmicznej."
+    "explanation": "Jeżeli poszczególne błędy względne wynoszą np. 1% (0,01), to ich iloczyn wynosi 0,0001 (0,01%), a iloczyn trzech błędów 0,000001. Odrzucenie tych wyrazów wyższych rzędów prowadzi do liniowego przybliżenia δA ≈ δR + 2·δI + δt, identycznego z wynikiem metody różniczki zupełnej i logarytmicznej.",
+    "type": "choice"
   },
   {
     "id": 67,
@@ -1002,7 +1126,8 @@
       "D": "ΔY = f(ΔX1, ΔX2, ..., ΔXn)"
     },
     "correct": "C",
-    "explanation": "W metodzie różniczki zupełnej przyrost funkcji ΔY zastępuje się jej różniczką zupełną dY, będącą sumą iloczynów pochodnych cząstkowych funkcji f względem poszczególnych zmiennych Xi oraz błędów bezwzględnych ΔXi tych zmiennych."
+    "explanation": "W metodzie różniczki zupełnej przyrost funkcji ΔY zastępuje się jej różniczką zupełną dY, będącą sumą iloczynów pochodnych cząstkowych funkcji f względem poszczególnych zmiennych Xi oraz błędów bezwzględnych ΔXi tych zmiennych.",
+    "type": "choice"
   },
   {
     "id": 68,
@@ -1017,7 +1142,8 @@
       "D": "Na zlogarytmowaniu stronami wzoru (ln A = ln R + 2·ln I + ln t), a następnie obliczeniu różniczki zupełnej d(ln A) = dA/A = dR/R + 2·dI/I + dt/t, co bezpośrednio daje relację między błędami względnymi"
     },
     "correct": "D",
-    "explanation": "Korzystając z własności pochodnej logarytmu naturalnego d(ln x) = dx / x ≈ Δx / x = δx, zlogarytmowanie wyrażenia iloczynowego zamienia mnożenie i potęgowanie na sumę logarytmów, a jej zróżniczkowanie od razu daje sumę błędów względnych z odpowiednimi współczynnikami."
+    "explanation": "Korzystając z własności pochodnej logarytmu naturalnego d(ln x) = dx / x ≈ Δx / x = δx, zlogarytmowanie wyrażenia iloczynowego zamienia mnożenie i potęgowanie na sumę logarytmów, a jej zróżniczkowanie od razu daje sumę błędów względnych z odpowiednimi współczynnikami.",
+    "type": "choice"
   },
   {
     "id": 69,
@@ -1032,7 +1158,8 @@
       "D": "Model M-3860D jest miernikiem wyłącznie wskazówkowym bez wyświetlacza cyfrowego"
     },
     "correct": "B",
-    "explanation": "Wspólna instrukcja obsługi serii Metex M-3850D/3860D/3870D wskazuje, że wyróżnikiem modelu M-3860D jest zastosowanie przetwornika True RMS w torze pomiarowym AC."
+    "explanation": "Wspólna instrukcja obsługi serii Metex M-3850D/3860D/3870D wskazuje, że wyróżnikiem modelu M-3860D jest zastosowanie przetwornika True RMS w torze pomiarowym AC.",
+    "type": "choice"
   },
   {
     "id": 70,
@@ -1047,7 +1174,8 @@
       "D": "Czas całkowania przetwornika A/C ustawiony na 100 okresów sieci zasilającej (czyli 2 sekundy dla sieci 50 Hz), co zapewnia maksymalną rozdzielczość i tłumienie zakłóceń sieciowych"
     },
     "correct": "D",
-    "explanation": "PLC (Power Line Cycles) określa czas całkowania przetwornika A/C wyrażony jako wielokrotność okresu napięcia sieci (20 ms dla 50 Hz). Ustawienie 100 PLC oznacza uśrednianie przez 100 okresów sieci, co minimalizuje szumy i zakłóceń sieciowe oraz pozwala uzyskać pełną dokładność 6½ cyfry."
+    "explanation": "PLC (Power Line Cycles) określa czas całkowania przetwornika A/C wyrażony jako wielokrotność okresu napięcia sieci (20 ms dla 50 Hz). Ustawienie 100 PLC oznacza uśrednianie przez 100 okresów sieci, co minimalizuje szumy i zakłóceń sieciowe oraz pozwala uzyskać pełną dokładność 6½ cyfry.",
+    "type": "choice"
   },
   {
     "id": 71,
@@ -1062,7 +1190,8 @@
       "D": "u(x) oznacza bezwzględną różnicę między największym a najmniejszym wynikiem w serii"
     },
     "correct": "A",
-    "explanation": "Zgodnie z dokumentem JCGM 100:2008 (GUM) niepewność standardowa to niepewność wyniku pomiaru wyrażona jako odchylenie standardowe. Zapis u(x) jest liczbą, a argument w nawiasie informuje wyłącznie o tym, której wielkości (estymaty) dotyczy dana niepewność."
+    "explanation": "Zgodnie z dokumentem JCGM 100:2008 (GUM) niepewność standardowa to niepewność wyniku pomiaru wyrażona jako odchylenie standardowe. Zapis u(x) jest liczbą, a argument w nawiasie informuje wyłącznie o tym, której wielkości (estymaty) dotyczy dana niepewność.",
+    "type": "choice"
   },
   {
     "id": 72,
@@ -1077,7 +1206,8 @@
       "D": "Metoda typu A polega na podzieleniu błędu granicznego przez √3, a metoda typu B na obliczeniu średniej arytmetycznej"
     },
     "correct": "C",
-    "explanation": "Niepewność standardowa typu A (ui) jest wyznaczana wyłącznie na podstawie analizy statystycznej serii n obserwacji jako eksperymentalne odchylenie standardowe średniej: s(x̄) = s(xi)/√n. Niepewność typu B (uj) wyznacza się metodami innymi niż statystyczna analiza serii (np. z błędu granicznego przyrządu przy założeniu rozkładu prostokątnego: uj = ΔXgr / √3)."
+    "explanation": "Niepewność standardowa typu A (ui) jest wyznaczana wyłącznie na podstawie analizy statystycznej serii n obserwacji jako eksperymentalne odchylenie standardowe średniej: s(x̄) = s(xi)/√n. Niepewność typu B (uj) wyznacza się metodami innymi niż statystyczna analiza serii (np. z błędu granicznego przyrządu przy założeniu rozkładu prostokątnego: uj = ΔXgr / √3).",
+    "type": "choice"
   },
   {
     "id": 73,
@@ -1092,7 +1222,8 @@
       "D": "Składową uj pomija się zawsze, gdy liczba pomiarów n przekracza 5"
     },
     "correct": "C",
-    "explanation": "Ponieważ pod pierwiastkiem składowe są podnoszone do kwadratu, składowa 10-krotnie mniejsza wnosi do sumy kwadratów zaledwie 1% (co po spierwiastkowaniu zmienia wynik o ok. 0,5%). Dlatego składową o rząd wielkości mniejszą od dominującej można w praktyce pominąć."
+    "explanation": "Ponieważ pod pierwiastkiem składowe są podnoszone do kwadratu, składowa 10-krotnie mniejsza wnosi do sumy kwadratów zaledwie 1% (co po spierwiastkowaniu zmienia wynik o ok. 0,5%). Dlatego składową o rząd wielkości mniejszą od dominującej można w praktyce pominąć.",
+    "type": "choice"
   },
   {
     "id": 74,
@@ -1107,7 +1238,8 @@
       "D": "U = k² · uc; k = 5 dla 95,6% oraz k = 10 dla 99,7%"
     },
     "correct": "A",
-    "explanation": "Niepewność rozszerzona U jest iloczynem współczynnika rozszerzenia k oraz niepewności złożonej uc (U = k · uc). Dla rozkładu normalnego Gaussa przedział ±2σ (k = 2) obejmuje 95,6% prawdopodobieństwa, natomiast przedział ±3σ (k = 3) obejmuje 99,7%."
+    "explanation": "Niepewność rozszerzona U jest iloczynem współczynnika rozszerzenia k oraz niepewności złożonej uc (U = k · uc). Dla rozkładu normalnego Gaussa przedział ±2σ (k = 2) obejmuje 95,6% prawdopodobieństwa, natomiast przedział ±3σ (k = 3) obejmuje 99,7%.",
+    "type": "choice"
   },
   {
     "id": 75,
@@ -1122,7 +1254,8 @@
       "D": "Teoretycznie rozkład wypadkowy jest splotem rozkładów składowych; w praktyce decyduje składnik dominujący (dla krótkiej serii z dominującym ui – rozkład t-Studenta, dla dominującego o rząd wielkości uj – rozkład prostokątny), a gdy składniki są porównywalne lub w pomiarach pośrednich z min. 3 wielkości – przyjmuje się rozkład normalny"
     },
     "correct": "D",
-    "explanation": "Wypadkowy rozkład prawdopodobieństwa jest splotem rozkładów składowych. W praktyce: dla krótkiej serii (n ≤ 30) przy dominacji typu A stosuje się rozkład t-Studenta; gdy niepewność typu B jest co najmniej o rząd wielkości większa od typu A – rozkład prostokątny; a gdy składowe są zbliżone lub dla serii n > 30 – rozkład normalny."
+    "explanation": "Wypadkowy rozkład prawdopodobieństwa jest splotem rozkładów składowych. W praktyce: dla krótkiej serii (n ≤ 30) przy dominacji typu A stosuje się rozkład t-Studenta; gdy niepewność typu B jest co najmniej o rząd wielkości większa od typu A – rozkład prostokątny; a gdy składowe są zbliżone lub dla serii n > 30 – rozkład normalny.",
+    "type": "choice"
   },
   {
     "id": 76,
@@ -1137,7 +1270,8 @@
       "D": "Niepewność zaokrągla się dokładnie tak samo jak wynik pomiaru – do parzystej cyfry na trzecim miejscu po przecinku"
     },
     "correct": "B",
-    "explanation": "W trakcie obliczeń niepewności zachowuje się 3 cyfry znaczące. Końcową niepewność zaokrągla się zawsze w górę: standardowo do 1 cyfry znaczącej, chyba że takie zaokrąglenie zwiększyłoby jej wartość o ponad 20% (dotyczy to głównie niepewności zaczynających się od cyfry 1, np. 111,55 Ω → 120 Ω zamiast 200 Ω) – wówczas pozostawia się 2 cyfry znaczące."
+    "explanation": "W trakcie obliczeń niepewności zachowuje się 3 cyfry znaczące. Końcową niepewność zaokrągla się zawsze w górę: standardowo do 1 cyfry znaczącej, chyba że takie zaokrąglenie zwiększyłoby jej wartość o ponad 20% (dotyczy to głównie niepewności zaczynających się od cyfry 1, np. 111,55 Ω → 120 Ω zamiast 200 Ω) – wówczas pozostawia się 2 cyfry znaczące.",
+    "type": "choice"
   },
   {
     "id": 77,
@@ -1152,7 +1286,8 @@
       "D": "Dla krótkiej serii (do 10 pomiarów) zachowuje się tyle cyfr znaczących, ile ma wskazanie przyrządu; przy średniej z ponad 10 pomiarów dodaje się jedną dodatkową cyfrę znaczącą, a przy średniej z ponad 100 pomiarów – dwie dodatkowe cyfry znaczące"
     },
     "correct": "D",
-    "explanation": "Uśrednianie większej liczby pomiarów zmniejsza niepewność przypadkową średniej (zgodnie z czynnikiem 1/√n). Dlatego dla n > 10 uzasadnione jest dopisanie jednej dodatkowej cyfry znaczącej ponad rozdzielczość pojedynczego odczytu, a dla n > 100 – dwóch cyfr."
+    "explanation": "Uśrednianie większej liczby pomiarów zmniejsza niepewność przypadkową średniej (zgodnie z czynnikiem 1/√n). Dlatego dla n > 10 uzasadnione jest dopisanie jednej dodatkowej cyfry znaczącej ponad rozdzielczość pojedynczego odczytu, a dla n > 100 – dwóch cyfr.",
+    "type": "choice"
   },
   {
     "id": 78,
@@ -1167,28 +1302,40 @@
       "D": "Należy odrzucić cały pomiar i powtórzyć serię od nowa"
     },
     "correct": "C",
-    "explanation": "Dla wyniku pomiaru stosuje się symetryczne zaokrąglanie matematyczne: gdy pierwsza odrzucana cyfra jest < 5 zaokrąglamy w dół, gdy > 5 (lub 5 i dalsze cyfry niezerowe) – w górę. Gdy pierwszą odrzucaną cyfrą jest dokładnie 5 (a po niej same zera), zaokrąglamy tak, aby ostatnia zachowana cyfra była parzysta (np. 1,250 → 1,2, ale 1,350 → 1,4)."
+    "explanation": "Dla wyniku pomiaru stosuje się symetryczne zaokrąglanie matematyczne: gdy pierwsza odrzucana cyfra jest < 5 zaokrąglamy w dół, gdy > 5 (lub 5 i dalsze cyfry niezerowe) – w górę. Gdy pierwszą odrzucaną cyfrą jest dokładnie 5 (a po niej same zera), zaokrąglamy tak, aby ostatnia zachowana cyfra była parzysta (np. 1,250 → 1,2, ale 1,350 → 1,4).",
+    "type": "choice"
   },
   {
     "id": 79,
     "lectureId": 6,
     "lectureTitle": "Niepewność pomiaru i zasady zapisu wyniku",
-    "question": "W wyniku pomiaru rezystancji otrzymano wartość R = 5335,777 Ω oraz złożoną niepewność standardową uc(R) = 55,7778 Ω. Jaki jest prawidłowy, zalecany zapis wyniku z niepewnością standardową, a jaki z niepewnością rozszerzoną U dla współczynnika rozszerzenia k = 2?",
+    "question": "W wyniku pomiaru rezystancji otrzymano wartość \\(R = 5335{,}777\\,\\Omega\\) oraz złożoną niepewność standardową \\(u_c(R) = 55{,}7778\\,\\Omega\\). Oblicz prawidłowo zaokrągloną w górę niepewność rozszerzoną \\(U\\) dla współczynnika rozszerzenia \\(k = 2\\). Wynik podaj w omach [Ω].",
     "image": null,
     "options": {
       "A": "Z niepewnością standardową: R = 5335,8(55,8) Ω; z rozszerzoną (k = 2): R = (5336 ± 112) Ω",
-      "B": "Z niepewnością standardową: R = 5336(56) Ω; z rozszerzoną (k = 2): U = 111,55 Ω → 120 Ω, więc R = (5340 ± 120) Ω lub (5,34 ± 0,12) kΩ",
+      "B": "Z niepewnością standardową: R = 5336(56) Ω; z rozszerzoną (k = 2): U = 120 Ω, więc R = (5340 ± 120) Ω lub (5,34 ± 0,12) kΩ",
       "C": "Z niepewnością standardową: R = 5300(60) Ω; z rozszerzoną (k = 2): R = (5300 ± 200) Ω",
       "D": "Z niepewnością standardową: R = 5335,777(56) Ω; z rozszerzoną (k = 2): R = (5335,78 ± 111,55) Ω"
     },
     "correct": "B",
-    "explanation": "W zapisie nawiasowym z uc(R) = 55,7778 Ω zaokrąglamy niepewność w górę do 2 cyfr znaczących w nawiasie: 56 Ω, a wynik do jedności: R = 5336(56) Ω. Dla k = 2 mamy U = 2 · 55,7778 = 111,55 Ω. Zaokrąglenie do 1 cyfry znaczącej (200 Ω) zmieniłoby U o blisko 80% (> 20%), więc zaokrąglamy w górę do 2 cyfr znaczących: U = 120 Ω, a wynik do dziesiątek: R = (5340 ± 120) Ω = (5,34 ± 0,12) kΩ."
+    "explanation": "Dla \\(k = 2\\) niepewność rozszerzona przed zaokrągleniem wynosi:\n\\[U = k \\cdot u_c(R) = 2 \\cdot 55{,}7778\\,\\Omega = 111{,}5556\\,\\Omega\\]\nZaokrąglenie do 1 cyfry znaczącej (\\(200\\,\\Omega\\)) zwiększyłoby \\(U\\) o blisko \\(80\\%\\) (\\(> 20\\%\\)), dlatego zaokrąglamy w górę do 2 cyfr znaczących: \\(U = 120\\,\\Omega\\) (na slajdzie 23 wykładu w06 podano wprost niepewność standardową \\(R = 5336(56)\\,\\Omega\\) oraz rozszerzoną \\(U = 120\\,\\Omega\\)).\nPrawidłowy zapis wyniku: \\(R = (5340 \\pm 120)\\,\\Omega = (5{,}34 \\pm 0{,}12)\\text{ k}\\Omega\\).",
+    "type": "open",
+    "numericTarget": 120,
+    "acceptedNumbers": [
+      120,
+      111.56,
+      111.55
+    ],
+    "tolerance": 0.01,
+    "toleranceAbs": 0.5,
+    "unit": "Ω",
+    "openAnswerText": "120 Ω (dokł. 111,56 Ω → w górę do 2 cyfr znacz.: 120 Ω; zapis: (5340 ± 120) Ω)"
   },
   {
     "id": 80,
     "lectureId": 6,
     "lectureTitle": "Niepewność pomiaru i zasady zapisu wyniku",
-    "question": "W pomiarze napięcia uzyskano estymatę U = 5,0148 V oraz złożoną niepewność standardową uc = 0,0017 V. Jak należy zapisać wynik końcowy z niepewnością rozszerzoną dla współczynnika rozszerzenia k = 3?",
+    "question": "W pomiarze napięcia uzyskano estymatę \\(U = 5{,}0148\\text{ V}\\) oraz złożoną niepewność standardową \\(u_c = 0{,}0017\\text{ V}\\). Oblicz prawidłowo zaokrągloną w górę niepewność rozszerzoną \\(U_{\\text{rozsz}}\\) dla współczynnika rozszerzenia \\(k = 3\\). Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "U = (5,015 ± 0,006) V lub U = 5,015 V ± 6 mV, ponieważ Urozsz = 3 · 0,0017 V = 0,0051 V, a zaokrąglenie w górę do 1 cyfry znaczącej (0,006 V) zwiększa niepewność o mniej niż 20%",
@@ -1197,7 +1344,17 @@
       "D": "U = (5,015 ± 0,005) V, ponieważ 0,0051 V zaokrągla się w dół do 0,005 V"
     },
     "correct": "A",
-    "explanation": "Dla k = 3 niepewność rozszerzona przed zaokrągleniem wynosi Urozsz = 3 · 0,0017 V = 0,0051 V. Zaokrąglenie w górę do jednej cyfry znaczącej daje 0,006 V (wzrost o (6 - 5,1)/5,1 ≈ 17,6% < 20%). Wynik pomiaru zaokrąglamy wówczas do trzeciego miejsca po przecinku: 5,0148 V → 5,015 V, co daje (5,015 ± 0,006) V."
+    "explanation": "Dla \\(k = 3\\) niepewność rozszerzona przed zaokrągleniem wynosi:\n\\[U_{\\text{rozsz}} = 3 \\cdot 0{,}0017\\text{ V} = 0{,}0051\\text{ V}\\]\nZaokrąglenie w górę do jednej cyfry znaczącej daje \\(0{,}006\\text{ V}\\) (wzrost o \\((6 - 5{,}1)/5{,}1 \\approx 17{,}6\\% < 20\\%\\)). Wynik pomiaru zaokrąglamy do trzeciego miejsca po przecinku: \\(U = (5{,}015 \\pm 0{,}006)\\text{ V}\\).",
+    "type": "open",
+    "numericTarget": 0.006,
+    "acceptedNumbers": [
+      0.006,
+      0.0051
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 0.0001,
+    "unit": "V",
+    "openAnswerText": "0,006 V (zapis wyniku: (5,015 ± 0,006) V)"
   },
   {
     "id": 81,
@@ -1212,7 +1369,8 @@
       "D": "Średnią arytmetyczną x̄ oblicza się wyłącznie z błędu grubego xb i błędu systematycznego Δxs"
     },
     "correct": "A",
-    "explanation": "Na wykresie interpretacji wyników pomiaru punkt xb leżący daleko poza skupiskiem x1..xn oznacza błąd gruby (pomyłkę), który eliminuje się z analizy. Średnia z poprawnych pomiarów x̄ jest przesunięta o błąd systematyczny Δxs względem poprawnej estymaty x = x̄ - Δxs, wokół której wyznacza się przedział niepewności u(x)."
+    "explanation": "Na wykresie interpretacji wyników pomiaru punkt xb leżący daleko poza skupiskiem x1..xn oznacza błąd gruby (pomyłkę), który eliminuje się z analizy. Średnia z poprawnych pomiarów x̄ jest przesunięta o błąd systematyczny Δxs względem poprawnej estymaty x = x̄ - Δxs, wokół której wyznacza się przedział niepewności u(x).",
+    "type": "choice"
   },
   {
     "id": 82,
@@ -1227,7 +1385,8 @@
       "D": "Wynik należy pomnożyć przez 2, aby uzyskać wartość skuteczną"
     },
     "correct": "B",
-    "explanation": "W zalecanym przez GUM zapisie nawiasowym liczba w nawiasie odpowiada niepewności standardowej wyrażonej w jednostkach ostatnich cyfr podanej estymaty. Ponieważ 5,015 V jest zapisane z dokładnością do części tysięcznych (0,001 V), zapis (2) oznacza u(U) = 0,002 V."
+    "explanation": "W zalecanym przez GUM zapisie nawiasowym liczba w nawiasie odpowiada niepewności standardowej wyrażonej w jednostkach ostatnich cyfr podanej estymaty. Ponieważ 5,015 V jest zapisane z dokładnością do części tysięcznych (0,001 V), zapis (2) oznacza u(U) = 0,002 V.",
+    "type": "choice"
   },
   {
     "id": 83,
@@ -1242,7 +1401,8 @@
       "D": "Jest to błąd drukarski – w mianowniku powinno zawsze występować n³"
     },
     "correct": "C",
-    "explanation": "Odchylenie standardowe pojedynczej obserwacji estymuje się z (n - 1) stopniami swobody (estymator nieobciążony σn-1). Ponieważ najlepszą estymatą wielkości mierzonej jest średnia arytmetyczna x̄ z n pomiarów, jej odchylenie standardowe (czyli niepewność typu A) maleje proporcjonalnie do √n: ui = s(x̄) = s(xi)/√n."
+    "explanation": "Odchylenie standardowe pojedynczej obserwacji estymuje się z (n - 1) stopniami swobody (estymator nieobciążony σn-1). Ponieważ najlepszą estymatą wielkości mierzonej jest średnia arytmetyczna x̄ z n pomiarów, jej odchylenie standardowe (czyli niepewność typu A) maleje proporcjonalnie do √n: ui = s(x̄) = s(xi)/√n.",
+    "type": "choice"
   },
   {
     "id": 84,
@@ -1257,13 +1417,14 @@
       "D": "uj = ΔXgr / √3"
     },
     "correct": "D",
-    "explanation": "Dla rozkładu jednostajnego (prostokątnego) o półszerokości przedziału równej błędowi granicznemu ΔXgr wariancja wynosi (ΔXgr)² / 3, a odchylenie standardowe (czyli niepewność standardowa typu B) jest równe uj = ΔXgr / √3."
+    "explanation": "Dla rozkładu jednostajnego (prostokątnego) o półszerokości przedziału równej błędowi granicznemu ΔXgr wariancja wynosi (ΔXgr)² / 3, a odchylenie standardowe (czyli niepewność standardowa typu B) jest równe uj = ΔXgr / √3.",
+    "type": "choice"
   },
   {
     "id": 85,
     "lectureId": 7,
     "lectureTitle": "Niepewność w pomiarach pośrednich i błąd metody",
-    "question": "Wykonano serię 5 pomiarów napięcia DC multimetrem Agilent 34405A na zakresie 10 V: 5,1311 V; 5,1363 V; 5,1328 V; 5,1337 V; 5,1301 V (średnia Uśr = 5,1328 V). Obliczone odchylenie standardowe próby wyniosło s = 0,002410394 V. Ile wynosi zaokrąglone do 3 cyfr znaczących odchylenie s oraz niepewność standardowa typu A ui(Uśr)?",
+    "question": "Wykonano serię \\(n = 5\\) pomiarów napięcia DC (średnia \\(U_{\\text{śr}} = 5{,}1328\\text{ V}\\)). Obliczone odchylenie standardowe próby wyniosło \\(s = 0{,}002410394\\text{ V}\\) (po zaokrągleniu w górę do 3 cyfr znaczących: \\(0{,}00242\\text{ V}\\)). Oblicz niepewność standardową typu A średniej \\(u_i(U_{\\text{śr}})\\) zaokrągloną w górę do 3 cyfr znaczących. Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "s = 0,00241 V; ui(Uśr) = 0,00241 V",
@@ -1272,13 +1433,24 @@
       "D": "s = 0,00240 V; ui(Uśr) = 0,00240 · √5 ≈ 0,00537 V"
     },
     "correct": "B",
-    "explanation": "W obliczeniach pośrednich niepewności zachowujemy 3 cyfry znaczące zaokrąglane w górę: s = 0,002410394 V → 0,00242 V. Następnie dzielimy przez pierwiastek z liczby pomiarów (√5): ui(Uśr) = 0,00242 V / √5 = 0,001082... V → 0,00109 V."
+    "explanation": "W obliczeniach pośrednich niepewności zachowujemy 3 cyfry znaczące zaokrąglane w górę: \\(s = 0{,}002410394\\text{ V} \\to 0{,}00242\\text{ V}\\).\nDzielimy przez pierwiastek z liczby pomiarów (\\(\\sqrt{5}\\)):\n\\[u_i(U_{\\text{śr}}) = \\frac{0{,}00242\\text{ V}}{\\sqrt{5}} \\approx 0{,}001082\\text{ V} \\to 0{,}00109\\text{ V}\\]",
+    "type": "open",
+    "numericTarget": 0.00109,
+    "acceptedNumbers": [
+      0.00109,
+      0.00108,
+      0.0011
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 2e-05,
+    "unit": "V",
+    "openAnswerText": "0,00109 V (z 0,00242 / √5 ≈ 0,001082 V → w górę: 0,00109 V)"
   },
   {
     "id": 86,
     "lectureId": 7,
     "lectureTitle": "Niepewność w pomiarach pośrednich i błąd metody",
-    "question": "Dla serii pomiarowej ze średnią Uśr = 5,1328 V uzyskano ui = 0,00109 V oraz uj = 0,00103 V. Złożona niepewność standardowa wyniosła uc = √(0,00109² + 0,00103²) = 0,001497 V → 0,00150 V. Jak poprawnie zapisać wynik pomiaru z niepewnością standardową uc, a jak z niepewnością rozszerzoną U (dla k = 2)?",
+    "question": "Dla serii pomiarowej ze średnią \\(U_{\\text{śr}} = 5{,}1328\\text{ V}\\) uzyskano \\(u_i = 0{,}00109\\text{ V}\\) oraz \\(u_j = 0{,}00103\\text{ V}\\), skąd złożona niepewność standardowa wyniosła \\(u_c = 0{,}00150\\text{ V}\\). Oblicz końcową niepewność rozszerzoną \\(U\\) dla współczynnika rozszerzenia \\(k = 2\\). Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "Z niepewnością standardową: Uzm = 5,1328(150) V; z niepewnością rozszerzoną: Uzm = (5,132 ± 0,003) V",
@@ -1287,7 +1459,17 @@
       "D": "Z niepewnością standardową: Uzm = 5,1328(15) V; z niepewnością rozszerzoną (k = 2, U = 0,003 V): Uzm = (5,133 ± 0,003) V lub 5,133 V ± 3 mV"
     },
     "correct": "D",
-    "explanation": "Dla uc = 0,00150 V zaokrąglenie do 2 cyfr znaczących daje 0,0015 V, co odpowiada dwóm ostatnim cyfrom średniej 5,1328 V → zapis nawiasowy 5,1328(15) V. Dla k = 2 niepewność rozszerzona wynosi U = 2 · 0,00150 V = 0,003 V (1 cyfra znacząca), więc średnią 5,1328 V zaokrąglamy do trzeciego miejsca po przecinku: (5,133 ± 0,003) V."
+    "explanation": "Złożona niepewność standardowa:\n\\[u_c = \\sqrt{0{,}00109^2 + 0{,}00103^2} \\approx 0{,}001497\\text{ V} \\to 0{,}00150\\text{ V}\\]\nDla \\(k = 2\\) niepewność rozszerzona wynosi:\n\\[U = 2 \\cdot 0{,}00150\\text{ V} = 0{,}003\\text{ V}\\]\nZapis z niepewnością standardową: \\(5{,}1328(15)\\text{ V}\\); zapis z niepewnością rozszerzoną: \\((5{,}133 \\pm 0{,}003)\\text{ V}\\).",
+    "type": "open",
+    "numericTarget": 0.003,
+    "acceptedNumbers": [
+      0.003,
+      0.0015
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 0.0001,
+    "unit": "V",
+    "openAnswerText": "0,003 V (zapis końcowy: (5,133 ± 0,003) V lub 5,1328(15) V)"
   },
   {
     "id": 87,
@@ -1302,7 +1484,8 @@
       "D": "u(ȳ) = Π (∂f/∂Xi) · u(xi)"
     },
     "correct": "A",
-    "explanation": "Dla nieskorelowanych wielkości wejściowych wariancja wielkości wyjściowej u²(ȳ) jest sumą kwadratów iloczynów współczynników wrażliwości (pochodnych cząstkowych ∂f/∂Xi obliczonych dla wartości średnich) oraz niepewności standardowych u(xi): u(ȳ) = √( Σ (∂f/∂Xi)² · u²(xi) )."
+    "explanation": "Dla nieskorelowanych wielkości wejściowych wariancja wielkości wyjściowej u²(ȳ) jest sumą kwadratów iloczynów współczynników wrażliwości (pochodnych cząstkowych ∂f/∂Xi obliczonych dla wartości średnich) oraz niepewności standardowych u(xi): u(ȳ) = √( Σ (∂f/∂Xi)² · u²(xi) ).",
+    "type": "choice"
   },
   {
     "id": 88,
@@ -1317,7 +1500,8 @@
       "D": "Wystarczy pomnożyć wynik dla zmiennych nieskorelowanych przez liczbę zmiennych k"
     },
     "correct": "C",
-    "explanation": "W przypadku skorelowanych wielkości wejściowych pełne prawo propagacji niepewności uwzględnia kowariancje u(xi, xj) = [1/(n(n-1))] Σ (xik - x̄i)(xjk - x̄j) poprzez dodatkowy człon 2 · Σᵢ₌₁ᵏ⁻¹ Σⱼ₌ᵢ₊₁ᵏ (∂f/∂Xi)(∂f/∂Xj) u(xi, xj) pod pierwiastkiem."
+    "explanation": "W przypadku skorelowanych wielkości wejściowych pełne prawo propagacji niepewności uwzględnia kowariancje u(xi, xj) = [1/(n(n-1))] Σ (xik - x̄i)(xjk - x̄j) poprzez dodatkowy człon 2 · Σᵢ₌₁ᵏ⁻¹ Σⱼ₌ᵢ₊₁ᵏ (∂f/∂Xi)(∂f/∂Xj) u(xi, xj) pod pierwiastkiem.",
+    "type": "choice"
   },
   {
     "id": 89,
@@ -1332,7 +1516,8 @@
       "D": "U(R̄x) = (1 / Ix) · U(Ux) - (Ux / Ix²) · U(Ix)"
     },
     "correct": "C",
-    "explanation": "Obliczamy pochodne cząstkowe funkcji Rx = Ux / Ix: ∂Rx/∂Ux = 1/Ix oraz ∂Rx/∂Ix = -Ux/Ix². Podstawiając je do prawa propagacji niepewności (po podniesieniu do kwadratu znak minus znika), otrzymujemy U(R̄x) = √( [(1/Ix)·U(Ux)]² + [(Ux/Ix²)·U(Ix)]² )."
+    "explanation": "Obliczamy pochodne cząstkowe funkcji Rx = Ux / Ix: ∂Rx/∂Ux = 1/Ix oraz ∂Rx/∂Ix = -Ux/Ix². Podstawiając je do prawa propagacji niepewności (po podniesieniu do kwadratu znak minus znika), otrzymujemy U(R̄x) = √( [(1/Ix)·U(Ux)]² + [(Ux/Ix²)·U(Ix)]² ).",
+    "type": "choice"
   },
   {
     "id": 90,
@@ -1347,7 +1532,8 @@
       "D": "Rezystancja wewnętrzna woltomierza Rv dodaje się szeregowo do napięcia mierzonego"
     },
     "correct": "A",
-    "explanation": "Każdy realny woltomierz o skończonej rezystancji Rv pobiera z badanego obwodu prąd I = Up / (Rw + Rv). Prąd ten powoduje spadek napięcia na rezystancji wewnętrznej źródła Rw, wobec czego na zaciskach woltomierza pojawia się napięcie obniżone względem SEM źródła Up."
+    "explanation": "Każdy realny woltomierz o skończonej rezystancji Rv pobiera z badanego obwodu prąd I = Up / (Rw + Rv). Prąd ten powoduje spadek napięcia na rezystancji wewnętrznej źródła Rw, wobec czego na zaciskach woltomierza pojawia się napięcie obniżone względem SEM źródła Up.",
+    "type": "choice"
   },
   {
     "id": 91,
@@ -1362,7 +1548,8 @@
       "D": "Błąd jest zawsze ujemny: δUs = -[Rw / (Rw + Rv)] · 100%; jest on tym mniejszy, im rezystancja wewnętrzna woltomierza Rv jest większa w stosunku do rezystancji źródła Rw (Rv >> Rw)"
     },
     "correct": "D",
-    "explanation": "Ponieważ napięcie zmierzone U = Up·Rv/(Rw + Rv) jest zawsze mniejsze od Up, błąd bezwzględny ΔUs = U - Up = -I·Rw oraz błąd względny δUs = -Rw/(Rw + Rv)·100% mają zawsze znak ujemny (mierzymy za mało). Aby zminimalizować ten błąd, musi zachodzić warunek Rv >> Rw."
+    "explanation": "Ponieważ napięcie zmierzone U = Up·Rv/(Rw + Rv) jest zawsze mniejsze od Up, błąd bezwzględny ΔUs = U - Up = -I·Rw = -Up·Rw/(Rw + Rv) oraz błąd względny δUs = -Rw/(Rw + Rv)·100% mają zawsze znak ujemny (mierzymy za mało). Aby zminimalizować ten błąd, musi zachodzić warunek Rv >> Rw. (Uwaga: na slajdzie 19 wykładu w07 we wzorze pośrednim na ΔUs wkradła się literówka w znaku mianownika: napisano Rw − Rv zamiast Rw + Rv; natomiast wzór na prąd I = Up/(Rw + Rv) na slajdzie 18 oraz wzór końcowy na δUs na slajdzie 19 mają poprawny znak plus).",
+    "type": "choice"
   },
   {
     "id": 92,
@@ -1377,7 +1564,8 @@
       "D": "W układzie poprawnie mierzonego prądu błąd metody jest zawsze równy zeru"
     },
     "correct": "B",
-    "explanation": "W układzie poprawnie mierzonego prądu amperomierz mierzy dokładny prąd I płynący przez Rx, ale woltomierz mierzy napięcie U powiększone o spadek napięcia na amperomierzu UA = I·RA. Stąd bezwzględny błąd metody wynosi ΔRsa = U/I - (U - UA)/I = UA/I = RA."
+    "explanation": "W układzie poprawnie mierzonego prądu amperomierz mierzy dokładny prąd I płynący przez Rx, ale woltomierz mierzy napięcie U powiększone o spadek napięcia na amperomierzu UA = I·RA. Stąd bezwzględny błąd metody wynosi ΔRsa = U/I - (U - UA)/I = UA/I = RA.",
+    "type": "choice"
   },
   {
     "id": 93,
@@ -1392,7 +1580,8 @@
       "D": "δRsa = (RA / Rx) · 100% (zawsze dodatni – mierzymy za dużo); układ ten należy stosować do pomiaru dużych rezystancji, spełniających warunek Rx >> RA"
     },
     "correct": "D",
-    "explanation": "Dzieląc błąd bezwzględny ΔRsa = RA przez wartość poprawną Rx, otrzymujemy δRsa = (RA / Rx)·100%. Błąd ten jest zawsze dodatni (wynik zawyżony o RA) i staje się pomijalnie mały, gdy mierzona rezystancja Rx jest znacznie większa od rezystancji wewnętrznej amperomierza RA (Rx >> RA)."
+    "explanation": "Dzieląc błąd bezwzględny ΔRsa = RA przez wartość poprawną Rx, otrzymujemy δRsa = (RA / Rx)·100%. Błąd ten jest zawsze dodatni (wynik zawyżony o RA) i staje się pomijalnie mały, gdy mierzona rezystancja Rx jest znacznie większa od rezystancji wewnętrznej amperomierza RA (Rx >> RA).",
+    "type": "choice"
   },
   {
     "id": 94,
@@ -1407,7 +1596,8 @@
       "D": "Błąd względny wynosi +[Rv / (Rx + Rv)] · 100% i układ nadaje się wyłącznie do pomiaru rezystancji izolacji rzędu megaomów"
     },
     "correct": "C",
-    "explanation": "W układzie poprawnie mierzonego napięcia amperomierz wskazuje sumę prądów I = Ix + Iv, więc obliczona rezystancja R = U/I jest w istocie równoległym połączeniem Rx oraz Rv. Błąd bezwzględny ΔRsv = U/I - U/(I - Iv) = -Rx²/(Rx + Rv) oraz względny δRsv = -Rx/(Rx + Rv)·100% są zawsze ujemne (mierzymy za mało) i maleją, gdy Rx << Rv."
+    "explanation": "W układzie poprawnie mierzonego napięcia amperomierz wskazuje sumę prądów I = Ix + Iv, więc obliczona rezystancja R = U/I jest w istocie równoległym połączeniem Rx oraz Rv. Błąd bezwzględny ΔRsv = U/I - U/(I - Iv) = -Rx²/(Rx + Rv) oraz względny δRsv = -Rx/(Rx + Rv)·100% są zawsze ujemne (mierzymy za mało) i maleją, gdy Rx << Rv.",
+    "type": "choice"
   },
   {
     "id": 95,
@@ -1422,13 +1612,14 @@
       "D": "Błędu metody nie da się skorygować żadnym wzorem, nawet gdy znamy dokładne wartości RA i Rv"
     },
     "correct": "B",
-    "explanation": "Błąd metody ma charakter błędu systematycznego o znanej przyczynie fizycznej. Znając rezystancję wewnętrzną RA lub Rv, możemy obliczyć dokładną wartość poprawki (odpowiednio odjąć spadek napięcia UA = I·RA od wskazania woltomierza lub odjąć prąd Iv = U/Rv od wskazania amperomierza)."
+    "explanation": "Błąd metody ma charakter błędu systematycznego o znanej przyczynie fizycznej. Znając rezystancję wewnętrzną RA lub Rv, możemy obliczyć dokładną wartość poprawki (odpowiednio odjąć spadek napięcia UA = I·RA od wskazania woltomierza lub odjąć prąd Iv = U/Rv od wskazania amperomierza).",
+    "type": "choice"
   },
   {
     "id": 96,
     "lectureId": 7,
     "lectureTitle": "Niepewność w pomiarach pośrednich i błąd metody",
-    "question": "Chcemy zmierzyć metodą techniczną rezystor Rx ≈ 10 Ω, dysponując amperomierzem o rezystancji wewnętrznej RA = 2 Ω oraz woltomierzem o rezystancji wewnętrznej Rv = 10 kΩ. Który układ pomiarowy zapewni mniejszy błąd metody i ile on wyniesie (bez wprowadzania poprawki)?",
+    "question": "Chcemy zmierzyć metodą techniczną rezystor \\(R_x \\approx 10\\,\\Omega\\), dysponując amperomierzem o rezystancji wewnętrznej \\(R_A = 2\\,\\Omega\\) oraz woltomierzem o rezystancji wewnętrznej \\(R_v = 10\\text{ k}\\Omega\\). Korzystniejszy układ to układ poprawnie mierzonego napięcia. Oblicz względny błąd metody \\(\\delta R_{sv}\\) w tym układzie (bez wprowadzania poprawki). Wynik podaj w procentach [%].",
     "image": null,
     "options": {
       "A": "Układ poprawnie mierzonego napięcia; błąd względny metody wyniesie δRsv = -10 / (10 + 10000) · 100% ≈ -0,1%, podczas gdy w układzie poprawnie mierzonego prądu wyniósłby aż +20%",
@@ -1437,13 +1628,25 @@
       "D": "Układ poprawnie mierzonego prądu; błąd wyniesie -20%"
     },
     "correct": "A",
-    "explanation": "Sprawdzamy oba układy: w układzie poprawnie mierzonego prądu δRsa = (RA / Rx)·100% = (2 / 10)·100% = +20% (bardzo duży błąd!). W układzie poprawnie mierzonego napięcia δRsv = -[Rx / (Rx + Rv)]·100% = -[10 / 10010]·100% ≈ -0,1% (ponieważ Rx << Rv)."
+    "explanation": "Sprawdzamy oba układy:\n• Układ poprawnie mierzonego prądu: \\(\\delta R_{sa} = \\frac{R_A}{R_x} \\cdot 100\\% = \\frac{2}{10} \\cdot 100\\% = +20\\%\\).\n• Układ poprawnie mierzonego napięcia (korzystny dla \\(R_x \\ll R_v\\)):\n\\[\\delta R_{sv} = -\\frac{R_x}{R_x + R_v} \\cdot 100\\% = -\\frac{10}{10 + 10000} \\cdot 100\\% \\approx -0{,}1\\%\\]",
+    "type": "open",
+    "numericTarget": -0.1,
+    "acceptedNumbers": [
+      -0.1,
+      0.1,
+      -0.0999,
+      0.0999
+    ],
+    "tolerance": 0.05,
+    "toleranceAbs": 0.01,
+    "unit": "%",
+    "openAnswerText": "-0,1% (dla porównania w układzie poprawnie mierzonego prądu błąd wyniósłby +20%)"
   },
   {
     "id": 97,
     "lectureId": 7,
     "lectureTitle": "Niepewność w pomiarach pośrednich i błąd metody",
-    "question": "W przykładzie z wykładu obliczono dla średniej Uśr = 5,1328 V (na zakresie 10 V multimetru o rocznej specyfikacji 0,025% + 0,005%) błąd graniczny ΔUgr = 0,0017832 V → 0,00179 V. Ile wyniosła wyznaczona z niego niepewność standardowa typu B uj(Uśr)?",
+    "question": "W przykładzie z wykładu obliczono dla średniej \\(U_{\\text{śr}} = 5{,}1328\\text{ V}\\) (na zakresie \\(10\\text{ V}\\) multimetru o rocznej specyfikacji \\(0{,}025\\% + 0{,}005\\%\\)) błąd graniczny \\(\\Delta U_{\\text{gr}} = 0{,}0017832\\text{ V} \\to 0{,}00179\\text{ V}\\). Oblicz wyznaczoną z niego niepewność standardową typu B \\(u_j(U_{\\text{śr}})\\). Wynik podaj w woltach [V].",
     "image": null,
     "options": {
       "A": "uj(Uśr) = 0,00179 V / √3 ≈ 0,00103 V",
@@ -1452,7 +1655,18 @@
       "D": "uj(Uśr) = 0,00179 V"
     },
     "correct": "A",
-    "explanation": "Niepewność standardową typu B wyznacza się z zaokrąglonego do 3 cyfr znaczących błędu granicznego ΔUgr = 0,00179 V przy założeniu rozkładu prostokątnego, dzieląc przez √3: uj(Uśr) = 0,00179 V / √3 ≈ 0,001033... V → 0,00103 V."
+    "explanation": "Niepewność standardową typu B wyznacza się z błędu granicznego \\(\\Delta U_{\\text{gr}} = 0{,}00179\\text{ V}\\) przy założeniu rozkładu prostokątnego, dzieląc przez \\(\\sqrt{3}\\):\n\\[u_j(U_{\\text{śr}}) = \\frac{0{,}00179\\text{ V}}{\\sqrt{3}} \\approx 0{,}001033\\text{ V} \\approx 0{,}00103\\text{ V}\\]",
+    "type": "open",
+    "numericTarget": 0.00103,
+    "acceptedNumbers": [
+      0.00103,
+      0.00104,
+      0.001
+    ],
+    "tolerance": 0.02,
+    "toleranceAbs": 2e-05,
+    "unit": "V",
+    "openAnswerText": "0,00103 V (lub 0,00104 V przy zaokrągleniu w górę)"
   },
   {
     "id": 98,
@@ -1467,7 +1681,8 @@
       "D": "Ponieważ każda niepewność musi mieć dokładnie pięć miejsc po przecinku"
     },
     "correct": "B",
-    "explanation": "Zera wiodące (przed pierwszą niezerową cyfrą) nie są cyframi znaczącymi. W liczbie 0,00150 V pierwszymi dwiema cyframi znaczącymi są 1 oraz 5, natomiast końcowe zero jest trzecią cyfrą znaczącą, świadczącą o dokładności obliczeń pośrednich."
+    "explanation": "Zera wiodące (przed pierwszą niezerową cyfrą) nie są cyframi znaczącymi. W liczbie 0,00150 V pierwszymi dwiema cyframi znaczącymi są 1 oraz 5, natomiast końcowe zero jest trzecią cyfrą znaczącą, świadczącą o dokładności obliczeń pośrednich.",
+    "type": "choice"
   },
   {
     "id": 99,
@@ -1482,7 +1697,8 @@
       "D": "Zbudowany jest wyłącznie z kondensatorów i cewek indukcyjnych"
     },
     "correct": "C",
-    "explanation": "Drabinka R-2R wymaga zastosowania rezystorów o tylko dwóch nominalech (R i 2R, np. 10 kΩ i 20 kΩ), dzięki czemu łatwo uzyskać wysoką dokładność ich stosunku niezależnie od liczby bitów N. Kolejne klucze od S-1 (MSB) do S-N (LSB) wnoszą wagi 2⁻¹, 2⁻², ..., 2⁻ᴺ napięcia Uref."
+    "explanation": "Drabinka R-2R wymaga zastosowania rezystorów o tylko dwóch nominalech (R i 2R, np. 10 kΩ i 20 kΩ), dzięki czemu łatwo uzyskać wysoką dokładność ich stosunku niezależnie od liczby bitów N. Kolejne klucze od S-1 (MSB) do S-N (LSB) wnoszą wagi 2⁻¹, 2⁻², ..., 2⁻ᴺ napięcia Uref.",
+    "type": "choice"
   },
   {
     "id": 100,
@@ -1497,7 +1713,8 @@
       "D": "Metody bezpośrednie dzielą się na kompensacyjne (z kompensacją równomierną, z kompensacją wagową) oraz porównania bezpośredniego (równoległa, szeregowa, szeregowo-równoległa); natomiast metody pośrednie dzielą się na czasowe (proste, z podwójnym/wielokrotnym całkowaniem) oraz częstotliwościowe (proste, z równoważeniem ładunku, Delta-Sigma)"
     },
     "correct": "D",
-    "explanation": "Zgodnie ze schematem klasyfikacji z wykładu: przetwarzanie bezpośrednie (U → N) obejmuje metody kompensacyjne (równomierna, wagowa) i porównania bezpośredniego (równoległa, szeregowa, szeregowo-równoległa), zaś przetwarzanie pośrednie zamienia najpierw napięcie na czas (proste, podwójne/potrójne/wielokrotne całkowanie) lub na częstotliwość (proste, z równoważeniem ładunku, ΔΣ)."
+    "explanation": "Zgodnie ze schematem klasyfikacji z wykładu: przetwarzanie bezpośrednie (U → N) obejmuje metody kompensacyjne (równomierna, wagowa) i porównania bezpośredniego (równoległa, szeregowa, szeregowo-równoległa), zaś przetwarzanie pośrednie zamienia najpierw napięcie na czas (proste, podwójne/potrójne/wielokrotne całkowanie) lub na częstotliwość (proste, z równoważeniem ładunku, ΔΣ).",
+    "type": "choice"
   },
   {
     "id": 101,
@@ -1512,7 +1729,8 @@
       "D": "Oba układy są elementami wyłącznie biernymi zbudowanymi z rezystorów"
     },
     "correct": "B",
-    "explanation": "Komparator K ma wejścia analogowe i wyjście dwustanowe (cyfrowe): zmienia stan z 0 na 1 w chwili, gdy napięcie U1 przekroczy napięcie progowe U2. Bramka iloczynu logicznego AND pełni w przetwornikach rolę klucza zliczającego: przepuszcza impulsy zegarowe do licznika tylko wtedy, gdy wejście sterujące z komparatora/układu sterowania ma stan 1."
+    "explanation": "Komparator K ma wejścia analogowe i wyjście dwustanowe (cyfrowe): zmienia stan z 0 na 1 w chwili, gdy napięcie U1 przekroczy napięcie progowe U2. Bramka iloczynu logicznego AND pełni w przetwornikach rolę klucza zliczającego: przepuszcza impulsy zegarowe do licznika tylko wtedy, gdy wejście sterujące z komparatora/układu sterowania ma stan 1.",
+    "type": "choice"
   },
   {
     "id": 102,
@@ -1527,22 +1745,32 @@
       "D": "Wewnętrzny przetwornik C/A wytwarza narastające schodkowo napięcie kompensujące Uk; dopóki Uk < Ux, impulsy zegara są zliczane przez licznik. Główne wady to długi czas przetwarzania (2ⁿ taktów dla n bitów), konieczność odczekania do końca cyklu oraz wymóg stałości Ux w czasie konwersji"
     },
     "correct": "D",
-    "explanation": "W metodzie kompensacji równomiernej licznik zlicza impulsy od zera, a wewnętrzny przetwornik C/A generuje narastające schodkowo napięcie Uk. Gdy Uk przekroczy Ux, bramka zostaje zablokowana. Układ jest prosty, ale wolny (pełny cykl trwa 2ⁿ kroków zegara) i wymaga niezmiennego napięcia Ux."
+    "explanation": "W metodzie kompensacji równomiernej licznik zlicza impulsy od zera, a wewnętrzny przetwornik C/A generuje narastające schodkowo napięcie Uk. Gdy Uk przekroczy Ux, bramka zostaje zablokowana. Układ jest prosty, ale wolny (pełny cykl trwa 2ⁿ kroków zegara) i wymaga niezmiennego napięcia Ux.",
+    "type": "choice"
   },
   {
     "id": 103,
     "lectureId": 8,
     "lectureTitle": "Przetwarzanie A/C i C/A oraz przyrządy cyfrowe",
-    "question": "W jaki sposób przebiega konwersja w przetworniku A/C z kompensacją wagową (sukcesywnej aproksymacji – SAR) i ile kroków zajmuje wyznaczenie słowa n-bitowego?",
+    "question": "Przetwornik C/A lub A/C o rozdzielczości \\(n = 12\\text{ bitów}\\) odwzorowuje napięcie na \\(2^n\\) stanów (poziomów), co w metodzie z kompensacją równomierną oznacza do \\(2^n\\) kroków zegara (podczas gdy przetwornik z kompensacją wagową SAR wyznacza wynik od MSB do LSB w zaledwie \\(n = 12\\) krokach). Oblicz całkowitą liczbę poziomów kwantowania \\(2^n\\) dla przetwornika 12-bitowego.",
     "image": null,
     "options": {
-      "A": "Polega na cyklicznym zawężaniu zakresu począwszy od najstarszego bitu MSB (b1 = 1, czyli Uk = 1/2 Uref): jeśli Uk > Ux, bit jest zerowany (b1 = 0), a jeśli Uk < Ux, bit pozostaje równy 1; wyznaczenie słowa n-bitowego trwa dokładnie n kroków",
-      "B": "Polega na kolejnym dodawaniu najmłodszego bitu LSB aż do uzyskania 2ⁿ kroków",
-      "C": "Trwa zawsze 1 takt zegara niezależnie od liczby bitów n i tłumi wszystkie zakłócenia okresowe",
-      "D": "Polega na rozładowywaniu kondensatora prądem stałym i pomiarze częstotliwości"
+      "A": "4096 poziomów (2¹² = 4096)",
+      "B": "1024 poziomy",
+      "C": "2048 poziomów",
+      "D": "12 poziomów"
     },
     "correct": "A",
-    "explanation": "Przetwornik z kompensacją wagową (SAR) działa analogicznie do ważenia na wadze szalkowej z odważnikami o wagach 1/2, 1/4, 1/8, ..., 1/2ⁿ zakresu Uref. W każdym z n kroków sprawdzany jest kolejny bit od MSB do LSB, dzięki czemu konwersja n-bitowa jest bardzo szybka i wymaga tylko n taktów (lecz układ nie ma odporności na zakłócenia i wymaga stałości Ux)."
+    "explanation": "Liczba rozróżnialnych poziomów (stanów binarnych) przetwornika \\(n\\)-bitowego wynosi \\(2^n = 2^{12} = 4096\\).\nW metodzie z kompensacją równomierną pełny cykl przetwarzania może wymagać aż \\(4096\\) taktów zegara, natomiast w metodzie z kompensacją wagową (sukcesywnej aproksymacji – SAR) kolejne bity od najstarszego (MSB, o wadze \\(\\tfrac{1}{2} U_{\\text{ref}}\\)) do najmłodszego (LSB) wyznacza się jak na wadze szalkowej w zaledwie \\(n = 12\\) krokach (w10, slajdy 11–15).",
+    "type": "open",
+    "numericTarget": 4096,
+    "acceptedNumbers": [
+      4096
+    ],
+    "tolerance": 0.01,
+    "toleranceAbs": 0.5,
+    "unit": "poziomów",
+    "openAnswerText": "4096 poziomów (2¹² = 4096; dla porównania SAR potrzebuje n = 12 kroków)"
   },
   {
     "id": 104,
@@ -1557,7 +1785,8 @@
       "D": "Służy do zamiany sygnału cyfrowego z powrotem na sygnał schodkowy na ekranie LCD"
     },
     "correct": "C",
-    "explanation": "Zmiana napięcia wejściowego w trakcie pracy przetwornika kompensacyjnego wywołałaby duży błąd konwersji. Układ S&H w chwili próbkowania zamyka klucz P, ładując kondensator C przez wtórnik W1 do wartości chwilowej u(tj), a po otwarciu klucza wtórnik W2 o bardzo dużej rezystancji wejściowej utrzymuje to napięcie na stałym poziomie aż do zakończenia przetwarzania."
+    "explanation": "Zmiana napięcia wejściowego w trakcie pracy przetwornika kompensacyjnego wywołałaby duży błąd konwersji. Układ S&H w chwili próbkowania zamyka klucz P, ładując kondensator C przez wtórnik W1 do wartości chwilowej u(tj), a po otwarciu klucza wtórnik W2 o bardzo dużej rezystancji wejściowej utrzymuje to napięcie na stałym poziomie aż do zakończenia przetwarzania.",
+    "type": "choice"
   },
   {
     "id": 105,
@@ -1572,7 +1801,8 @@
       "D": "Oba etapy polegają na jednoczesnym ładowaniu dwóch różnych kondensatorów przez czas 1 nanosekundy"
     },
     "correct": "C",
-    "explanation": "W przetworniku z podwójnym całkowaniem najpierw integruje się napięcie mierzone Ux przez ściśle określony czas Tp (napięcie na wyjściu integratora rośnie liniowo do wartości proporcjonalnej do średniej z Ux). Następnie przełącznik podaje napięcie odniesienia -Uref i licznik zlicza impulsy zegara do chwili zrównania napięcia integratora z zerem przez czas Tx = Tp · (Ux / Uref)."
+    "explanation": "W przetworniku z podwójnym całkowaniem najpierw integruje się napięcie mierzone Ux przez ściśle określony czas Tp (napięcie na wyjściu integratora rośnie liniowo do wartości proporcjonalnej do średniej z Ux). Następnie przełącznik podaje napięcie odniesienia -Uref i licznik zlicza impulsy zegara do chwili zrównania napięcia integratora z zerem przez czas Tx = Tp · (Ux / Uref).",
+    "type": "choice"
   },
   {
     "id": 106,
@@ -1587,7 +1817,8 @@
       "D": "Ponieważ tłumi wyłącznie zakłócenia o częstotliwości wyższej niż 10 GHz"
     },
     "correct": "A",
-    "explanation": "Całka z przebiegu sinusoidalnego (zakłócenia sieciowego) po pełnym okresie Tz lub jego k-krotności jest równa zeru. Dobierając czas pierwszego całkowania Tp = k · Tz (np. 20 ms lub wielokrotność dla 50 Hz), przetwornik z podwójnym całkowaniem zapewnia bardzo wysoki współczynnik tłumienia zakłóceń narzuconych (NMRR), choć kosztem niewielkiej szybkości (ok. 3 pomiarów/s)."
+    "explanation": "Całka z przebiegu sinusoidalnego (zakłócenia sieciowego) po pełnym okresie Tz lub jego k-krotności jest równa zeru. Dobierając czas pierwszego całkowania Tp = k · Tz (np. 20 ms lub wielokrotność dla 50 Hz), przetwornik z podwójnym całkowaniem zapewnia bardzo wysoki współczynnik tłumienia zakłóceń narzuconych (NMRR), choć kosztem niewielkiej szybkości (ok. 3 pomiarów/s).",
+    "type": "choice"
   },
   {
     "id": 107,
@@ -1602,7 +1833,8 @@
       "D": "Metoda bezpośredniego porównania równoległego (przetwornik równoległy / Flash)"
     },
     "correct": "D",
-    "explanation": "W przetworniku równoległym (Flash) dzielnik rezystorowy wytwarza wszystkie poziomy odniesienia jednocześnie, a zestaw komparatorów porównuje je z napięciem Ux w jednym kroku. Dekoder (koder) natychmiast zamienia stan wyjść komparatorów na kod binarny, co czyni tę metodę najszybszą ze wszystkich."
+    "explanation": "W przetworniku równoległym (Flash) dzielnik rezystorowy wytwarza wszystkie poziomy odniesienia jednocześnie, a zestaw komparatorów porównuje je z napięciem Ux w jednym kroku. Dekoder (koder) natychmiast zamienia stan wyjść komparatorów na kod binarny, co czyni tę metodę najszybszą ze wszystkich.",
+    "type": "choice"
   },
   {
     "id": 108,
@@ -1617,7 +1849,8 @@
       "D": "Błąd przesunięcia zera tworzy składową multiplikatywną, a błąd kwantowania zależy od kwadratu częstotliwości"
     },
     "correct": "B",
-    "explanation": "Błąd przesunięcia zera ΔU0 przesuwa całą charakterystykę przetwarzania równolegle w górę lub w dół (stała wartość na całym zakresie – składnik addytywny). Błąd współczynnika skali (wzmocnienia) ΔUG zmienia nachylenie prostej przetwarzania, więc wywołany nim błąd rośnie proporcjonalnie do wartości sygnału wejściowego Ux (składnik multiplikatywny)."
+    "explanation": "Błąd przesunięcia zera ΔU0 przesuwa całą charakterystykę przetwarzania równolegle w górę lub w dół (stała wartość na całym zakresie – składnik addytywny). Błąd współczynnika skali (wzmocnienia) ΔUG zmienia nachylenie prostej przetwarzania, więc wywołany nim błąd rośnie proporcjonalnie do wartości sygnału wejściowego Ux (składnik multiplikatywny).",
+    "type": "choice"
   },
   {
     "id": 109,
@@ -1632,7 +1865,8 @@
       "D": "Błąd nieliniowości różniczkowej wynika z rozrzutu wartości (tolerancji) rezystorów w drabinkach rezystorowych powodującego nierówną szerokość poszczególnych przedziałów kwantowania, natomiast błąd nieliniowości całkowej wynika np. z nieliniowości ładowania kondensatora w układzie całkującym"
     },
     "correct": "D",
-    "explanation": "Niedokładności wykonania rezystorów w drabince przetwornika sprawiają, że schodki kwantowania nie mają idealnie równej szerokości q (nieliniowość różniczkowa), a w skrajnym przypadku niektóre kody mogą w ogóle nie wystąpić (błąd brakujących kodów). Z kolei nieliniowość charakterystyki układu całkującego powoduje wygięcie całej charakterystyki przetwarzania względem prostej idealnej (nieliniowość całkowa)."
+    "explanation": "Niedokładności wykonania rezystorów w drabince przetwornika sprawiają, że schodki kwantowania nie mają idealnie równej szerokości q (nieliniowość różniczkowa), a w skrajnym przypadku niektóre kody mogą w ogóle nie wystąpić (błąd brakujących kodów). Z kolei nieliniowość charakterystyki układu całkującego powoduje wygięcie całej charakterystyki przetwarzania względem prostej idealnej (nieliniowość całkowa).",
+    "type": "choice"
   },
   {
     "id": 110,
@@ -1647,7 +1881,8 @@
       "D": "Watomierz cyfrowy używa cewki ruchomej i sprężynki zwrotnej zamiast przetwornika A/C"
     },
     "correct": "C",
-    "explanation": "Aby poprawnie obliczyć moc czynną z próbek u(ti) oraz i(ti), obie próbki muszą pochodzić z dokładnie tej samej chwili czasowej ti. Dlatego watomierz cyfrowy posiada dwa równocześnie taktowane układy S&H, z których zapamiętane napięcia są następnie sekwencyjnie przekazywane przez multiplekser do jednego przetwornika A/C i mnożone cyfrowo przez mikroprocesor."
+    "explanation": "Aby poprawnie obliczyć moc czynną z próbek u(ti) oraz i(ti), obie próbki muszą pochodzić z dokładnie tej samej chwili czasowej ti. Dlatego watomierz cyfrowy posiada dwa równocześnie taktowane układy S&H, z których zapamiętane napięcia są następnie sekwencyjnie przekazywane przez multiplekser do jednego przetwornika A/C i mnożone cyfrowo przez mikroprocesor.",
+    "type": "choice"
   },
   {
     "id": 111,
@@ -1662,7 +1897,8 @@
       "D": "Oscyloskop cyfrowy nie posiada w ogóle pamięci RAM ani przetworników A/C"
     },
     "correct": "B",
-    "explanation": "Oscyloskop cyfrowy wymaga bardzo szybkiej, równoczesnej akwizycji przebiegów w każdym kanale, dlatego każdy kanał ma własny tor kondycjonowania i dedykowany przetwornik A/C zapisujący próbki do szybkiej pamięci RAM. W karcie pomiarowej (DAQ) sygnały z wejść AI0–AI7 (po układach S&H) trafiają przez multiplekser, przełącznik konfiguracji (RSE/Differential) oraz wzmacniacz z nastawą wzmocnienia do wspólnego przetwornika A/C."
+    "explanation": "Oscyloskop cyfrowy wymaga bardzo szybkiej, równoczesnej akwizycji przebiegów w każdym kanale, dlatego każdy kanał ma własny tor kondycjonowania i dedykowany przetwornik A/C zapisujący próbki do szybkiej pamięci RAM. W karcie pomiarowej (DAQ) sygnały z wejść AI0–AI7 (po układach S&H) trafiają przez multiplekser, przełącznik konfiguracji (RSE/Differential) oraz wzmacniacz z nastawą wzmocnienia do wspólnego przetwornika A/C.",
+    "type": "choice"
   },
   {
     "id": 112,
@@ -1677,6 +1913,7 @@
       "D": "Tylko jeden pojedynczy bezpiecznik topikowy bez żadnych układów cyfrowych"
     },
     "correct": "A",
-    "explanation": "Zgodnie ze schematem blokowym karty pomiarowej z wykładu, oprócz sekcji wejść analogowych AI0–AI7 (z układami S&H, multiplekserem, wyborem trybu asymetrycznego RSE lub różnicowego Differential, wzmacniaczem PGA i przetwornikiem A/C), karta zawiera także sekcję wyjścia analogowego AO (przetwornik C/A z buforem) oraz rejestr dwukierunkowych linii cyfrowych."
+    "explanation": "Zgodnie ze schematem blokowym karty pomiarowej z wykładu, oprócz sekcji wejść analogowych AI0–AI7 (z układami S&H, multiplekserem, wyborem trybu asymetrycznego RSE lub różnicowego Differential, wzmacniaczem PGA i przetwornikiem A/C), karta zawiera także sekcję wyjścia analogowego AO (przetwornik C/A z buforem) oraz rejestr dwukierunkowych linii cyfrowych.",
+    "type": "choice"
   }
 ]
